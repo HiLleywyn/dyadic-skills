@@ -36,7 +36,7 @@ On `409 VERSION_CONFLICT`, re-read and merge the intended change against the cur
 
 ## Execution and published results
 
-The owner runs JavaScript and Python with **Run** or Shift+Enter in the editor. CodeMirror edits source; execution happens in isolated browser workers inside an opaque-origin iframe. There is **no HTTP execute endpoint**, server kernel or Jupyter runtime. Do not invent one.
+Notebook links open in reader mode, including repository associations. The owner chooses **Edit**, then runs JavaScript and Python with **Run** or Shift+Enter. CodeMirror edits source; execution happens in isolated browser workers inside an opaque-origin iframe. There is **no HTTP execute endpoint**, server kernel or Jupyter runtime. Do not invent one. Editing cell source/type/language clears stale output; results arriving after the source changes are discarded.
 
 An external AI tool may execute code in its own authorized environment and save the actual result through the cells API, with `outputs` and `executed_at`. This stores evidence from that execution; it does not prove the browser runtime ran. Never fabricate results or mark unexecuted code as executed. Browser-specific behavior must be verified in the owner editor. Published readers cannot trigger code execution.
 

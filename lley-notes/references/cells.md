@@ -34,7 +34,7 @@ This is a schema example, not evidence that the code ran. Preserve real outputs 
 | `image` | `/media/ATTACHMENT_UUID` | An uploaded raster image |
 | `attachment` | JSON object encoded **as a string**: `{"url":"/media/UUID","filename":"data.csv"}` | Download link |
 
-Object-record table example: `source: JSON.stringify([{method:"A",score:0.9},{method:"B",score:0.8}])`. Array rows such as `[["Column","Value"],["A",1]]` also work. Markdown HTML is sanitized; iframe, form, style and executable output are not supported. Use a separate `math` cell for mathematical expressions.
+Object-record table example: `source: JSON.stringify([{method:"A",score:0.9},{method:"B",score:0.8}])`. Array rows such as `[["Column","Value"],["A",1]]` also work; an all-string first row becomes the column header. Tables, including Markdown and execution outputs, preserve single-line values and scroll horizontally. Numeric display uses up to eight significant digits; hover the value for full precision, which is also preserved in exports. Markdown HTML is sanitized; iframe, form, style and executable output are not supported. Use a separate `math` cell for mathematical expressions.
 
 ## Output types
 
@@ -49,7 +49,7 @@ An output is `{kind,data}`, where `data` must be JSON serializable. There is no 
 | `image` | `data:image/png;base64,...`, `data:image/jpeg;base64,...` or `data:image/webp;base64,...` |
 | `chart` | Numeric array, or `[{label:"A",value:3},{label:"B",value:5}]` |
 
-Charts render as bar charts with an accessible data table; this is not a Vega, Plotly or arbitrary SVG/HTML renderer. Image output must be a supported base64 raster URL, not an arbitrary remote URL. Use uploaded images in an `image` cell for attachments.
+Charts render as horizontal bar charts with full labels, a scale derived from the actual values, and an accessible data table; this is not a Vega, Plotly or arbitrary SVG/HTML renderer. Image output must be a supported base64 raster URL, not an arbitrary remote URL. Use uploaded images in an `image` cell for attachments. Clicking or tapping an image opens a lightbox with zoom and fit controls; Escape closes it. This also works for Markdown images and raster cell outputs.
 
 ## JavaScript
 
