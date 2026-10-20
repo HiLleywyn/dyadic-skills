@@ -10,6 +10,7 @@ Use `https://notes.lley.cat/api` with `Authorization: Bearer $LLEY_TOKEN`. The s
 - Read [Notes API and recipes](references/api.md) for notebook and cell CRUD, publishing, revision history/diffs, uploads, exports and associations.
 - Read [Cell format and execution](references/cells.md) before authoring cells, code, attachments, charts or saved outputs. The custom format and runtime helpers matter here.
 - Use [lley-git](../lley-git/SKILL.md) when creating or modifying associated repositories.
+- Use [lley-android](../lley-android/SKILL.md) for Notes in the native app and [lley-delivery](../lley-delivery/SKILL.md) for documenting Actions/releases. Always record platform implementation work, tests, deployment state and limitations in notebooks associated with lley-cat. This documentation does not imply publishing a private draft.
 
 ## Permissions and resource discovery
 

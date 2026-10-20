@@ -8,10 +8,16 @@ AI instructions for the actual lley.cat API, Git gateway, and notebook format. T
 | --- | --- | --- |
 | [lley-git](lley-git/SKILL.md) | Repositories, descriptions, visibility, files, branches, commits, clone/push, GitHub references, notebook associations | [Git API and recipes](lley-git/references/api.md) |
 | [lley-notes](lley-notes/SKILL.md) | Notebook CRUD, nested subnotes, cells, execution/validation, publishing, attachments, revisions, export, multiple repository associations | [Cell format and execution](lley-notes/references/cells.md), [Notes API and recipes](lley-notes/references/api.md) |
+| [lley-delivery](lley-delivery/SKILL.md) | Custom Actions, stage graphs, CI/CD, isolated runners, logs, artifacts and Releases | [Delivery API and format](lley-delivery/references/api.md) |
+| [lley-android](lley-android/SKILL.md) | Capacitor app across all three sites, Android builds/signing, native haptics, notifications and document storage | Native paths and build procedure in the skill |
 
 ```text
 skills/
 ├── README.md
+├── lley-android/SKILL.md
+├── lley-delivery/
+│   ├── SKILL.md
+│   └── references/api.md
 ├── lley-git/
 │   ├── SKILL.md
 │   └── references/api.md
@@ -37,12 +43,19 @@ Every domain serves the same `/api` contract. Prefer `https://git.lley.cat/api` 
 | Associate notes with private repositories | `git:read`, `notes:read`, `notes:write` |
 | All repository and notebook operations | All six Git/repository/Notes scopes above |
 | Edit profile and current project | `profile:write` |
+| Read Actions configuration, runs, logs and artifacts | `actions:read` |
+| Configure Actions | `actions:write` |
+| Start/cancel/retry Actions when explicitly enabled | `actions:run` |
+| Read published releases/assets | `releases:read` |
+| Create/edit/publish/delete releases and upload/delete assets | `releases:write` |
 
 Scopes are independent. Repository restrictions also apply to notebook associations. Creating a repository requires **unrestricted** `repo:admin`; a repository-limited token cannot create its own new target. A restricted Notes token must create a notebook with at least one permitted `repository_ids` entry. Profile permission is global only.
 
 Discover the current scope descriptions with `GET /api/token-permissions`. The owner can edit token names, scopes, repository limits and expiry in Settings without changing the token string. Changes and revocation apply on the next request. Rotation revokes the old string and displays a replacement once.
 
 ## Working conventions
+
+**Delivery currently stays paused with all push, tag and manual triggers disabled.** Previewing stages, pushing source, building Android locally or publishing a release does not authorize enabling CI/CD. Use isolated tests for real execution. Work on the platform must be documented in notes associated with lley-cat. Dyadic is read-only reference; only change explicitly authorized repositories.
 
 - Use returned UUIDs, not names, as resource identifiers. Renames preserve aliases and stable links.
 - Read a notebook before modifying it. Supply its latest `version`; merge after `409 VERSION_CONFLICT`.

@@ -9,6 +9,8 @@ Use the public gateway at `https://git.lley.cat/api`. It fronts a private Forgej
 
 Read [API and recipes](references/api.md) for endpoint payloads, file commits, branches, GitHub imports and associations. For writing notebook content or execution outputs, also use [lley-notes](../lley-notes/SKILL.md).
 
+Every repository has custom **Actions** and **Releases** sections. Use [lley-delivery](../lley-delivery/SKILL.md) for stage graphs, CI/CD, logs, artifacts and versioned releases. They use new independent `actions:read`, `actions:write`, `actions:run`, `releases:read` and `releases:write` grants. Existing Git scopes do not silently grant these permissions. Delivery is currently required to stay paused with every trigger disabled; pushing source must not activate it.
+
 ## Authentication and discovery
 
 Use `Authorization: Bearer $LLEY_TOKEN` for API requests. Git HTTPS accepts the same token as its password; the username can be the owner's current username. Keep credentials in a credential manager or process environment, never in a remote URL, logs or repository files.
