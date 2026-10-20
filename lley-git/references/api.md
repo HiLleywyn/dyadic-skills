@@ -77,7 +77,7 @@ This creates a local reference with actual public GitHub metadata and a local UU
 
 ## Notebook associations
 
-`GET /repositories/:id` includes the authorized notebook list. Its entries include notebook `id`, title, slug, cells and visibility-filtered repository metadata. The native Notes section uses this same data.
+`GET /repositories/:id` includes the authorized notebook list. Its entries include notebook `id`, title, slug, cells, `created_at`, `updated_at` and visibility-filtered repository metadata. The native Notes section shows both dates with local 24-hour time and seconds. Public modification times come from published reader snapshots. Its sort selector supports updated/created ascending or descending, title A–Z/Z–A and saved order; `?tab=notes&note_sort=updated-desc` is the default. Other values are `updated-asc`, `created-desc`, `created-asc`, `title-asc`, `title-desc`, `custom`.
 
 ```http
 PUT /api/associations
@@ -86,4 +86,6 @@ Content-Type: application/json
 {"repo_id":"REPOSITORY_UUID","note_id":"NOTEBOOK_UUID","position":0}
 ```
 
-The operation adds a relationship or updates its order. Remove with `DELETE /api/associations/REPOSITORY_UUID/NOTEBOOK_UUID`. Both sides update immediately. To swap ordered entries, update both positions; ties sort by modification time. Associations require access to the repository plus notebook write access and a permitted repository scope. A notebook may belong to multiple repositories, including local GitHub references, and is stored independently of Git.
+The operation adds a relationship or updates its position. Remove with `DELETE /api/associations/REPOSITORY_UUID/NOTEBOOK_UUID`. Both sides update immediately. Save a complete order atomically with `PUT /api/repositories/REPOSITORY_UUID/notes/order` and `{note_ids:[ALL_CURRENT_NOTEBOOK_UUIDS]}`; each associated UUID must occur exactly once. Duplicates or incomplete/stale membership return `409 ASSOCIATION_CONFLICT`. Ordering requires repository read access and `notes:write` for every note. In the UI choose **Saved order** to enable owner move controls. Reader-local sorting does not change saved positions.
+
+Associations require access to the repository plus notebook write access and a permitted repository scope. A notebook may belong to multiple repositories, including local GitHub references, and is stored independently of Git. Each linked note's **Changes** control opens its revision comparison. The same `notes:read` token can call `GET /api/notebooks/:id/history?view=published` and `GET /api/notebooks/:id/diff?view=published&base=1&head=2`. Read [Notes API](../../lley-notes/references/api.md#publishing-and-recovery) for draft/publication versions and privacy behavior. Unpublished edits do not appear in public diffs.

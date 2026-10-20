@@ -49,7 +49,7 @@ An output is `{kind,data}`, where `data` must be JSON serializable. There is no 
 | `image` | `data:image/png;base64,...`, `data:image/jpeg;base64,...` or `data:image/webp;base64,...` |
 | `chart` | Numeric array, or `[{label:"A",value:3},{label:"B",value:5}]` |
 
-Charts render as horizontal bar charts with full labels, a scale derived from the actual values, and an accessible data table; this is not a Vega, Plotly or arbitrary SVG/HTML renderer. Image output must be a supported base64 raster URL, not an arbitrary remote URL. Use uploaded images in an `image` cell for attachments. Clicking or tapping an image opens a lightbox with zoom and fit controls; Escape closes it. This also works for Markdown images and raster cell outputs.
+Charts render as horizontal bar charts with full labels, a scale derived from the actual values, and an accessible data table; this is not a Vega, Plotly or arbitrary SVG/HTML renderer. Image output must be a supported base64 raster URL, not an arbitrary remote URL. Use uploaded images in an `image` cell for attachments. Clicking or tapping an image opens a lightbox. On mobile/tablet, pinch with two fingers to zoom and drag with one finger to pan; Fit resets it. Desktop also supports zoom buttons, double-click, `+`/`-` and `0` to fit; Escape closes it. The shared viewer handles notebook attachments, Markdown images, raster cell outputs and repository Markdown images.
 
 ## JavaScript
 

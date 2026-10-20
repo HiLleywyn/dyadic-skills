@@ -7,7 +7,7 @@ description: Create, edit, publish, export and recover notebooks on notes.lley.c
 
 Use `https://notes.lley.cat/api` with `Authorization: Bearer $LLEY_TOKEN`. The same personal access token works for Git HTTPS and Notes; there is no separate Notes credential or Jupyter service.
 
-- Read [Notes API and recipes](references/api.md) for notebook and cell CRUD, publishing, revisions, uploads, exports and associations.
+- Read [Notes API and recipes](references/api.md) for notebook and cell CRUD, publishing, revision history/diffs, uploads, exports and associations.
 - Read [Cell format and execution](references/cells.md) before authoring cells, code, attachments, charts or saved outputs. The custom format and runtime helpers matter here.
 - Use [lley-git](../lley-git/SKILL.md) when creating or modifying associated repositories.
 
@@ -19,7 +19,7 @@ Request only the task's independent token scopes:
 
 | Task | Scopes |
 | --- | --- |
-| Read drafts, outputs, attachments and export | `notes:read` |
+| Read drafts, outputs, attachments, history/diffs and export | `notes:read` |
 | Create/edit/delete notes; cells, outputs, uploads, revisions and associations | `notes:read` + `notes:write` |
 | Publish/update reader snapshot or unpublish | `notes:read` + `notes:publish` |
 | Associate with private repositories | Also `git:read` |

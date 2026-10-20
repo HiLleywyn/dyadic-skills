@@ -80,11 +80,18 @@ If a mutation returns `409 VERSION_CONFLICT`, re-read, preserve other edits, and
 | --- | --- | --- |
 | POST | `/notebooks/:id/publish` | `{publish:true,version}` capture or update snapshot; false unpublish |
 | GET | `/notebooks/:id/revisions` | Latest 100 previous `{version,created_at}` records; notes:write |
+| GET | `/notebooks/:id/history?view=draft` | Current and previous saved versions, with timestamps; notes:read |
+| GET | `/notebooks/:id/history?view=published` | Authorized reader publications and timestamps; separate publication version sequence |
+| GET | `/notebooks/:id/diff?view=published&base=1&head=2` | Structured metadata/cell/output differences with unified patches |
 | POST | `/notebooks/:id/restore/:revisionVersion` | `{version:CURRENT_VERSION}` recommended; notes:write |
 
 Publish requires the separate `notes:publish` scope. It captures current saved cells and outputs, not unsaved editor text. Editing a published notebook changes its draft while anonymous readers continue to see the previous snapshot. Updating its description or title does not update the reader snapshot until publishing again. Visibility changes take effect immediately; setting a published note private conceals it.
 
 Restoring a revision makes a new version, preserves current slug/visibility/associations and leaves the reader snapshot unchanged. The old version remains recoverable. For compatibility, restore accepts an omitted body and checks the version observed at request start; send the current version explicitly for script concurrency control.
+
+History returns `{view,available_views,current_version,revisions:[{version,updated_at}],can_restore}`. Authenticated readers default to `draft`; anonymous readers can access only authorized published versions. Always select version numbers from the returned history, and keep the same `view` for the diff. Publication versions are independent of draft versions and cannot be used for restore. A diff defaults to the latest versus previous accessible revision; `base=0` compares against an empty document. It returns `{view,base,head,before,after,sections,summary,truncated}`. Sections contain metadata or stable-ID cell changes, including source, saved output and ordering; image data is represented by a fingerprint. Large or expensive patches may be summarized with `truncated:true`.
+
+Public history never includes unpublished edits or private older publications. Making a notebook private or unpublishing it also conceals its public history/diffs. The reader and repository Notes section expose **Changes** with date/time selectors and unified or side-by-side diffs. `notes:read` suffices for history/diffs; restoring still requires `notes:write`.
 
 ## Attachments and export
 
@@ -105,5 +112,7 @@ Attachment content is at `https://notes.lley.cat/media/:id`, outside `/api`, usi
 ```
 
 Send to `PUT /associations` to add or reorder. Remove with `DELETE /associations/:repo/:note`. Both require notebook write access, repository read access and a permitted repository restriction. Associations do not increment the notebook content version. The notebook `repositories` and repository `notes` views reflect the same many-to-many records.
+
+For an atomic saved order, send `{note_ids:[ALL_CURRENT_NOTEBOOK_UUIDS]}` to `PUT /repositories/:repo/notes/order`. Include each associated note exactly once; an incomplete or duplicate list returns `409 ASSOCIATION_CONFLICT`. Requires repository read access and `notes:write` for every note. Repository Notes also supports reader-local sorting by update date, creation date or title; public timestamps refer to reader snapshots, not later drafts.
 
 For GitHub, create or find a local GitHub reference using the Git skill, then associate its **local UUID**. Do not submit a GitHub URL where a UUID is expected. The local repository page shows the Notes section; this cannot add UI to GitHub's own website.
