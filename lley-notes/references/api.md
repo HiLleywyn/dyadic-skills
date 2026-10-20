@@ -70,7 +70,7 @@ note = await call(`/notebooks/${note.id}/cells`, 'POST', {version: note.version,
 // Save only the actual observed output with a subsequent cell PATCH.
 ```
 
-To save a real result, cell PATCH accepts `outputs:[{kind:"json",data:...}]` and `executed_at:new Date().toISOString()`. Editing source/type/language via cell PATCH removes old outputs/execution timestamp unless replacement outputs are included. Whole-document PUT/PATCH stores the cells as supplied, so clear stale results yourself when replacing a whole array.
+To save a real result, cell PATCH accepts `outputs:[{kind:"json",data:...}]`, a new `executed_at:new Date().toISOString()`, and `outputs_stale:false`. Source/language changes retain old results with `outputs_stale:true`; later affected code cells in that language are also invalidated. The same normalization applies to whole-document PUT/PATCH, insert/delete and reorder operations. A fresh execution timestamp distinguishes regenerated results from reused results, even when the values are identical. A stale flag alone cannot be cleared by resubmitting unchanged execution metadata. Conversion to a non-code type removes execution data. JSON exports and revision snapshots retain the flag.
 
 If a mutation returns `409 VERSION_CONFLICT`, re-read, preserve other edits, and retry the intended change using the new version. Invalid reorder payloads return `400 INVALID_CELL_ORDER`. Omitted/invalid versions return 400. `404` can mean absent or outside token access; do not recover by creating a duplicate automatically.
 

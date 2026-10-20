@@ -14,7 +14,7 @@
 
 A notebook response contains `id,title,slug,description,visibility,status,cells,version,created_at,updated_at,repositories,editable`. `repositories` contains only repositories readable by the caller. `editable` reflects notebook write permission; the browser additionally requires the owner session to show editing controls. Timestamps are ISO instants; the UI presents local 24-hour time including seconds.
 
-Each cell requires a real unique UUID, `type`, and string `source`. Optional fields are `language`, `outputs` and `executed_at`. Example:
+Each cell requires a real unique UUID, `type`, and string `source`. Optional fields are `language`, `outputs`, `executed_at` and boolean `outputs_stale`. Example:
 
 ```json
 {"id":"48ce4f0f-ac35-42b5-a297-70397e7f934f","type":"code","language":"python","source":"sum(range(10))","outputs":[{"kind":"json","data":45}],"executed_at":"2026-10-19T15:10:20Z"}
@@ -83,6 +83,9 @@ sum(row["value"] for row in records)
 ## Execution boundaries
 
 - Owner editor: Run or Shift+Enter for a selected code cell; Ctrl/Cmd+S saves.
+- Run All executes code cells in document order with existing language state. Reset & Run All first resets both workers, then regenerates draft results. Stop interrupts the batch; the first error also stops it.
+- Validate outputs resets both workers and executes in order without replacing saved results. Its report compares exact typed values (object key order ignored), text, arrays, tables, charts and image bytes. Dynamic timestamps, randomness, float differences and byte-level image changes may differ. Errors fail validation; a cell without saved output/execution metadata is reported as lacking a baseline, never as matched.
+- Source/language changes and structural code edits mark affected same-language results stale. Old output remains visible with a warning, including after reload and API edits. Reset alone leaves saved output intact and does not certify it. Run again to regenerate; validation alone leaves stale flags unchanged because it preserves the baseline. Code/order changes during a batch discard the in-flight result and stop later execution.
 - Per-language execution is serial. JavaScript has a 10-second limit; Python 45 seconds including first runtime load.
 - Stop/Reset terminates the worker and loses its language state. Reloading also loses runtime state; saved outputs remain.
 - Workers have no DOM or application credentials. Runtime network access is constrained to local engine assets by CSP; application APIs and arbitrary internet requests are unavailable.
