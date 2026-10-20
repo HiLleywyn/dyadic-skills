@@ -27,7 +27,7 @@ Request only the task's independent token scopes:
 | Publish/update reader snapshot or unpublish | `notes:read` + `notes:publish` |
 | Associate with private repositories | Also `git:read` |
 
-Token grants are edited by the owner in `https://lley.cat/admin` → Access tokens. Discover the live scope catalog at `GET /api/token-permissions`. An API token cannot create tokens or change its own grants. Repository-limited tokens can access Notes only through a permitted association. On creation, include at least one allowed `repository_ids` entry; every supplied repository must be permitted and readable. Removing the last permitted association can remove that token's subsequent access to the note.
+Token grants are edited by the owner in `https://lley.cat/admin` → Access Tokens. Discover the live scope catalog at `GET /api/token-permissions`. An API token cannot create tokens or change its own grants. Repository-limited tokens can access Notes only through a permitted association. On creation, include at least one allowed `repository_ids` entry; every supplied repository must be permitted and readable. Removing the last permitted association can remove that token's subsequent access to the note.
 
 ## Hierarchy and repository links
 
@@ -56,3 +56,8 @@ Notebook visibility and repository visibility are independent. Public readers se
 Revision restore creates a new draft version of title, description and cells. It preserves current slug, visibility, associations and reader snapshot. Supply the current version when restoring to detect concurrent edits. JSON exports use `format:"lley-notebook",format_version:1`; Markdown exports contain source and saved outputs. Attachments remain separate download URLs, so download them separately for a portable copy.
 
 Verify by reading the note and both association views. For publishing, also inspect an anonymous response: it should contain only the intended saved snapshot. For deletion, verify absence using the previously authorized token. Errors are `{error:{code,message}}`; 404 may conceal an inaccessible resource, while 401 indicates invalid/expired/revoked credentials. Check permissions and associations before concluding a note is absent.
+
+
+## Notes List And Favorites
+
+The list is called **Notes**. **New Note** and **All / Starred** sit above its full-width search, matching Repositories. Notes still open in Reader mode. Favorite changes do not alter authored content, version or edit times. `GET /notebook-stars` and `GET /notebooks/:id/star` require `stars:read`; PUT/DELETE the latter require `stars:write`. Content-read access and repository restrictions still apply. Public visitors cannot inspect the owner's favorites. Typed tools are `notes_stars_list`, `notes_star_get`, `notes_star_set`. The starred list follows the ordinary latest-200 authorized Notes listing.

@@ -46,9 +46,11 @@ Every domain serves the same `/api` contract. Prefer `https://git.lley.cat/api` 
 | All repository and notebook operations | All six Git/repository/Notes scopes above |
 | Edit profile and current project | `profile:write` |
 | Read Actions configuration, runs, logs and artifacts | `actions:read` |
+| Create/edit issues or pull requests | `git:read` + `issues:write` / `pulls:write` |
+| Merge reviewed pull request head | `git:read`, `git:write`, `pulls:merge`; add `repo:admin` to delete the source branch |
 | Configure Actions | `actions:write` |
 | Credential metadata / encrypted writes and environment policies | `secrets:read` / `secrets:write` |
-| Read / change owner repository favorites | `stars:read` / `stars:write` |
+| Read / change owner repository and note favorites | `stars:read` / `stars:write` |
 | Start/cancel/retry Actions when explicitly enabled | `actions:run` |
 | Read published releases/assets | `releases:read` |
 | Create/edit/publish/delete releases and upload/delete assets | `releases:write` |

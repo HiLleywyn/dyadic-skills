@@ -1,6 +1,9 @@
 ---
+
 name: lley-git
+
 description: Use git.lley.cat to create and manage repositories, inspect and commit files, push or clone over HTTPS, manage branches and visibility, and associate notebooks. Applies to the custom lley.cat Git gateway, not generic GitHub account administration or infrastructure changes.
+
 ---
 
 # Git on lley.cat
@@ -18,19 +21,27 @@ Every repository has custom **Actions** and **Releases** sections. Use [lley-del
 Use `Authorization: Bearer $LLEY_TOKEN` for API requests. Git HTTPS accepts the same token as its password; the username can be the owner's current username. Keep credentials in a credential manager or process environment, never in a remote URL, logs or repository files.
 
 ```bash
+
 curl --fail-with-body -sS -H "Authorization: Bearer $LLEY_TOKEN" \
+
   https://git.lley.cat/api/repositories
+
 ```
 
-Tokens are issued and edited in `https://lley.cat/admin` → Access tokens. `GET /api/token-permissions` discovers current permissions. Token management and passkey endpoints require an owner browser session; an API token cannot promote itself or create another token.
+Tokens are issued and edited in `https://lley.cat/admin` → Access Tokens. `GET /api/token-permissions` discovers current permissions. Token management and passkey endpoints require an owner browser session; an API token cannot promote itself or create another token.
 
 Choose independent scopes for the requested work:
 
 | Operation | Scopes |
+
 | --- | --- |
+
 | Read private metadata, files, history, diffs, raw/archive, clone/pull | `git:read` |
+
 | Push, create/replace/delete files, create branch | `git:read` + `git:write` |
+
 | Create/delete/rename repositories, description/settings/default branch, delete branch, refresh | `git:read` + `repo:admin` |
+
 | Link or unlink notebooks | `git:read` + `notes:read` + `notes:write` |
 
 A repository-limited token cannot create repositories. Use unrestricted `repo:admin` for creation, then restrict a token to the returned UUID when appropriate. A Notes scope never grants Git read access.
@@ -40,7 +51,9 @@ A repository-limited token cannot create repositories. Use unrestricted `repo:ad
 Find the requested repository in the authorized list and use its `id` everywhere. Names/slugs can change; previous names remain aliases and cannot be reused by another repository while reserved.
 
 - Detail page: `https://git.lley.cat/r/REPOSITORY_UUID`
+
 - Stable remote: `https://git.lley.cat/r/REPOSITORY_UUID.git`
+
 - Human remote: `https://git.lley.cat/USERNAME/REPOSITORY_SLUG.git`
 
 Use normal Git for existing local projects, multi-file changes, merges, history and large files. A newly created `initialize:false` repository is empty: make a local commit, select `main`, add its stable remote and push. An initialized repository already has a README commit; clone/fetch it before pushing to avoid unrelated histories. Respect local changes and remote history; do not force-push as a routine upload.
@@ -57,8 +70,18 @@ Visibility values are `public`, `private`, `ip`. IP restrictions accept IPv4 and
 
 ## Verify the result
 
-Repository **Tests** shows actual case results and Actions history. The SVG badge at `/api/repositories/:id/badges/tests.svg` uses repository/IP permissions, reports absent tests honestly and marks results outdated when the source commit changes. Use the delivery skill for report ingestion; do not fabricate a passing badge. Owner favorites use `GET/PUT/DELETE /repositories/:id/star` with independent `stars:read`/`stars:write` scopes. `GET /stars` lists readable favorites within the token�s repository restrictions. This is one owner's synchronized state, not public visitor accounts or invented community counts.
+Repository **Tests** shows actual case results and Actions history. The SVG badge at `/api/repositories/:id/badges/tests.svg` uses repository/IP permissions, reports absent tests honestly and marks results outdated when the source commit changes. Use the delivery skill for report ingestion; do not fabricate a passing badge. Owner favorites use `GET/PUT/DELETE /repositories/:id/star` with independent `stars:read`/`stars:write` scopes. `GET /stars` lists readable favorites within the token’s repository restrictions. This is one owner's synchronized state, not public visitor accounts or invented community counts.
 
 Read back changed metadata and affected files/branches. After a Git push, fetch or clone and inspect the resulting commit. Repository pages and lists display actual modification timestamps with seconds in the viewer's local 24-hour time. Do not generate repository descriptions or notes unless the user requested that content.
 
 Errors use `{error:{code,message}}`. `401` means invalid/expired/revoked credentials, `404` can conceal an unauthorized private resource, `409` indicates a name/branch/file conflict. Check the token's read/write/admin scopes and repository restriction before treating 404 as proof that a resource does not exist. Re-read the current file SHA after a conflict; do not blindly overwrite concurrent work.
+
+
+
+## Issues, Pull Requests And Favorites
+
+Hosted repositories have real Issues and Pull Requests in the current branch's **Main** menu. Use `git:read` for private content, independent `issues:write` or `pulls:write` for mutations, and `pulls:merge` plus `git:write` for merging. Deleting the merged source branch also requires `repo:admin`. Existing tokens must explicitly receive these scopes; they are not inferred from Git writing. Read the API reference for payloads.
+
+Read the actual pull diff and latest head before a merge. Supply the exact reviewed SHA; after `HEAD_CHANGED`, reload and review. Never pass force flags or assume CI succeeded because merge is available. Creating a PR does not authorize merging it or activating delivery. Comments require the user's communication authorization. Public/IP/private access gates cover these endpoints, and GitHub references stay read only.
+
+The repository list uses **All / Starred** above a full-width search. `stars:read` and `stars:write` manage owner favorites with independent repository read access. **Automations** contains **Actions** and **Tests**; **Credentials** appears only for the owner. Branch names are shown verbatim and selecting a branch opens its own files.

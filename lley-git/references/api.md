@@ -91,3 +91,12 @@ The operation adds a relationship or updates its position. Remove with `DELETE /
 Associations require access to the repository plus notebook write access and a permitted repository scope. A notebook may belong to multiple repositories, including local GitHub references, and is stored independently of Git. Each linked note's **Changes** control opens its revision comparison. The same `notes:read` token can call `GET /api/notebooks/:id/history?view=published` and `GET /api/notebooks/:id/diff?view=published&base=1&head=2`. Read [Notes API](../../lley-notes/references/api.md#publishing-and-recovery) for draft/publication versions and privacy behavior. Unpublished edits do not appear in public diffs.
 
 A notebook may connect to multiple repositories at once. The homepage circular map draws every visible repository-to-note edge, alongside notebook parent/subnote edges. Content bubbles scale using authorized `size_bytes`; repository sizes are provider-reported storage, cached for up to a minute, or null when unavailable.
+
+
+## Issues And Pull Requests
+
+Under `/repositories/:id`, GET `/issues` or `/pulls` accepts `state=open|closed|all&page=1` (30 rows). Issues exclude pull requests; numbering is shared. POST `/issues` takes `{title,body?,ref?}`; POST `/pulls` takes `{title,body?,head,base}`. GET `/{issues|pulls}/:number` reads the record; PATCH takes `{title?,body?,state?:open|closed}`. GET `/:number/comments?page=1` lists 30 comments and POST takes `{body}`. Use the corresponding `issues:write` or `pulls:write` scope, in addition to Git access.
+
+GET `/pulls/:number/diff` returns actual text. POST `/pulls/:number/merge` takes `{method,head_sha,delete_branch?:false,title?,message?}`. Methods: `merge`, `squash`, `rebase`, `fast-forward-only`. `head_sha` must be the latest reviewed commit. Merge needs `pulls:merge` and `git:write`; branch deletion also needs `repo:admin`. Stale head, conflicts, closed/already merged requests and branch protection are enforced. Force and deferred auto-merge are unavailable.
+
+Typed MCP equivalents: `git_issue_list/get/create/patch/comments/comment`, `git_pull_list/get/create/patch/comments/comment`, `git_pull_diff`, `git_pull_merge`.
