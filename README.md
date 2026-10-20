@@ -7,7 +7,7 @@ AI instructions for the actual lley.cat API, Git gateway, and notebook format. T
 | Skill | Use it for | Detailed reference |
 | --- | --- | --- |
 | [lley-git](lley-git/SKILL.md) | Repositories, descriptions, visibility, files, branches, commits, clone/push, GitHub references, notebook associations | [Git API and recipes](lley-git/references/api.md) |
-| [lley-notes](lley-notes/SKILL.md) | Notebook CRUD, individual cells, execution outputs, publishing, attachments, revisions, export, repository associations | [Cell format and execution](lley-notes/references/cells.md), [Notes API and recipes](lley-notes/references/api.md) |
+| [lley-notes](lley-notes/SKILL.md) | Notebook CRUD, nested subnotes, cells, execution/validation, publishing, attachments, revisions, export, multiple repository associations | [Cell format and execution](lley-notes/references/cells.md), [Notes API and recipes](lley-notes/references/api.md) |
 
 ```text
 skills/

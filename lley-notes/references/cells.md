@@ -12,7 +12,7 @@
 
 ## Document shape
 
-A notebook response contains `id,title,slug,description,visibility,status,cells,version,created_at,updated_at,repositories,editable`. `repositories` contains only repositories readable by the caller. `editable` reflects notebook write permission; the browser additionally requires the owner session to show editing controls. Timestamps are ISO instants; the UI presents local 24-hour time including seconds.
+A notebook response contains `id,title,slug,description,visibility,status,cells,version,created_at,updated_at,repositories,editable,parent_id,parent,size_bytes`. `repositories` contains only repositories readable by the caller. `editable` reflects notebook write permission; the browser additionally requires the owner session to show editing controls. Timestamps are ISO instants; the UI presents local 24-hour time including seconds.
 
 Each cell requires a real unique UUID, `type`, and string `source`. Optional fields are `language`, `outputs`, `executed_at` and boolean `outputs_stale`. Example:
 

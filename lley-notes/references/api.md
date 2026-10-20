@@ -5,6 +5,7 @@ Base: `https://notes.lley.cat/api`. Authenticate with `Authorization: Bearer $LL
 ## Contents
 
 - [Notebook lifecycle](#notebook-lifecycle)
+- [Subnotes](#subnotes)
 - [Cell operations](#cell-operations)
 - [Publishing and recovery](#publishing-and-recovery)
 - [Attachments and export](#attachments-and-export)
@@ -18,7 +19,7 @@ Base: `https://notes.lley.cat/api`. Authenticate with `Authorization: Bearer $LL
 | POST | `/notebooks` | Create a draft; 201 |
 | GET | `/notebooks/resolve/:slug` | Current or previous slug |
 | GET | `/notebooks/:id` | Authorized draft or saved reader snapshot |
-| PATCH | `/notebooks/:id` | `{version,...changedFields}`; fields: title, slug, description, visibility, cells |
+| PATCH | `/notebooks/:id` | `{version,...changedFields}`; fields: title, slug, description, visibility, cells, parent_id |
 | PUT | `/notebooks/:id` | Complete title, slug, description, visibility, cells and version |
 | DELETE | `/notebooks/:id` | Delete notebook, revisions, associations and attachment storage |
 
@@ -37,6 +38,16 @@ For a description-only change, GET the note, then:
 ```
 
 PATCH does not accept `status`, `published`, timestamps, IDs or `repositories`. Publish through the separate endpoint. Associations are managed independently. PUT remains useful for an entire editor document or importing cell content from a JSON export; pass only editable fields and the current version, rather than assuming export metadata is writable. An API token with notes:read can inspect an authorized draft; an anonymous reader receives the saved published snapshot.
+
+## Subnotes
+
+Pass `parent_id:"PARENT_NOTEBOOK_UUID"` to creation or `{version,parent_id:"PARENT_UUID"}` to notebook PATCH. Set null to move the note to the top level. The owner editor exposes **Parent notebook**, **New subnote**, parent breadcrumbs and linked children. Homepage List and the Notes index use expandable nested lists; the circular map connects children to their parent.
+
+Changing parent requires `notes:write` access to both notes. Self/descendant cycles return `409 NOTEBOOK_CYCLE`; concurrent conflicting parent changes cannot create a cycle. Deleting a parent promotes direct children while retaining their contents. Restore preserves the current parent, as it does other current relationships.
+
+`GET /notebooks?parent_id=UUID` returns up to 200 authorized direct children, after checking access to the parent. Responses contain `parent_id` and an authorized `parent:{id,title,slug}` summary. Hidden parent IDs/titles are omitted; a visible child of a hidden parent is presented at top level. Children keep their own visibility and repository permissions; nesting does not publish content or expand token access. Parent relationships update navigation immediately and do not require republishing cell content.
+
+Notebook `size_bytes` counts visible content/output JSON and referenced attachments. Anonymous sizes exclude unpublished drafts and unused uploads. The map uses bounded size scaling, and draws each visible repository association independently; one note can connect to several repositories.
 
 ## Cell operations
 

@@ -26,6 +26,10 @@ Request only the task's independent token scopes:
 
 Token grants are edited by the owner in `https://lley.cat/admin` → Access tokens. Discover the live scope catalog at `GET /api/token-permissions`. An API token cannot create tokens or change its own grants. Repository-limited tokens can access Notes only through a permitted association. On creation, include at least one allowed `repository_ids` entry; every supplied repository must be permitted and readable. Removing the last permitted association can remove that token's subsequent access to the note.
 
+## Hierarchy and repository links
+
+Use versioned notebook `parent_id` to nest under another note, or null for top level. Both notes require write access; cycles are rejected. Read [Subnotes](references/api.md#subnotes) for permission, deletion and public visibility behavior. Never infer child visibility from its parent. A note can have many repository links: supply multiple `repository_ids` when creating, or add relationships independently afterward. The owner UI supports checkbox selection of multiple repositories, and the map draws every visible connection.
+
 ## Editing without losing work
 
 Read the current notebook and its `version` before a mutation. Prefer partial `PATCH /notebooks/:id` for metadata or a complete replacement `cells` array. Use the individual cell endpoints to avoid rebuilding the document for a small edit. Every content mutation takes the latest notebook `version` and returns the complete updated notebook with an incremented version.
