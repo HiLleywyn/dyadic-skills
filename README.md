@@ -9,6 +9,7 @@ AI instructions for the actual lley.cat API, Git gateway, and notebook format. T
 | [lley-git](lley-git/SKILL.md) | Repositories, descriptions, visibility, files, branches, commits, clone/push, GitHub references, notebook associations | [Git API and recipes](lley-git/references/api.md) |
 | [lley-notes](lley-notes/SKILL.md) | Notebook CRUD, nested subnotes, cells, execution/validation, publishing, attachments, revisions, export, multiple repository associations | [Cell format and execution](lley-notes/references/cells.md), [Notes API and recipes](lley-notes/references/api.md) |
 | [lley-delivery](lley-delivery/SKILL.md) | Custom Actions, stage graphs, CI/CD, isolated runners, logs, artifacts and Releases | [Delivery API and format](lley-delivery/references/api.md) |
+| [lley-mcp](lley-mcp/SKILL.md) | Typed MCP tools, protected-file token setup, safe notebook patches and append-only bridge messaging | [Platform MCP contract](https://git.lley.cat/r/cf7b2b43-ffd8-4fb7-9381-43a9246c4210?path=docs%2FMCP.md) |
 | [lley-android](lley-android/SKILL.md) | Capacitor app across all three sites, Android builds/signing, native haptics, notifications and document storage | Native paths and build procedure in the skill |
 
 ```text
@@ -45,6 +46,8 @@ Every domain serves the same `/api` contract. Prefer `https://git.lley.cat/api` 
 | Edit profile and current project | `profile:write` |
 | Read Actions configuration, runs, logs and artifacts | `actions:read` |
 | Configure Actions | `actions:write` |
+| Credential metadata / encrypted writes and environment policies | `secrets:read` / `secrets:write` |
+| Read / change owner repository favorites | `stars:read` / `stars:write` |
 | Start/cancel/retry Actions when explicitly enabled | `actions:run` |
 | Read published releases/assets | `releases:read` |
 | Create/edit/publish/delete releases and upload/delete assets | `releases:write` |
@@ -55,7 +58,7 @@ Discover the current scope descriptions with `GET /api/token-permissions`. The o
 
 ## Working conventions
 
-**Delivery currently stays paused with all push, tag and manual triggers disabled.** Previewing stages, pushing source, building Android locally or publishing a release does not authorize enabling CI/CD. Use isolated tests for real execution. Work on the platform must be documented in notes associated with lley-cat. Dyadic is read-only reference; only change explicitly authorized repositories.
+**Only lley-cat is authorized for production delivery verification.** Keep every other repository disabled with its triggers off. Global resume and repository activation are separate owner-only gates. Use isolated tests before production runs. Previewing stages, source pushes or release publication do not authorize activating additional repositories. Work on the platform must be documented in notes associated with lley-cat. Dyadic is read-only reference; only change explicitly authorized repositories.
 
 - Use returned UUIDs, not names, as resource identifiers. Renames preserve aliases and stable links.
 - Read a notebook before modifying it. Supply its latest `version`; merge after `409 VERSION_CONFLICT`.

@@ -7,6 +7,8 @@ description: Use git.lley.cat to create and manage repositories, inspect and com
 
 Use the public gateway at `https://git.lley.cat/api`. It fronts a private Forgejo engine; do not use Forgejo account, token, or `/api/v1` endpoints. This platform has one owner. Public readers need no account; authenticated automation uses an owner-issued personal access token.
 
+When available, use the [typed MCP tools](../lley-mcp/SKILL.md) for API operations. Git HTTPS remains the transport for normal clone/push. The MCP adapter reads its token from a protected file or client vault; do not move it into shell arguments.
+
 Read [API and recipes](references/api.md) for endpoint payloads, file commits, branches, GitHub imports and associations. For writing notebook content or execution outputs, also use [lley-notes](../lley-notes/SKILL.md).
 
 Every repository has custom **Actions** and **Releases** sections. Use [lley-delivery](../lley-delivery/SKILL.md) for stage graphs, CI/CD, logs, artifacts and versioned releases. They use new independent `actions:read`, `actions:write`, `actions:run`, `releases:read` and `releases:write` grants. Existing Git scopes do not silently grant these permissions. Delivery is currently required to stay paused with every trigger disabled; pushing source must not activate it.
@@ -54,6 +56,8 @@ Visibility values are `public`, `private`, `ip`. IP restrictions accept IPv4 and
 `provider:github` means a public GitHub **reference**, read only here. Its local page supports notebook associations. To host an editable copy, create with `github_url` and `import:true`. This does not grant access to private GitHub repositories or allow changes to GitHub itself.
 
 ## Verify the result
+
+Repository **Tests** shows actual case results and Actions history. The SVG badge at `/api/repositories/:id/badges/tests.svg` uses repository/IP permissions, reports absent tests honestly and marks results outdated when the source commit changes. Use the delivery skill for report ingestion; do not fabricate a passing badge. Owner favorites use `GET/PUT/DELETE /repositories/:id/star` with independent `stars:read`/`stars:write` scopes. `GET /stars` lists readable favorites within the token’s repository restrictions. This is one owner's synchronized state, not public visitor accounts or invented community counts.
 
 Read back changed metadata and affected files/branches. After a Git push, fetch or clone and inspect the resulting commit. Repository pages and lists display actual modification timestamps with seconds in the viewer's local 24-hour time. Do not generate repository descriptions or notes unless the user requested that content.
 

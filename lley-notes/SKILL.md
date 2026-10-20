@@ -7,6 +7,8 @@ description: Create, edit, publish, export and recover notebooks on notes.lley.c
 
 Use `https://notes.lley.cat/api` with `Authorization: Bearer $LLEY_TOKEN`. The same personal access token works for Git HTTPS and Notes; there is no separate Notes credential or Jupyter service.
 
+When connected, prefer the [typed MCP tools](../lley-mcp/SKILL.md): `notes_get`, `notes_cell_patch` and `notes_patch` enforce the same versions and cell schemas without manually reconstructing cells in shell commands. Read `structuredContent.result` for the new version. MCP does not introduce server-side code execution.
+
 - Read [Notes API and recipes](references/api.md) for notebook and cell CRUD, publishing, revision history/diffs, uploads, exports and associations.
 - Read [Cell format and execution](references/cells.md) before authoring cells, code, attachments, charts or saved outputs. The custom format and runtime helpers matter here.
 - Use [lley-git](../lley-git/SKILL.md) when creating or modifying associated repositories.
