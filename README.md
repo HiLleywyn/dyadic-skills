@@ -10,6 +10,7 @@ AI instructions for the actual lley.cat API, Git gateway, and notebook format. T
 | [lley-notes](lley-notes/SKILL.md) | Notebook CRUD, nested subnotes, cells, execution/validation, publishing, attachments, revisions, export, multiple repository associations | [Cell format and execution](lley-notes/references/cells.md), [Notes API and recipes](lley-notes/references/api.md) |
 | [lley-delivery](lley-delivery/SKILL.md) | Custom Actions, stage graphs, CI/CD, isolated runners, logs, artifacts and Releases | [Delivery API and format](lley-delivery/references/api.md) |
 | [lley-mcp](lley-mcp/SKILL.md) | Typed MCP tools, protected-file token setup, safe notebook patches and append-only bridge messaging | [Platform MCP contract](https://git.lley.cat/r/cf7b2b43-ffd8-4fb7-9381-43a9246c4210?path=docs%2FMCP.md) |
+| [lley-dyadic-embed](lley-dyadic-embed/SKILL.md) | Portable host-authenticated Git and rich Notes backend/React integration, separate branch, workspace/vault seams | Package README on the integration branch |
 | [lley-android](lley-android/SKILL.md) | Capacitor app across all three sites, Android builds/signing, native haptics, notifications and document storage | Native paths and build procedure in the skill |
 
 ```text
