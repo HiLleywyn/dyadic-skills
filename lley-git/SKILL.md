@@ -2,7 +2,7 @@
 
 name: lley-git
 
-description: Use git.lley.cat to create and manage repositories, inspect and commit files, push or clone over HTTPS, manage branches and visibility, and associate notebooks. Applies to the custom lley.cat Git gateway, not generic GitHub account administration or infrastructure changes.
+description: Use git.lley.cat to create and manage repositories, inspect and commit files, push or clone over HTTPS, manage branches and visibility, track issues and pull requests, merge reviewed commits, and associate notebooks. Applies to the custom lley.cat Git gateway, not generic GitHub account administration or infrastructure changes.
 
 ---
 

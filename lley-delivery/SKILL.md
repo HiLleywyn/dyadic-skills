@@ -46,3 +46,10 @@ Runs pin an immutable commit; retries create a new record. Cancellation is coope
 Create a draft pinned to an actual branch/tag/commit, upload real artifacts, verify returned size and SHA-256, then publish when the user's task authorizes publication. Release publication does not run Actions. Deleting a release removes its assets; confirm the exact release identity is within the user's requested scope.
 
 Always keep implementation, validation, deployment status and limitations in notes associated with lley-cat when working on the platform. Preserve facts: distinguish browser/emulator tests from physical-device validation. Never save credentials or private signing material in notes or release bodies.
+
+
+## Shared UI Rules
+
+Use Title Case for every word in menus, settings, statuses and displayed test names. Preserve acronyms, authored content, actual code and branch/file identifiers. The persistent rule is in the lley-cat AGENTS.md. Reuse shared searches, dropdowns, rectangular status/count boxes and buffered full-width navy surfaces. Tests has equal colored totals, a single 3:1 search/filter row and inward-indented stage/suite/case groups. Do not repeat selected-run metadata or add explanatory paragraphs to pages.
+
+Badges display `Tests`, `Not Run`, `Passed`, `Outdated` and other title-cased colored labels. They are hidden when no Actions are configured, no run history exists and no recognized test source is present. Source presence can produce `Not Run`, never success. Report names/codes remain unchanged in the API; presentation casing is applied only by the UI.
