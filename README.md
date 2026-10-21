@@ -6,6 +6,7 @@ AI instructions for the actual lley.cat API, Git gateway, and notebook format. T
 
 | Skill | Use it for | Detailed reference |
 | --- | --- | --- |
+| [lley-interface](lley-interface/SKILL.md) | Exact Dyadic design system, themes, responsive navigation, shared cards/controls and visual validation | Interface contract in the skill |
 | [lley-profile](lley-profile/SKILL.md) | Public profile, independent pins, real contribution history and avatar navigation | Profile API and privacy rules in the skill |
 | [lley-git](lley-git/SKILL.md) | Repositories, descriptions, visibility, files, branches, commits, clone/push, GitHub references, notebook associations | [Git API and recipes](lley-git/references/api.md) |
 | [lley-notes](lley-notes/SKILL.md) | Notebook CRUD, nested subnotes, cells, execution/validation, publishing, attachments, revisions, export, multiple repository associations | [Cell format and execution](lley-notes/references/cells.md), [Notes API and recipes](lley-notes/references/api.md) |
@@ -17,6 +18,7 @@ AI instructions for the actual lley.cat API, Git gateway, and notebook format. T
 ```text
 skills/
 ├── README.md
+├── lley-interface/SKILL.md
 ├── lley-profile/SKILL.md
 ├── lley-mcp/SKILL.md
 ├── lley-dyadic-embed/SKILL.md

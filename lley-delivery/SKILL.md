@@ -54,4 +54,7 @@ Use normal English title case in menus, settings, statuses and displayed test na
 
 Badges display `Tests`, `Not Run`, `Passed`, `Outdated` and other title-cased colored labels. They are hidden when no Actions are configured, no run history exists and no recognized test source is present. Source presence can produce `Not Run`, never success. Report names/codes remain unchanged in the API; presentation casing is applied only by the UI.
 
-All pages use the shared --content-gutter (16px on phones, 24px above 700px) inside full-width surface backgrounds. Apply it to real content rows as well as headings, including associated notes, notebook subnotes/execution, libraries, Settings, tests, actions and releases. Do not put header actions or toolbars outside their containing box. Verify actual geometry at mobile/tablet/desktop sizes and CSS specificity rather than assuming an outer selector covers every component.
+All pages use the shared --content-gutter (Dyadic’s clamp(1rem, 4vw, 3rem)) inside full-width surface backgrounds. Apply it to real content rows as well as headings, including associated notes, notebook subnotes/execution, libraries, Settings, tests, actions and releases. Do not put header actions or toolbars outside their containing box. Verify actual geometry at mobile/tablet/desktop sizes and CSS specificity rather than assuming an outer selector covers every component.
+
+
+Interface work follows [lley-interface](../lley-interface/SKILL.md): the current Dyadic Workspace source, Geist/Geist Mono, shared Dark/Light/OLED roles, responsive rail/drawer, bounded menus and common cards/controls. Settings → Security contains Access Tokens. Preserve platform authorization and authored content while changing the UI.

@@ -61,3 +61,8 @@ Verify by reading the note and both association views. For publishing, also insp
 ## Notes List And Favorites
 
 The list is called **Notes**. **New Note** and **All / Starred** sit above its full-width search, matching Repositories. Notes still open in Reader mode. Favorite changes do not alter authored content, version or edit times. `GET /notebook-stars` and `GET /notebooks/:id/star` require `stars:read`; PUT/DELETE the latter require `stars:write`. Content-read access and repository restrictions still apply. Public visitors cannot inspect the owner's favorites. Typed tools are `notes_stars_list`, `notes_star_get`, `notes_star_set`. The starred list follows the ordinary latest-200 authorized Notes listing.
+
+Notes matches the repository library: Add Note at upper right, All/Starred beside Search, and stars/real linked-repository tests at the entry’s top-right. There is no chevron column: tapping a parent entry’s background toggles its children; the title opens reader mode. Open notes use full-width surfaces with inset contents in both reader/editor modes. Empty Subnotes bars are absent; Add Subnote remains in Notebook Options. Save floats at bottom-right only for pending edits, alongside existing autosave.
+
+
+Interface work follows [lley-interface](../lley-interface/SKILL.md): the current Dyadic Workspace source, Geist/Geist Mono, shared Dark/Light/OLED roles, responsive rail/drawer, bounded menus and common cards/controls. Settings → Security contains Access Tokens. Preserve platform authorization and authored content while changing the UI.
