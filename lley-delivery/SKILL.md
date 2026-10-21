@@ -50,6 +50,6 @@ Always keep implementation, validation, deployment status and limitations in not
 
 ## Shared UI Rules
 
-Use Title Case for every word in menus, settings, statuses and displayed test names. Preserve acronyms, authored content, actual code and branch/file identifiers. The persistent rule is in the lley-cat AGENTS.md. Reuse shared searches, dropdowns, rectangular status/count boxes and buffered full-width navy surfaces. Tests has equal colored totals, a single 3:1 search/filter row and inward-indented stage/suite/case groups. Do not repeat selected-run metadata or add explanatory paragraphs to pages.
+Use normal English title case in menus, settings, statuses and displayed test names; lowercase internal articles, conjunctions and prepositions. Preserve acronyms, authored content, actual code and branch/file identifiers. The persistent rule is in the lley-cat AGENTS.md. Reuse shared searches, dropdowns, rectangular status/count boxes and buffered full-width navy surfaces. Tests has equal colored totals, a single 3:1 search/filter row and inward-indented stage/suite/case groups. Do not repeat selected-run metadata or add explanatory paragraphs to pages.
 
 Badges display `Tests`, `Not Run`, `Passed`, `Outdated` and other title-cased colored labels. They are hidden when no Actions are configured, no run history exists and no recognized test source is present. Source presence can produce `Not Run`, never success. Report names/codes remain unchanged in the API; presentation casing is applied only by the UI.

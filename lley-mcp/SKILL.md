@@ -28,3 +28,5 @@ The future Dyadic embedding scaffold lives on a separate branch of lley-cat. MCP
 
 
 Hosted collaboration uses the `git_issue_*` and `git_pull_*` tools, including actual comments, real diffs and explicit merges. Use independent issue/pull write scopes. Merging needs `pulls:merge` and `git:write`, an exact reviewed head SHA, and explicit human merge authorization. Source deletion additionally needs `repo:admin`. No force/protection bypass or automatic merge is exposed. Notes favorites use `notes_stars_list`, `notes_star_get`, `notes_star_set` with independent star and content access. Settings → MCP has the endpoint and copyable protected-file stdio configuration; keep credentials out of the browser and shell.
+
+Profile tools include `platform_profile_pins_get`, `platform_profile_pins_set` and `platform_profile_activity`; profile updates use a server-side partial PATCH. Pins are independent of stars and require global profile:write plus readable targets. Read [lley-profile](../lley-profile/SKILL.md) for visibility, unpublished draft protection and actual contribution provenance/limits.

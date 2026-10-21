@@ -28,7 +28,7 @@ curl --fail-with-body -sS -H "Authorization: Bearer $LLEY_TOKEN" \
 
 ```
 
-Tokens are issued and edited in `https://lley.cat/admin` → Access Tokens. `GET /api/token-permissions` discovers current permissions. Token management and passkey endpoints require an owner browser session; an API token cannot promote itself or create another token.
+Tokens are issued and edited in `https://lley.cat/settings/security#access-tokens` → Access Tokens. `GET /api/token-permissions` discovers current permissions. Token management and passkey endpoints require an owner browser session; an API token cannot promote itself or create another token.
 
 Choose independent scopes for the requested work:
 

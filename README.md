@@ -6,6 +6,7 @@ AI instructions for the actual lley.cat API, Git gateway, and notebook format. T
 
 | Skill | Use it for | Detailed reference |
 | --- | --- | --- |
+| [lley-profile](lley-profile/SKILL.md) | Public profile, independent pins, real contribution history and avatar navigation | Profile API and privacy rules in the skill |
 | [lley-git](lley-git/SKILL.md) | Repositories, descriptions, visibility, files, branches, commits, clone/push, GitHub references, notebook associations | [Git API and recipes](lley-git/references/api.md) |
 | [lley-notes](lley-notes/SKILL.md) | Notebook CRUD, nested subnotes, cells, execution/validation, publishing, attachments, revisions, export, multiple repository associations | [Cell format and execution](lley-notes/references/cells.md), [Notes API and recipes](lley-notes/references/api.md) |
 | [lley-delivery](lley-delivery/SKILL.md) | Custom Actions, stage graphs, CI/CD, isolated runners, logs, artifacts and Releases | [Delivery API and format](lley-delivery/references/api.md) |
@@ -16,6 +17,9 @@ AI instructions for the actual lley.cat API, Git gateway, and notebook format. T
 ```text
 skills/
 ├── README.md
+├── lley-profile/SKILL.md
+├── lley-mcp/SKILL.md
+├── lley-dyadic-embed/SKILL.md
 ├── lley-android/SKILL.md
 ├── lley-delivery/
 │   ├── SKILL.md
@@ -32,7 +36,7 @@ skills/
 
 ## Quick reference
 
-Every domain serves the same `/api` contract. Prefer `https://git.lley.cat/api` for repository work and `https://notes.lley.cat/api` for notebook work. Authenticate API calls with `Authorization: Bearer $LLEY_TOKEN`. Use that same token as the password for Git HTTPS. Obtain it through [Settings → Access tokens](https://lley.cat/admin); a token cannot mint other tokens.
+Every domain serves the same `/api` contract. Prefer `https://git.lley.cat/api` for repository work and `https://notes.lley.cat/api` for notebook work. Authenticate API calls with `Authorization: Bearer $LLEY_TOKEN`. Use that same token as the password for Git HTTPS. Obtain it through [Settings → Security → Access Tokens](https://lley.cat/settings/security#access-tokens); a token cannot mint other tokens.
 
 | Task | Scopes to select |
 | --- | --- |

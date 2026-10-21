@@ -27,7 +27,7 @@ Request only the task's independent token scopes:
 | Publish/update reader snapshot or unpublish | `notes:read` + `notes:publish` |
 | Associate with private repositories | Also `git:read` |
 
-Token grants are edited by the owner in `https://lley.cat/admin` → Access Tokens. Discover the live scope catalog at `GET /api/token-permissions`. An API token cannot create tokens or change its own grants. Repository-limited tokens can access Notes only through a permitted association. On creation, include at least one allowed `repository_ids` entry; every supplied repository must be permitted and readable. Removing the last permitted association can remove that token's subsequent access to the note.
+Token grants are edited by the owner in `https://lley.cat/settings/security#access-tokens` → Access Tokens. Discover the live scope catalog at `GET /api/token-permissions`. An API token cannot create tokens or change its own grants. Repository-limited tokens can access Notes only through a permitted association. On creation, include at least one allowed `repository_ids` entry; every supplied repository must be permitted and readable. Removing the last permitted association can remove that token's subsequent access to the note.
 
 ## Hierarchy and repository links
 

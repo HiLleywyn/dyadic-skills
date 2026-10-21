@@ -25,7 +25,7 @@ The TypeScript client is `src/native.ts`; Java implementation is `mobile/android
 - Notifications: explicit Android 13+ permission, dedicated native channel, optional WorkManager activity polling. Polling runs approximately every 15 minutes and can be delayed by battery policy. It requires an owner session and stops receiving private API content after sign-out. There is no configured Firebase/FCM push service; do not claim immediate background push delivery.
 - Storage: use Storage Access Framework open/create/folder intents. Selected-folder grants are persistable; broad storage and `MANAGE_EXTERNAL_STORAGE` are unnecessary. File reads are capped at 8 MB, native trusted-origin downloads at 256 MB. Cookie-bearing downloads must stay on the three HTTPS origins and refuse redirects.
 - Passkeys/app links: serve `/.well-known/assetlinks.json` on all three origins with the same package and release certificate fingerprint. Keep that public metadata aligned with `shared/android-identity.json`. AndroidX WebView authentication support must remain enabled when available. The server separately accepts the pinned `android:apk-key-hash:<base64url SHA-256 certificate>` WebAuthn client-data origin; never add it to HTTP/CSRF allowed origins. Keep signature, challenge, RP ID and user-verification checks intact.
-- Device UI: `/app` exposes haptics, notifications and document permissions. All Git and Notes routes must work inside the app. Respect safe-area insets, native back navigation, touch targets, image pinch and reduced motion.
+- Device UI: `/settings/app` exposes haptics, notifications and document permissions; `/app` redirects there. All Git and Notes routes must work inside the app. Respect safe-area insets, native back navigation, touch targets, image pinch and reduced motion.
 
 ## Sign-in and connection handling
 
@@ -34,3 +34,10 @@ The TypeScript client is `src/native.ts`; Java implementation is `mobile/android
 Sign-in coverage must include all three domains, cancellation staying inline, shared owner cookies, signed native/browser assertions, replay rejection and denial of unknown APK certificates. The emulator tests simulate passkey cancellation; they do not prove the owner's biometric gesture succeeded. Keep that distinction in release notes.
 
 Document build evidence, release URLs, real device/emulator limitations and deployment results in a notebook associated with lley-cat, using [lley-notes](../lley-notes/SKILL.md). Do not put credentials or signing material in notebook content.
+
+
+## Back Navigation And UI
+
+Version 0.1.1 / build 2 adds native `OnBackPressedDispatcher` handling. The app dispatches a cancelable `lley-android-back` event; the shared overlay registry closes the highest-priority/latest image dialog, modal or popup. Otherwise the native shell goes to a previous trusted WebView entry, including cross-domain history. It skips bundled/non-platform entries, returns an initial deep link to Home, and stays open at the root. Keep modal/image/menu hooks registered with cleanup; never let Back finish the activity by falling through to the default callback. Test hardware Back on a task-owned clean emulator using `BackNavigationTest`, alongside the prior native/login regressions (nine tests total).
+
+Use normal English title case with lowercase internal minor words. The Android controls are Send Test, Add Folder and Add File. Access Tokens is inside Settings → Security on the same page; legacy token URLs still resolve there. Web UI changes deploy through the application; native Back changes require a newly signed APK/AAB. Increment versionCode for installable updates and retain the release certificate.
