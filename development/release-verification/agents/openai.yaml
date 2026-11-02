@@ -1,0 +1,3 @@
+interface:
+  display_name: "Release Verification"
+  short_description: "Verify deployed revisions and visible user outcomes"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "WSL Operations"
+  short_description: "Diagnose WSL, paths, networking, and interoperability"

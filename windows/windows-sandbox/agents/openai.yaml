@@ -1,0 +1,3 @@
+interface:
+  display_name: "Windows Sandbox"
+  short_description: "Configure and automate disposable Windows desktops"

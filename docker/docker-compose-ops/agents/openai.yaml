@@ -1,0 +1,3 @@
+interface:
+  display_name: "Docker Compose Operations"
+  short_description: "Diagnose and update Compose services with preserved state"

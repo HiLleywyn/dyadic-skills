@@ -1,0 +1,3 @@
+interface:
+  display_name: "Windows Diagnostics"
+  short_description: "Investigate Windows processes, ports, logs, and crashes"

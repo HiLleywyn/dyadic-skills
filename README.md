@@ -2,6 +2,8 @@
 
 AI instructions for the actual lley.cat API, Git gateway, and notebook format. These skills work from a checkout or by reading their files through the repository API. They do not contain credentials.
 
+Windows, Docker, and general development skills are grouped by domain below. Each skill directory contains its own `SKILL.md` and any supporting files.
+
 ## Contents
 
 | Skill | Use it for | Detailed reference |
@@ -14,6 +16,29 @@ AI instructions for the actual lley.cat API, Git gateway, and notebook format. T
 | [lley-mcp](lley-mcp/SKILL.md) | Typed MCP tools, protected-file token setup, safe notebook patches and append-only bridge messaging | [Platform MCP contract](https://git.lley.cat/r/cf7b2b43-ffd8-4fb7-9381-43a9246c4210?path=docs%2FMCP.md) |
 | [lley-dyadic-embed](lley-dyadic-embed/SKILL.md) | Portable host-authenticated Git and rich Notes backend/React integration, separate branch, workspace/vault seams | Package README on the integration branch |
 | [lley-android](lley-android/SKILL.md) | Capacitor app across all three sites, Android builds/signing, native haptics, notifications and document storage | Native paths and build procedure in the skill |
+
+### Windows
+
+| Skill | Use it for |
+| --- | --- |
+| [windows-sandbox](windows/windows-sandbox/SKILL.md) | Disposable Windows desktops, `.wsb` files, guest scripts, folder mappings, setup and CLI automation |
+| [wsl-ops](windows/wsl-ops/SKILL.md) | Distribution selection, Windows/Linux paths, shell environment, networking, interoperability and recovery |
+| [windows-diagnostics](windows/windows-diagnostics/SKILL.md) | Processes, ports, file locks, events, services, scheduled tasks and Sysinternals investigations |
+| [winget-setup](windows/winget-setup/SKILL.md) | Exact package selection, requested installations/updates, pins, environment export/import and Sandbox bootstrap |
+
+### Docker
+
+| Skill | Use it for |
+| --- | --- |
+| [docker-compose-ops](docker/docker-compose-ops/SKILL.md) | Service health, DNS/networks, persistent data, environment preservation and targeted recreation |
+
+### Development
+
+| Skill | Use it for |
+| --- | --- |
+| [release-verification](development/release-verification/SKILL.md) | Source/artifact/runtime identity, readiness, API behavior and visible user outcomes after delivery |
+
+For local Codex use, copy the individual skill directory containing `SKILL.md` into your configured skills directory (normally `~/.codex/skills`). The category directories organize this repository; install a skill such as `windows/wsl-ops` as `~/.codex/skills/wsl-ops`.
 
 ```text
 skills/
@@ -29,11 +54,33 @@ skills/
 ├── lley-git/
 │   ├── SKILL.md
 │   └── references/api.md
-└── lley-notes/
-    ├── SKILL.md
-    └── references/
-        ├── api.md
-        └── cells.md
+├── lley-notes/
+│   ├── SKILL.md
+│   └── references/
+│       ├── api.md
+│       └── cells.md
+├── windows/
+│   ├── windows-sandbox/
+│   │   ├── SKILL.md
+│   │   ├── agents/openai.yaml
+│   │   └── references/cli.md
+│   ├── wsl-ops/
+│   │   ├── SKILL.md
+│   │   └── agents/openai.yaml
+│   ├── windows-diagnostics/
+│   │   ├── SKILL.md
+│   │   └── agents/openai.yaml
+│   └── winget-setup/
+│       ├── SKILL.md
+│       └── agents/openai.yaml
+├── docker/
+│   └── docker-compose-ops/
+│       ├── SKILL.md
+│       └── agents/openai.yaml
+└── development/
+    └── release-verification/
+        ├── SKILL.md
+        └── agents/openai.yaml
 ```
 
 ## Quick reference
