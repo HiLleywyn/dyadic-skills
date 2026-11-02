@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "id": "DYA-EXAMPLE-001",
+  "title": "Synthetic credential returned in an error response",
+  "target": "example/adapter",
+  "snapshot": {
+    "repository": "https://example.invalid/adapter",
+    "revision": "0123456789abcdef0123456789abcdef01234567",
+    "dirty_state": "clean",
+    "assessed_at": "2026-11-02T12:00:00Z"
+  },
+  "status": "validated-reportable",
+  "claim_state": "CONFIRMED",
+  "confidence": "high",
+  "severity": "medium",
+  "cwe": ["CWE-209"],
+  "root_cause": "The external error serializer includes unredacted request parameters in the response body.",
+  "attack_path": [
+    "An unauthenticated client submits a request to the reachable adapter endpoint.",
+    "The adapter adds its synthetic provider key to an outbound query parameter.",
+    "A controlled provider error causes the request object to be serialized into the client response."
+  ],
+  "preconditions": [
+    "The adapter endpoint is reachable by the client.",
+    "The selected endpoint uses the affected custom-error path."
+  ],
+  "impact": "A client can obtain the configured provider credential and consume the privileges assigned to that key.",
+  "evidence": [
+    {
+      "kind": "source",
+      "locator": "src/requester.ts:40",
+      "observation": "The serializer includes the complete request parameter object."
+    },
+    {
+      "kind": "test",
+      "locator": "tests/credential-response.test.ts",
+      "observation": "A disposable test observed the synthetic key in the HTTP response."
+    }
+  ],
+  "counterevidence": [
+    "The logging path redacts the same synthetic key.",
+    "A private network deployment can prevent an external client from reaching the endpoint."
+  ],
+  "affected_versions": ["1.0.0"],
+  "fixed_versions": [],
+  "remediation": [
+    "Return a generic client error and keep recursively redacted diagnostics in operator logs."
+  ],
+  "limitations": [
+    "The example uses only synthetic data and does not establish public deployment prevalence."
+  ]
+}

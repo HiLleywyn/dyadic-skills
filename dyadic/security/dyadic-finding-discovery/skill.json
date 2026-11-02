@@ -1,0 +1,22 @@
+{
+  "id": "dyadic-finding-discovery",
+  "name": "Finding Discovery",
+  "description": "Generate evidence-linked vulnerability candidates from a pinned source snapshot for later validation.",
+  "version": "1.0.0",
+  "author": "Dyadic",
+  "color": "amber",
+  "icon": "search",
+  "enabled": true,
+  "abilities": [
+    "Combines entry-point, sink, invariant, history, and mechanical passes",
+    "Records candidates with evidence and counterevidence",
+    "Defines the smallest safe validation step for each lead"
+  ],
+  "permissions": [
+    "Read-only discovery by default",
+    "Candidates are not submitted or externally tracked before validation"
+  ],
+  "changes": [
+    { "version": "1.0.0", "notes": "Initial Dyadic-native security candidate discovery workflow." }
+  ]
+}

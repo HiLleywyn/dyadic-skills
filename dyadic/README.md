@@ -30,6 +30,27 @@ Official Iris runtime packages are copied from Dyadic's maintained `catalog/skil
 | [Web Task Automation](iris/web-task-automation/SKILL.md) | Web Task Automation |
 | [Write Tests](iris/write-tests/SKILL.md) | Write Tests |
 
+## Security engineering suite
+
+The [Dyadic Security Skills](security/README.md) are owner-authored, Dyadic-native packages added after the pinned official catalog snapshot. They are kept in a separate collection so their provenance is explicit. They use the same runtime principles—live tool discovery, workspace isolation, execution approvals and evidence receipts—but do not imply that a scanner or external disclosure integration is enabled.
+
+| Package | Purpose |
+| --- | --- |
+| [Security Scan](security/dyadic-security-scan/SKILL.md) | Single-pass repository or component assessment |
+| [Security Diff Scan](security/dyadic-security-diff-scan/SKILL.md) | Security review of a patch or revision comparison |
+| [Threat Model](security/dyadic-threat-model/SKILL.md) | Assets, actors, trust boundaries, abuse cases and controls |
+| [Finding Discovery](security/dyadic-finding-discovery/SKILL.md) | Evidence-linked candidate generation |
+| [Attack Path Analysis](security/dyadic-attack-path-analysis/SKILL.md) | Source-to-sink security-boundary tracing |
+| [Finding Validation](security/dyadic-finding-validation/SKILL.md) | Skeptical reproduction, counterevidence and verdict |
+| [Vulnerability Write-up](security/dyadic-vulnerability-writeup/SKILL.md) | Maintainer-ready private disclosure report |
+| [Fix Finding](security/dyadic-fix-finding/SKILL.md) | Minimal remediation and regression coverage |
+| [Verify Fix](security/dyadic-verify-fix/SKILL.md) | Independent exploit and behavior verification |
+| [Security Hardening](security/dyadic-security-hardening/SKILL.md) | Evidence-to-control architecture roadmap |
+| [Security Policy](security/dyadic-security-policy/SKILL.md) | SECURITY.md and disclosure-policy engineering |
+| [Track Findings](security/dyadic-track-findings/SKILL.md) | Deduplicated private finding lifecycle |
+
+Install or mirror the security collection with its `_shared/` standards and `scripts/`; the linked evidence, severity, safe-testing and reporting standards are normative parts of the workflows.
+
 ## Integration and examples
 
 | Skill | Status |
@@ -40,4 +61,4 @@ Official Iris runtime packages are copied from Dyadic's maintained `catalog/skil
 
 Forensics source-history scanners require an existing local Git worktree; they do not require GitHub. Static API contract audits remain separate from explicitly approved isolated runtime tests. Copying these packages does not enable either plugin or relax their execution boundaries.
 
-See [source provenance](../PROVENANCE.md). Future runtime changes belong in Dyadic's source catalog first, followed by a reviewed snapshot update here.
+See [source provenance](../PROVENANCE.md). Future changes to the 23 official Iris packages belong in Dyadic's source catalog first, followed by a reviewed snapshot update here. The separately identified security suite is maintained directly in this skills repository until it is deliberately adopted into the product catalog.

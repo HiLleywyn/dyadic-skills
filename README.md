@@ -18,9 +18,9 @@ The [lley.cat reference](lley-cat/README.md) includes scopes and working convent
 
 ## Dyadic
 
-The [Dyadic catalog](dyadic/README.md) contains 23 official Iris skills, two bundled examples and the [Git/Notes embedding skill](dyadic/lley-dyadic-embed/SKILL.md).
+The [Dyadic catalog](dyadic/README.md) contains 23 official Iris skills, a 12-skill [security engineering suite](dyadic/security/README.md), two bundled examples and the [Git/Notes embedding skill](dyadic/lley-dyadic-embed/SKILL.md).
 
-Iris skills retain their `skill.json` metadata and bundled resources. They depend on Dyadic's existing tool registry, execution broker, sandbox and approval system. Reading a skill elsewhere does not provide those tools or authorize their execution. The embedding package remains an integration scaffold, not a claim of a deployed Dyadic installation.
+Iris skills retain their `skill.json` metadata and bundled resources. They depend on Dyadic's existing tool registry, execution broker, sandbox and approval system. Reading a skill elsewhere does not provide those tools or authorize their execution. The security suite adds full workflows for scanning, threat modeling, candidate discovery, attack-path analysis, validation, reporting, remediation, verification, hardening, policy and finding lifecycle. The embedding package remains an integration scaffold, not a claim of a deployed Dyadic installation.
 
 ## Ward
 
@@ -65,4 +65,4 @@ Installation does not change model selections, enable plugins, grant permissions
 
 The seven former root `lley-*` folders now live under `lley-cat/`. `lley-dyadic-embed/` moved to `dyadic/lley-dyadic-embed/`. Skill names are unchanged; update folder import URLs accordingly. Historical commit URLs remain available in Git history. Windows, Docker and release-verification additions retain their existing paths.
 
-See [provenance and maintenance](PROVENANCE.md) for source revisions, attribution and validation boundaries. This collection has 42 skills; it does not imply that 42 skills should be loaded into every conversation.
+See [provenance and maintenance](PROVENANCE.md) for source revisions, attribution and validation boundaries. This collection has 54 skills; it does not imply that 54 skills should be loaded into every conversation.

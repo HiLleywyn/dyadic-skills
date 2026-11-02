@@ -1,0 +1,22 @@
+{
+  "id": "dyadic-finding-validation",
+  "name": "Finding Validation",
+  "description": "Reproduce or disprove security candidates and issue a conservative reportability verdict.",
+  "version": "1.0.0",
+  "author": "Dyadic",
+  "color": "green",
+  "icon": "check-shield",
+  "enabled": true,
+  "abilities": [
+    "Builds a fact-by-fact exploitation decision matrix",
+    "Uses safe proofs and explicit negative controls",
+    "Separates reportability, confidence, severity, and scope"
+  ],
+  "permissions": [
+    "Read-only validation unless an isolated or live test is specifically authorized",
+    "Does not submit, patch, or externally track findings"
+  ],
+  "changes": [
+    { "version": "1.0.0", "notes": "Initial Dyadic-native finding validation workflow." }
+  ]
+}

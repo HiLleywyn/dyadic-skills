@@ -1,0 +1,22 @@
+{
+  "id": "dyadic-threat-model",
+  "name": "Threat Model",
+  "description": "Model assets, actors, trust boundaries, abuse cases, assumptions, and controls for a concrete system.",
+  "version": "1.0.0",
+  "author": "Dyadic",
+  "color": "violet",
+  "icon": "network",
+  "enabled": true,
+  "abilities": [
+    "Maps assets and security invariants to concrete architecture",
+    "Identifies actors, data flows, trust boundaries, and abuse cases",
+    "Prioritizes review surfaces without inflating gaps into vulnerabilities"
+  ],
+  "permissions": [
+    "Read-only architecture and source inspection by default",
+    "Does not authorize active testing or external publication"
+  ],
+  "changes": [
+    { "version": "1.0.0", "notes": "Initial Dyadic-native threat-modeling workflow." }
+  ]
+}

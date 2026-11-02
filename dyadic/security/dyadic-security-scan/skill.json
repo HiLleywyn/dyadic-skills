@@ -1,0 +1,23 @@
+{
+  "id": "dyadic-security-scan",
+  "name": "Security Scan",
+  "description": "Run a single-pass, evidence-bounded source security assessment with validated findings and a coverage receipt.",
+  "version": "1.0.0",
+  "author": "Dyadic",
+  "color": "red",
+  "icon": "shield",
+  "enabled": true,
+  "abilities": [
+    "Pins an immutable source snapshot and maps trust boundaries",
+    "Discovers and validates source-to-sink security findings",
+    "Records counterevidence, negative results, and coverage limits"
+  ],
+  "permissions": [
+    "Read-only source inspection by default",
+    "Runtime probes require the target-specific authorization and Dyadic approval applicable to the selected tool",
+    "Does not submit reports, modify source, or create issues unless separately requested"
+  ],
+  "changes": [
+    { "version": "1.0.0", "notes": "Initial Dyadic-native single-pass security assessment workflow." }
+  ]
+}

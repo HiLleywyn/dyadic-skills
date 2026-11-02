@@ -1,0 +1,22 @@
+{
+  "id": "dyadic-security-hardening",
+  "name": "Security Hardening",
+  "description": "Turn findings and threat evidence into a prioritized, verifiable defense-in-depth roadmap.",
+  "version": "1.0.0",
+  "author": "Dyadic",
+  "color": "blue",
+  "icon": "layers-shield",
+  "enabled": true,
+  "abilities": [
+    "Maps observed risks to preventive, detective, and recovery controls",
+    "Prioritizes required remediation separately from hardening and hygiene",
+    "Defines staged rollout, verification, monitoring, and rollback criteria"
+  ],
+  "permissions": [
+    "Produces proposals by default",
+    "Implementation and infrastructure changes require a separate explicit request"
+  ],
+  "changes": [
+    { "version": "1.0.0", "notes": "Initial Dyadic-native security hardening workflow." }
+  ]
+}
