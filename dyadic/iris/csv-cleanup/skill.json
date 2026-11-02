@@ -1,0 +1,21 @@
+{
+  "id": "csv-cleanup",
+  "name": "CSV Cleanup",
+  "description": "Clean a messy spreadsheet or CSV into a new file: tidy headers, standard dates and numbers, no blank or duplicate rows.",
+  "version": "1.0.1",
+  "icon": "wrench",
+  "color": "coral",
+  "abilities": [
+    "Tidies headers and trims stray spaces",
+    "Standardises dates and numbers, column by column",
+    "Drops blank and duplicate rows into a new file, never the original",
+    "Reports every change and every value it couldn't read"
+  ],
+  "permissions": [
+    "Uses the Code plugin: runs in your private, offline sandbox"
+  ],
+  "changes": [
+    {"version": "1.0.1", "notes": "Names in Title Case."},
+    {"version": "1.0.0", "notes": "First release, with clean_csv.py."}
+  ]
+}

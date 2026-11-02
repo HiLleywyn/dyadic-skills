@@ -1,0 +1,21 @@
+{
+  "id": "evidence-review",
+  "name": "Execution Evidence Review",
+  "description": "Check tool outcomes, persisted artifacts and provider usage without trusting completion claims.",
+  "version": "1.0.0",
+  "icon": "puzzle",
+  "color": "violet",
+  "abilities": [
+    "Uses native bounded agent controls",
+    "Separates reports from recorded evidence"
+  ],
+  "permissions": [
+    "Uses only the tools the owner enables; installation grants no new permissions."
+  ],
+  "changes": [
+    {
+      "version": "1.0.0",
+      "notes": "Native Phase 3 workflow guidance."
+    }
+  ]
+}

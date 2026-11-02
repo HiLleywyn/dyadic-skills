@@ -1,0 +1,51 @@
+{
+  "id": "debug-code",
+  "name": "Debug Code",
+  "description": "Find why code fails and fix the cause, and turn logs, stack traces and crash reports into a diagnosis with its evidence and the next check.",
+  "version": "1.4.0",
+  "icon": "bug",
+  "color": "red",
+  "modes": [
+    "code"
+  ],
+  "abilities": [
+    "Reproduces the failure before changing anything",
+    "Reads tracebacks and error messages from the bottom frame up",
+    "Narrows the cause one hypothesis at a time, with the evidence for each",
+    "Fixes the smallest thing that explains every symptom, and adds a test that would have caught it",
+    "Summarizes a large log with log_summary.py: levels, time span, repeated messages grouped",
+    "Builds a timeline and finds the first error, not the loudest one",
+    "Follows one request through the log by its id",
+    "Gives a cause with its evidence and how sure it is, and the next check to confirm it"
+  ],
+  "permissions": [
+    "Uses Code Sandbox: reads and runs code in your private, network-isolated sandbox",
+    "Reads logs you paste or attach, or files in your workspace; uses Code Sandbox for large files"
+  ],
+  "changes": [
+    {
+      "version": "1.4.0",
+      "notes": "Adds bounded workflows, deterministic conflict combination, native read-only inspection and measured agent results."
+    },
+    {
+      "version": "1.3.1",
+      "notes": "Clarifies Bash versus inspection commands, trusted Python subprocesses and mutually exclusive edit forms."
+    },
+    {
+      "version": "1.3.0",
+      "notes": "Adds native independent task, staged merge, scoped package and parallel read composition guidance."
+    },
+    {
+      "version": "1.2.0",
+      "notes": "Adds version-checked V4A previews and bounded native agent supervision guidance."
+    },
+    {
+      "version": "1.1.0",
+      "notes": "Merged with Logs to Diagnosis, which is part of this skill now."
+    },
+    {
+      "version": "1.0.0",
+      "notes": "First release."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "compare-documents",
+  "name": "Compare Documents",
+  "description": "Compare two or more documents or versions side by side: what matches, what differs, what one leaves out, with the exact wording and where it is.",
+  "version": "1.0.0",
+  "icon": "scale",
+  "color": "violet",
+  "abilities": [
+    "Picks the points that matter and lines the documents up in one table",
+    "Shows exact values and wording, never a paraphrase of a number",
+    "Lists what changed between versions, using Python's difflib when the text is long",
+    "Marks what a document doesn't state instead of guessing"
+  ],
+  "permissions": [
+    "Reads files you attach, files in your workspace and passages Knowledge Search finds",
+    "Uses the Code Sandbox plugin for exact differences between versions"
+  ],
+  "changes": [
+    {"version": "1.0.0", "notes": "First release."}
+  ]
+}

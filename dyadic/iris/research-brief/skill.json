@@ -1,0 +1,22 @@
+{
+  "id": "research-brief",
+  "name": "Research Brief",
+  "description": "Research a question on the web and get a short brief: the answer first, every finding cited, and what is still uncertain.",
+  "version": "1.0.2",
+  "icon": "search",
+  "color": "blue",
+  "abilities": [
+    "Plans a few searches aimed at primary sources",
+    "Reads the pages instead of trusting snippets",
+    "Writes a one-screen brief with inline citations",
+    "Says where sources disagree, and which is more credible"
+  ],
+  "permissions": [
+    "Uses the Web search and Read web pages plugins when they are on"
+  ],
+  "changes": [
+    {"version": "1.0.2", "notes": "No \"Couldn't verify\" section: it searches again for any part still unanswered."},
+    {"version": "1.0.1", "notes": "Names in Title Case."},
+    {"version": "1.0.0", "notes": "First release."}
+  ]
+}

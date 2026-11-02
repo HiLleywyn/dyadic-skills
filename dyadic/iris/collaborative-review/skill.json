@@ -1,0 +1,21 @@
+{
+  "id": "collaborative-review",
+  "name": "Collaborative Review",
+  "description": "Plan bounded agent work, inspect independent findings, and review exact staged revisions.",
+  "version": "1.0.0",
+  "icon": "puzzle",
+  "color": "violet",
+  "abilities": [
+    "Uses native bounded agent controls",
+    "Separates reports from recorded evidence"
+  ],
+  "permissions": [
+    "Uses only the tools the owner enables; installation grants no new permissions."
+  ],
+  "changes": [
+    {
+      "version": "1.0.0",
+      "notes": "Native Phase 3 workflow guidance."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "data-visualization",
+  "name": "Data Visualization",
+  "description": "Choose the right chart for your data and draw it: SVG for the web, PNG for Word and PDF files, or a native chart inside an Excel workbook.",
+  "version": "1.0.0",
+  "icon": "pie",
+  "color": "teal",
+  "abilities": [
+    "Picks the chart that fits what the data has to show, or says when a table is better",
+    "Draws bar, line, area, stacked, scatter and histogram charts with chart.py",
+    "Uses color-blind-safe colors, a title that states the finding and labeled units",
+    "Puts charts in Word documents, PDFs and Excel workbooks"
+  ],
+  "permissions": [
+    "Uses the Code Sandbox: runs in your private, offline sandbox",
+    "Uses the Documents and Spreadsheets plugins to put charts in files"
+  ],
+  "changes": [
+    {"version": "1.0.0", "notes": "First release, with chart.py."}
+  ]
+}

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Seeded Generative Art</title>
+<style>
+  :root {color-scheme:light dark; font:16px system-ui,sans-serif; background:var(--bg,Canvas); color:var(--ink,CanvasText)}
+  * {box-sizing:border-box}
+  body {margin:auto; padding:24px; max-width:1100px}
+  h1 {font-size:24px; margin:0 0 16px}
+  form {display:flex; flex-wrap:wrap; align-items:end; gap:12px; margin-bottom:20px}
+  label {display:grid; gap:6px; font-size:14px}
+  input,button {font:inherit; padding:10px; border:1px solid color-mix(in srgb,currentColor 20%,transparent); border-radius:8px}
+  input {max-width:160px} button {cursor:pointer}
+  input[type=color] {width:64px; height:44px; padding:4px}
+  canvas {display:block; width:100%; height:auto; border-radius:12px}
+  output {display:block; font-size:14px; margin-top:12px}
+  @media(max-width:500px) {body {padding:16px} form>* {flex:1 1 120px}}
+</style>
+<h1>Seeded Generative Art</h1>
+<form id="controls">
+  <label>Seed <input id="seed" type="number" min="0" max="4294967295" step="1" value="42"></label>
+  <label>Detail <input id="detail" type="number" min="1" max="500" step="1" value="120"></label>
+  <label>First color <input id="first" type="color" value="#a88965"></label>
+  <label>Second color <input id="second" type="color" value="#526e83"></label>
+  <button type="submit">Redraw</button>
+  <button id="download" type="button">Download image</button>
+</form>
+<canvas id="art" width="960" height="640" aria-label="Seeded generative drawing"></canvas>
+<output id="status" aria-live="polite"></output>
+<script>
+  'use strict';
+  const canvas=document.getElementById('art'), ctx=canvas.getContext('2d');
+  const seedInput=document.getElementById('seed'), detailInput=document.getElementById('detail');
+  const first=document.getElementById('first'), second=document.getElementById('second');
+  function bounded(value,min,max,fallback) {
+    const number=Number(value);
+    return Number.isFinite(number)?Math.min(max,Math.max(min,Math.floor(number))):fallback;
+  }
+  function generator(seed) {
+    let state=seed>>>0;
+    return () => {state=(Math.imul(1664525,state)+1013904223)>>>0; return state/4294967296;};
+  }
+  function draw() {
+    const seed=bounded(seedInput.value,0,4294967295,42), detail=bounded(detailInput.value,1,500,120);
+    seedInput.value=String(seed); detailInput.value=String(detail);
+    const random=generator(seed), background=ctx.createLinearGradient(0,0,canvas.width,canvas.height);
+    background.addColorStop(0,first.value); background.addColorStop(1,second.value);
+    ctx.globalAlpha=1; ctx.fillStyle=background; ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.globalAlpha=.28; ctx.lineWidth=1.5;
+    for(let n=0;n<detail;n++) {
+      ctx.strokeStyle=n%2?'#ffffff':'#111111'; ctx.beginPath();
+      let x=random()*canvas.width,y=random()*canvas.height;
+      ctx.moveTo(x,y);
+      for(let step=0;step<60;step++) {
+        const angle=Math.sin(x*.007+seed*.001)+Math.cos(y*.009);
+        x+=Math.cos(angle)*6; y+=Math.sin(angle)*6; ctx.lineTo(x,y);
+      }
+      ctx.stroke();
+    }
+    ctx.globalAlpha=1;
+    document.getElementById('status').textContent=`Seed ${seed}; ${detail} ${detail===1?'path':'paths'}. Same settings reproduce the same drawing.`;
+  }
+  document.getElementById('controls').addEventListener('submit',event=>{event.preventDefault();draw();});
+  for(const input of [seedInput,detailInput,first,second]) input.addEventListener('change',draw);
+  document.getElementById('download').addEventListener('click',()=>{
+    canvas.toBlob(blob=>{
+      if(!blob)return;
+      const url=URL.createObjectURL(blob), link=document.createElement('a');
+      link.href=url; link.download=`generative-art-${seedInput.value}.png`; link.click();
+      setTimeout(()=>URL.revokeObjectURL(url),1000);
+    },'image/png');
+  });
+  draw();
+</script>
+</html>

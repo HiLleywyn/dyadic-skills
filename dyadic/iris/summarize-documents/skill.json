@@ -1,0 +1,32 @@
+{
+  "id": "summarize-documents",
+  "name": "Summarize Documents",
+  "description": "Summarize documents to their main and key points, or turn a PDF into structured notes with an outline, key terms, numbers and dates, each citing its page.",
+  "version": "1.1.0",
+  "icon": "notebook",
+  "color": "blue",
+  "abilities": [
+    "Reads the whole document before summarizing, or says when it only had passages",
+    "Leads with the main point, then the key points with their page or section",
+    "Keeps names, numbers and dates exactly as written",
+    "Summarizes several documents one by one, then what they share",
+    "Reads the whole PDF in order, page by page, without skipping",
+    "Writes a summary, an outline that follows the document, key terms, numbers and dates",
+    "Cites the page for every point",
+    "Saves the notes as Markdown or a Word document when you ask"
+  ],
+  "permissions": [
+    "Reads files you attach, files in your workspace and passages Knowledge Search finds",
+    "Uses the Documents plugin to read the PDF, and OCR for scanned pages if you agree"
+  ],
+  "changes": [
+    {
+      "version": "1.1.0",
+      "notes": "Merged with PDF to Structured Notes, which is part of this skill now."
+    },
+    {
+      "version": "1.0.0",
+      "notes": "First release."
+    }
+  ]
+}

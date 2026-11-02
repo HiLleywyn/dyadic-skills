@@ -1,0 +1,20 @@
+{
+  "id": "data-analysis",
+  "name": "Data Analysis",
+  "description": "Analyze a CSV or table with Python in your sandbox: real computed numbers, a clear finding and an SVG chart.",
+  "version": "1.0.1",
+  "icon": "chart",
+  "color": "green",
+  "abilities": [
+    "Profiles every column before answering",
+    "Computes totals, trends and comparisons with Python",
+    "Draws bar and line charts as SVG files in your workspace"
+  ],
+  "permissions": [
+    "Uses the Code plugin: runs in your private, offline sandbox"
+  ],
+  "changes": [
+    {"version": "1.0.1", "notes": "Names in Title Case."},
+    {"version": "1.0.0", "notes": "First release, with profile.py and chart.py."}
+  ]
+}

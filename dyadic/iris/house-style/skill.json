@@ -1,0 +1,20 @@
+{
+  "id": "house-style",
+  "name": "Style Guide Editing",
+  "description": "Write or edit a document to your style guide, or to a plain-language house style, and see what changed.",
+  "version": "1.0.1",
+  "icon": "pen",
+  "color": "pink",
+  "abilities": [
+    "Follows your own style guide or writing sample",
+    "Edits in passes: structure, clarity, concision, consistency, correctness",
+    "Lists what changed, and flags facts to check instead of rewriting them"
+  ],
+  "permissions": [
+    "Reads a style guide from your message, project or workspace files"
+  ],
+  "changes": [
+    {"version": "1.0.1", "notes": "Names in Title Case."},
+    {"version": "1.0.0", "notes": "First release."}
+  ]
+}

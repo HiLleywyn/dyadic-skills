@@ -1,0 +1,21 @@
+{
+  "id": "write-tests",
+  "name": "Write Tests",
+  "description": "Write focused tests for code: the behaviour that matters, its edge cases and failures, each test named for what it proves, then run them in your sandbox.",
+  "version": "1.0.0",
+  "icon": "flask",
+  "color": "green",
+  "modes": ["code"],
+  "abilities": [
+    "Lists the cases first: the usual one, the edges and the failures",
+    "Writes small tests named for what they prove, with fakes instead of networks and clocks",
+    "Runs them in your sandbox with run_tests.py, even where pytest isn't installed",
+    "Reports what passed, what failed and what it couldn't test"
+  ],
+  "permissions": [
+    "Uses Code Sandbox: writes test files in your workspace and runs them offline"
+  ],
+  "changes": [
+    {"version": "1.0.0", "notes": "First release, with run_tests.py."}
+  ]
+}

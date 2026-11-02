@@ -1,0 +1,20 @@
+{
+  "id": "requirements-to-implementation-plan",
+  "name": "Requirements to Implementation Plan",
+  "description": "Turn a feature request into a plan you can build from: what must be true when it's done, the open questions, the design, small ordered steps each with its test, and the risks.",
+  "version": "1.0.0",
+  "icon": "map",
+  "color": "teal",
+  "abilities": [
+    "Restates the goal and writes acceptance criteria you can check",
+    "Asks only the questions that change the design",
+    "Breaks the work into small steps in a safe order, each with how to test it",
+    "Names the risks, what is out of scope, and a rough size"
+  ],
+  "permissions": [
+    "Works from what you describe; reads your code in the workspace when there is some"
+  ],
+  "changes": [
+    {"version": "1.0.0", "notes": "First release."}
+  ]
+}

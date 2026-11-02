@@ -1,0 +1,20 @@
+{
+  "id": "explain-code",
+  "name": "Explain Code",
+  "description": "Explain what code does and why, at the reader's level: its purpose in a sentence, a walk through the important parts, a worked example and the gotchas.",
+  "version": "1.0.0",
+  "icon": "bulb",
+  "color": "amber",
+  "abilities": [
+    "Starts with what the code is for, in one sentence",
+    "Walks through the parts that matter, in the order data flows",
+    "Traces one invented input through it to show what happens",
+    "Points out side effects, edge cases and surprises"
+  ],
+  "permissions": [
+    "Reads code you paste, files in your workspace, or a public repository it clones"
+  ],
+  "changes": [
+    {"version": "1.0.0", "notes": "First release."}
+  ]
+}

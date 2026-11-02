@@ -1,0 +1,20 @@
+{
+  "id": "meeting-actions",
+  "name": "Meeting Action Items",
+  "description": "Turn meeting notes or a transcript into decisions, action items with owners and dates, and open questions.",
+  "version": "1.0.1",
+  "icon": "decision",
+  "color": "amber",
+  "abilities": [
+    "Separates decisions from ideas and preferences",
+    "Lists action items with owners and dates, never guessed",
+    "Drafts a follow-up message when asked"
+  ],
+  "permissions": [
+    "Works only from the notes you give it"
+  ],
+  "changes": [
+    {"version": "1.0.1", "notes": "Names in Title Case."},
+    {"version": "1.0.0", "notes": "First release."}
+  ]
+}

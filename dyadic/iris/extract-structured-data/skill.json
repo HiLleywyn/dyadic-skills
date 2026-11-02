@@ -1,0 +1,20 @@
+{
+  "id": "extract-structured-data",
+  "name": "Extract Structured Data",
+  "description": "Pull fields out of documents, scans and receipts into JSON or a table: you name the fields, every value is checked and traced to its source.",
+  "version": "1.0.0",
+  "icon": "database",
+  "color": "violet",
+  "abilities": [
+    "Agrees the fields and their types with you before extracting",
+    "Extracts from PDFs, Word files, spreadsheets, scans, receipts and pasted text",
+    "Leaves a value empty rather than guessing, and notes where each one came from",
+    "Checks the result with validate.py and saves it as JSON, CSV or an Excel table"
+  ],
+  "permissions": [
+    "Uses the Documents, Spreadsheets and OCR plugins to read sources, and the Code Sandbox to check results"
+  ],
+  "changes": [
+    {"version": "1.0.0", "notes": "First release, with validate.py."}
+  ]
+}

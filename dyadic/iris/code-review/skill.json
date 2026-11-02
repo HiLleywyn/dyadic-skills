@@ -1,0 +1,37 @@
+{
+  "id": "code-review",
+  "name": "Code Review",
+  "description": "Review code, a change or a GitHub pull request: findings by severity, each with its file and line and a fix; a pull request review is posted only when you ask.",
+  "version": "1.1.0",
+  "icon": "code",
+  "color": "teal",
+  "modes": [
+    "code"
+  ],
+  "abilities": [
+    "Works through a checklist: correctness, security, data, performance, maintainability",
+    "Ranks findings by severity and points to the line",
+    "Runs the tests in your sandbox when it can",
+    "Reads the pull request's description, files and whole diff, page by page",
+    "Learns the repository's conventions from its contributing guide, linter settings and neighbouring code",
+    "Writes one review with findings by severity, each pointing to the file and line, with a fix"
+  ],
+  "permissions": [
+    "Reads code you paste or files in your workspace",
+    "Uses the GitHub plugin, which you install from the Store: reads pull requests, and posts the review as one comment only when you ask and approve it"
+  ],
+  "changes": [
+    {
+      "version": "1.1.0",
+      "notes": "Merged with Pull Request Review, which is part of this skill now."
+    },
+    {
+      "version": "1.0.1",
+      "notes": "Names in Title Case."
+    },
+    {
+      "version": "1.0.0",
+      "notes": "First release."
+    }
+  ]
+}

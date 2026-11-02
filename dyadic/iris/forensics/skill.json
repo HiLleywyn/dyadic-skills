@@ -1,0 +1,8 @@
+{
+  "id": "forensics", "name": "Forensics", "version": "1.0.0",
+  "description": "Plan bounded investigations, preserve private evidence and deliver source-linked reports through native Forensics tools.",
+  "icon": "search", "color": "gray",
+  "abilities": ["Public records and passive infrastructure research", "Evidence, relationships, timelines and reports", "Explicit source limitations and competing explanations"],
+  "permissions": ["Uses the Forensics plugin when enabled; case changes follow execution permissions"],
+  "changes": [{"version": "1.0.0", "notes": "Native case workflows, deferred tool groups and evidence-grounded reporting."}]
+}

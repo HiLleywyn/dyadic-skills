@@ -1,0 +1,32 @@
+{
+  "id": "fact-check",
+  "name": "Fact Check",
+  "description": "Fact check claim by claim, and verify a single source: each checkable claim with the sources that confirm or contradict it and a verdict, or a source traced to its original and rated.",
+  "version": "1.1.0",
+  "icon": "decision",
+  "color": "green",
+  "abilities": [
+    "Pulls out the checkable claims and quotes each one exactly",
+    "Looks for the primary source behind every claim and reads it",
+    "Gives each claim a verdict from one fixed scale, with the evidence linked",
+    "Says plainly what it couldn't check",
+    "Traces a claim back to the original source through the copies",
+    "Finds the exact passage, figure or quote in the source itself",
+    "Checks the publisher, the date and lookalike addresses",
+    "Rates the source on a fixed scale and says why"
+  ],
+  "permissions": [
+    "Uses the Web Search and Web Page Reader plugins when they are on",
+    "Uses Knowledge Search to check claims against your own files"
+  ],
+  "changes": [
+    {
+      "version": "1.1.0",
+      "notes": "Merged with Source Verification, which is part of this skill now."
+    },
+    {
+      "version": "1.0.0",
+      "notes": "First release."
+    }
+  ]
+}

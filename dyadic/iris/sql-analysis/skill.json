@@ -1,0 +1,27 @@
+{
+  "id": "sql-analysis",
+  "name": "SQL Analysis",
+  "description": "Answer questions from your databases with the Database plugin: explore the schema, write safe, efficient queries, check the numbers and explain what they mean.",
+  "version": "1.1.0",
+  "icon": "dbQuery",
+  "color": "teal",
+  "abilities": [
+    "Explores the tables, columns and keys before writing a query",
+    "Writes one focused query at a time: filtered, aggregated and limited on the server",
+    "Checks results for duplicates from joins, missing values and time zones",
+    "Explains the answer with the numbers behind it, and shows any change before asking you to approve it"
+  ],
+  "permissions": [
+    "Uses the Database plugin and the connections you saved; Code Sandbox to chart a result"
+  ],
+  "changes": [
+    {
+      "version": "1.1.0",
+      "notes": "Exact owner review before any arbitrary remote SQL, including SELECT and preparation; local SQLite reads remain offline."
+    },
+    {
+      "version": "1.0.0",
+      "notes": "First release."
+    }
+  ]
+}

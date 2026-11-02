@@ -1,0 +1,21 @@
+{
+  "id": "api-integration",
+  "name": "API Integration",
+  "description": "Use a web API well with HTTP Request: read its documentation, start with a cheap read, page through results, handle sign-in errors and rate limits, and ask before every change.",
+  "version": "1.0.0",
+  "icon": "plug",
+  "color": "violet",
+  "modes": ["code"],
+  "abilities": [
+    "Checks the API's documentation before the first call",
+    "Pages through results by link, cursor or page number until it has what you asked for",
+    "Tells a wrong sign-in from a missing permission, and waits out rate limits",
+    "Shows exactly what a change will send before asking you to approve it"
+  ],
+  "permissions": [
+    "Uses HTTP Request and the connections you saved; Web Search and Web Page Reader for documentation"
+  ],
+  "changes": [
+    {"version": "1.0.0", "notes": "First release."}
+  ]
+}
