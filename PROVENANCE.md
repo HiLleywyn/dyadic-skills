@@ -18,7 +18,7 @@ Displayed names use title case, with the brand written `lley.cat`. Codex-oriente
 
 ## Attribution and access
 
-Retain every supplied license and attribution when moving or exporting a package. The algorithmic-art example includes its supplied Apache-2.0 license and Anthropic notice; the Ward package includes its MIT license. Kali and Karpathy originally supplied license declarations in their frontmatter; this collection preserves those declarations without inventing copyright ownership. A private collection does not relicense its contents or make the underlying services public.
+Retain every supplied license and attribution when moving or exporting a package. The algorithmic-art example includes its supplied Apache-2.0 license and Anthropic notice; the Ward package includes its MIT license. Kali and Karpathy originally supplied license declarations in their frontmatter; this collection preserves those declarations without inventing copyright ownership. Publishing this collection does not relicense its contents or expose the underlying private services and data.
 
 Dyadic's copied skills remain snapshots of its maintained runtime packages. Make future runtime edits in Dyadic's source catalog, then update this collection from the reviewed commit. Do not use a copied skill to override live schemas, execution-time authorization or newer user instructions. Product behavior and provider compatibility require their own tests; a well-formed skill alone proves neither.
 

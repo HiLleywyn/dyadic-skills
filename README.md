@@ -1,6 +1,6 @@
 # Skills
 
-Maintained instructions for lley.cat, Dyadic, Ward, Windows, Linux, Docker and development. Each skill folder contains its own `SKILL.md` and supporting resources. This repository is private; it contains guidance and examples, not credentials or installed services.
+Maintained instructions for lley.cat, Dyadic, Ward, Windows, Linux, Docker and development. Each skill folder contains its own `SKILL.md` and supporting resources. This collection contains guidance and examples, not credentials or installed services. Repository visibility is managed separately by its owner.
 
 ## lley.cat
 
