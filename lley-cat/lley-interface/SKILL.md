@@ -18,3 +18,11 @@ Note links open reader mode. Parent entry backgrounds expand children; title lin
 Validate rendered phone, tablet and desktop pages in every theme against the current reference. Inspect all page types, menus, sheets, search, copy fields and controls; a passing build or matching hex values is insufficient. Test edit/revert/save, overlay return paths, narrow-screen overflow, runtime/output formatting and Android Back where affected. Use private disposable fixtures without changing authored notes or repository metadata. Document implementation, observed validation, deployment and limitations in a connected lley-cat notebook. Manual app deployment preserves volumes and does not activate delivery.
 
 Owner appearance uses session-only `GET/PUT /api/preferences` with `appearance: system|light|dark|oled`; PATs cannot access account preferences. The validated non-secret appearance and wrap cookies synchronize the three domains. Android's trusted `theme` action updates native canvas/system-bar contrast without additional permissions. Native changes require a newly signed version/build with the existing signing identity; see [lley-android](../lley-android/SKILL.md).
+
+## Shared Tracking, Search and Long Sheets
+
+Reuse `Tracking.tsx` and `shared/tracking.mjs` for issue/PR/Notes categories, severity, workflow states, filters and sorting. Keep Draft/Published independent. Semantic `--track-*` roles give all nine sub-states separate Light and Dark/OLED colors; accompany color with readable text/dots. Custom categories must remain usable in lists and editors.
+
+Repository and workspace content search must expose actual source matches with paths, line links and coverage. Use the shared search fields, keep folder controls usable on narrow screens, and inset results within full-width surfaces. Preserve selected refs and link matches to immutable commits.
+
+`Modal` owns the fixed title/drag handle and a bounded `modal-scroll` region with native vertical scrolling. Elastic decoration must not remove the body's scroll container. Body gestures scroll results; header gestures dismiss the sheet. Verify long test reports to the last case, background-scroll containment, keyboard focus/Back, and mobile/tablet/desktop geometry across themes. Record observable UI results separately from unit, build, CI or physical-device evidence.

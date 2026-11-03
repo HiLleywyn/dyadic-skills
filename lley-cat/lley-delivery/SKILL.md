@@ -58,3 +58,11 @@ All pages use the shared --content-gutter (Dyadic’s clamp(1rem, 4vw, 3rem)) in
 
 
 Interface work follows [lley-interface](../lley-interface/SKILL.md): the current Lley semantic theme tokens, Workspace-derived geometry, Geist/Geist Mono, responsive rail/drawer, bounded menus and common cards/controls. Settings → Security contains Access Tokens. Preserve platform authorization and authored content while changing the UI.
+
+## Tracking and Test/Build Gates
+
+Use the shared tracking contract for issues or PRs the user authorized creating/updating: custom categories, evidence-backed severity, and Open/Closed sub-states. A failing test is not automatically a security vulnerability or Critical severity. Link relevant real run IDs and source commits.
+
+For platform source changes, run `npm test`, `npm run check` and `npm run build`, plus the integration workflow relevant to the changed boundary. `npm run test:tracking` requires the explicitly isolated tracking fixture; do not redirect it to production. Then run the approved custom Actions pipeline at the exact immutable commit when the task calls for hosted checks. A local build or configuration preview does not count as hosted execution. Read actual per-case reports, artifacts and terminal stage results.
+
+Long Action Run sheets must retain a dedicated vertical body scroller while the header supports dismissal. Verify that the final test cases are reachable on phones and that the background page does not move. Shared web changes reach the live-URL Android shell without an APK rebuild; native/bundled changes require the signed build, instrumentation/login and publication gates in [lley-android](../lley-android/SKILL.md). Preserve all unrelated repository activation settings.

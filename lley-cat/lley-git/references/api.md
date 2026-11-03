@@ -100,3 +100,17 @@ Under `/repositories/:id`, GET `/issues` or `/pulls` accepts `state=open|closed|
 GET `/pulls/:number/diff` returns actual text. POST `/pulls/:number/merge` takes `{method,head_sha,delete_branch?:false,title?,message?}`. Methods: `merge`, `squash`, `rebase`, `fast-forward-only`. `head_sha` must be the latest reviewed commit. Merge needs `pulls:merge` and `git:write`; branch deletion also needs `repo:admin`. Stale head, conflicts, closed/already merged requests and branch protection are enforced. Force and deferred auto-merge are unavailable.
 
 Typed MCP equivalents: `git_issue_list/get/create/patch/comments/comment`, `git_pull_list/get/create/patch/comments/comment`, `git_pull_diff`, `git_pull_merge`.
+
+## Shared Tracking and Content Search
+
+Paths are relative to `/api`. Issue/pull create and patch accept `categories:string[]`, `severity:critical|high|medium|low|none`, `state:open|closed`, and `sub_state:todo|backlog|in-progress|reopened|done|resolved|canceled|duplicate|closed`. A sub-state implies its state; contradictions fail. Partial patches retain omitted body/title fields. Closing is separate from the reviewed-head merge endpoint.
+
+| Method | Path | Meaning |
+| --- | --- | --- |
+| GET | `/tracking` | Public standard vocabulary and sort choices; no private labels |
+| GET | `/repositories/:id/categories` | Authorized native category labels and virtual standard presets |
+| GET | `/repositories/:id/issues` or `/pulls` | Filter `state,sub_state,severity,category,q`; sort `updated,created,number,title,severity,comments` with `-asc/-desc`; `page,limit` |
+| GET | `/repositories/:id/search?q=&ref=&path=&page=&limit=` | Actual text/path matches, commit SHA, 1-based lines and explicit coverage |
+| GET | `/search?q=&scope=all|git|notes&repository_page=1` | Readable default-branch file batches plus notebook source |
+
+Filter before paging. Git defaults to 30 results and returns `X-Total-Count`; scan limits fail explicitly. Content search is literal, bounded and non-executing. Follow coverage/continuation fields rather than treating a partial scan as complete. See the platform [tracking contract](https://git.lley.cat/r/cf7b2b43-ffd8-4fb7-9381-43a9246c4210?path=docs%2FTRACKING.md).

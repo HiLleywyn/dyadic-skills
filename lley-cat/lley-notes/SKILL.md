@@ -1,6 +1,6 @@
 ---
 name: lley-notes
-description: Create, edit, publish, export and recover notebooks on notes.lley.cat, including its custom cell schema, JavaScript/Python browser execution, rich saved outputs, attachments and repository associations. Use for this platform rather than Jupyter notebooks or arbitrary server execution.
+description: Create, edit, publish, export and recover notebooks on notes.lley.cat, including workflow classification, source search, its custom cell schema, JavaScript/Python browser execution, rich saved outputs, attachments and repository associations. Use for this platform rather than Jupyter notebooks or arbitrary server execution.
 ---
 
 # lley.cat Notes
@@ -66,3 +66,11 @@ Notes matches the repository library: Add Note at upper right, All/Starred besid
 
 
 Interface work follows [lley-interface](../lley-interface/SKILL.md): the current Lley semantic theme tokens, Workspace-derived geometry, Geist/Geist Mono, responsive rail/drawer, bounded menus and common cards/controls. Settings → Security contains Access Tokens. Preserve platform authorization and authored content while changing the UI.
+
+## Workflow Classification and Source Search
+
+Notes share Git's `categories`, `severity`, `state` and `sub_state` vocabulary; discover choices at `GET /tracking`. Workflow Open/Closed is independent from Draft/Published. Send metadata changes through version-checked create/patch/save operations and preserve omitted content. Use current versions after conflicts. Closed sub-states must belong to Closed, and Open sub-states to Open.
+
+`GET /notebooks` supports `q`, `category`, `severity`, `state`, `sub_state`, `publication`, `sort`, `page`, `limit` and `parent_id`. Matching uses authorized notebook source; anonymous matching and rendering use the published snapshot. Classification changes stay private until explicitly republished. Revision restore brings back available classification fields in the draft, without replacing the reader snapshot or associations.
+
+`GET /search?scope=notes` and MCP `workspace_content_search` find actual notebook source, not only titles. Do not use draft reads or token-visible categories as evidence of what a public reader can see. Check source search, reader behavior and version conflicts in disposable fixtures when changing these paths. Record actual CI/test/build/run IDs and observed UI behavior in connected work notes; keep synthetic UI fixtures distinct from real test outcomes. See the [shared tracking contract](https://git.lley.cat/r/cf7b2b43-ffd8-4fb7-9381-43a9246c4210?path=docs%2FTRACKING.md).

@@ -33,3 +33,11 @@ Profile tools include `platform_profile_pins_get`, `platform_profile_pins_set` a
 
 
 Interface work follows [lley-interface](../lley-interface/SKILL.md): the current Lley semantic theme tokens, Workspace-derived geometry, Geist/Geist Mono, responsive rail/drawer, bounded menus and common cards/controls. Settings → Security contains Access Tokens. Preserve platform authorization and authored content while changing the UI.
+
+## Tracking, Content Search and CI Evidence
+
+`tracking_schema` returns the standard categories, severities, sub-states and sorts. `git_categories_list` reads native repository categories and uncreated presets. `git_issue_*`, `git_pull_*` and `notes_*` create/patch/list tools expose the shared fields and filters in their actual schemas. Notes keep publication separate from workflow; version conflicts and published snapshot privacy still apply. Closing a PR sub-state never performs a merge.
+
+`git_content_search` reads actual file paths and text blobs at a selected ref and returns commit-pinned line matches. `workspace_content_search` scans readable repository batches and notebook source. Follow `has_more_repositories`, paging and coverage, and report partial results honestly. These tools retain existing scopes and repository/IP restrictions; no execution authority or additional token grant is implied.
+
+When updating tools or workflows, verify typed discovery and real calls, invalid inputs, read-only/repository-restricted denial, version conflicts and publication boundaries. Run the relevant unit/syntax/build and isolated integration gates, then inspect the real hosted Actions/test reports for the exact source commit when execution is authorized. Use [lley-delivery](../lley-delivery/SKILL.md) for the platform's CI protocol; do not substitute generic Forgejo Actions.

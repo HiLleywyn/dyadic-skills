@@ -19,7 +19,7 @@ Base: `https://notes.lley.cat/api`. Authenticate with `Authorization: Bearer $LL
 | POST | `/notebooks` | Create a draft; 201 |
 | GET | `/notebooks/resolve/:slug` | Current or previous slug |
 | GET | `/notebooks/:id` | Authorized draft or saved reader snapshot |
-| PATCH | `/notebooks/:id` | `{version,...changedFields}`; fields: title, slug, description, visibility, cells, parent_id |
+| PATCH | `/notebooks/:id` | `{version,...changedFields}`; fields: title, slug, description, visibility, cells, parent_id, state, sub_state, severity, categories |
 | PUT | `/notebooks/:id` | Complete title, slug, description, visibility, cells and version |
 | DELETE | `/notebooks/:id` | Delete notebook, revisions, associations and attachment storage |
 
@@ -127,3 +127,9 @@ Send to `PUT /associations` to add or reorder. Remove with `DELETE /associations
 For an atomic saved order, send `{note_ids:[ALL_CURRENT_NOTEBOOK_UUIDS]}` to `PUT /repositories/:repo/notes/order`. Include each associated note exactly once; an incomplete or duplicate list returns `409 ASSOCIATION_CONFLICT`. Requires repository read access and `notes:write` for every note. Repository Notes also supports reader-local sorting by update date, creation date or title; public timestamps refer to reader snapshots, not later drafts.
 
 For GitHub, create or find a local GitHub reference using the Git skill, then associate its **local UUID**. Do not submit a GitHub URL where a UUID is expected. The local repository page shows the Notes section; this cannot add UI to GitHub's own website.
+
+## Workflow and Source Queries
+
+Versioned create/patch/save accepts the shared `state`, `sub_state`, `severity` and `categories` fields. These are independent of publication `status`, which still changes only through publish/unpublish. Old published snapshots receive compatible display defaults; current draft classification never leaks into public reads or filters.
+
+Lists support `q`, `state=open|closed|all`, `sub_state`, `severity`, `category`, `publication=draft|published|all`, `sort`, `page`, `limit` and `parent_id`. Default limit is 200, maximum 200. Search matches authorized source after publication/permission selection and before paging. `/search?scope=notes&q=...` returns source excerpts. See [Tracking](https://git.lley.cat/r/cf7b2b43-ffd8-4fb7-9381-43a9246c4210?path=docs%2FTRACKING.md) for exact enums and limits.

@@ -85,3 +85,13 @@ Use the shared content inset (Dyadic’s clamp(1rem, 4vw, 3rem)) inside full-wid
 Library controls place Add Repository at the title’s upper right and All/Starred beside Search. Entry stars/available tests belong at the top-right, with descriptions beneath across the width. Repository navigation retains icons, fills its width, and keeps dropdowns on-screen. Clone is at the header’s upper right; Updated/tests sit left of Star, Upload, Download and Settings. Save controls float only for actual pending changes.
 
 Interface work follows [lley-interface](../lley-interface/SKILL.md): the current Lley semantic theme tokens, Workspace-derived geometry, Geist/Geist Mono, responsive rail/drawer, bounded menus and common cards/controls. Settings → Security contains Access Tokens. Preserve platform authorization and authored content while changing the UI.
+
+## Tracking, Source Search and Verification
+
+Issues and pulls accept shared `categories`, `severity`, `state` and `sub_state` fields. Discover the vocabulary with `GET /tracking` and repository categories with `GET /repositories/:id/categories`. Classification uses native Forgejo labels; `Severity/` and `Status/` prefixes are reserved. Custom category names are supported. State/sub-state contradictions fail; closing a pull as Done does not merge it. Keep authored bodies intact in partial patches.
+
+Lists filter and sort the full selected collection before pagination using `q`, `category`, `severity`, `state`, `sub_state`, `sort`, `page` and `limit`. Treat `TRACKING_LIMIT` as an explicit bound, not a complete empty result.
+
+Use `GET /repositories/:id/search` for actual text-blob/path search at a selected ref; results include immutable `commit_sha`, path, line, excerpts and coverage. `/search` searches authorized workspace content in repository batches. Follow pagination and inspect omissions before claiming no matches. These are read operations under the existing repository/IP/token gates; they do not execute repository code.
+
+After implementation, use the repository's actual unit/syntax/build gates and inspect immutable-source hosted Actions reports when the task authorizes running them. Preserve lley-cat's activation boundaries and use [lley-delivery](../lley-delivery/SKILL.md) for CI and deployment. Full contract: [Tracking and Content Search](https://git.lley.cat/r/cf7b2b43-ffd8-4fb7-9381-43a9246c4210?path=docs%2FTRACKING.md).

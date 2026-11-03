@@ -50,3 +50,9 @@ Keep a compact evidence table when several components or checks are involved:
 If a deployment is still settling, recheck readiness within the deadline. Investigate a specific failure before retrying. Do not roll back, republish, or repeatedly redeploy unless the task's authorization and release procedure cover that action.
 
 Report the verified revision/artifact, environment, observed user outcome, and material limits. Separate local tests, remote deployment, visible UI validation, and physical-device checks. Mark skipped or unavailable checks explicitly. Do not describe a partial delivery as shipped and verified when a required step remains unresolved.
+
+## CI, Build and Client Delivery Evidence
+
+When the task calls for running checks, use the project's actual test/syntax/build commands and approved hosted CI at an immutable source revision. Record the real run ID and per-stage/per-case results, and separate those from local execution. Preserve existing pipeline activation and approval boundaries. A configuration preview is not a run.
+
+For apps that load a live website, inspect the native/bundled boundary before making a new installer. Web-only changes can reach an existing shell; native code, permissions, identity or bundled assets require the project's signed-build and device/emulator gates. Test long result sheets by scrolling to the final entry and checking that the underlying page remains stationary. Keep browser emulation, wheel scrolling and physical touch evidence distinct.
