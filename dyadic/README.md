@@ -62,3 +62,9 @@ Install or mirror the security collection with its `_shared/` standards and `scr
 Forensics source-history scanners require an existing local Git worktree; they do not require GitHub. Static API contract audits remain separate from explicitly approved isolated runtime tests. Copying these packages does not enable either plugin or relax their execution boundaries.
 
 See [source provenance](../PROVENANCE.md). Future changes to the 23 official Iris packages belong in Dyadic's source catalog first, followed by a reviewed snapshot update here. The separately identified security suite is maintained directly in this skills repository until it is deliberately adopted into the product catalog.
+
+## Work continuity and operations
+
+[Current Work and delivery workflows](workflows/README.md) cover accepted revisions, artifact handoffs, receipt reconciliation and conflicting supplied sources. [Catalog Maintenance](operators/README.md) covers these three repositories off the platform. These five additions are repository-authored and are not silently represented as installed official defaults.
+
+[Agents](https://git.lley.cat/r/dadd28be-7d91-432f-beb0-00d285e8f02b?ref=store) holds Iris and specialists; [Plugins](https://git.lley.cat/r/ae86ea71-cb4d-4fc5-9ec1-803f8f303989?ref=store) holds the default runtime switches. See [compatibility](../COMPATIBILITY.md) before importing.

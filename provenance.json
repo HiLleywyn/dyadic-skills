@@ -1,0 +1,220 @@
+{
+  "schema": 1,
+  "source": "Dyadic",
+  "revision": "26ea591af225ed48129a1968db78b3e8f335dc90",
+  "normalization": "LF text; no content edits to source snapshots",
+  "files": {
+    "dyadic/iris/api-contract-review/SKILL.md": {
+      "source": "catalog/skills/api-contract-review/SKILL.md",
+      "sha256": "1f2a3acd508bbcaa8be55b691f1a0ebd9914db36f6c8f7b10ac9324fbb560824"
+    },
+    "dyadic/iris/api-contract-review/skill.json": {
+      "source": "catalog/skills/api-contract-review/skill.json",
+      "sha256": "d402c0e60ac170a1bdbb0430ea8fa3baabff322ebd9345b6b4292e6569af6e01"
+    },
+    "dyadic/iris/api-integration/SKILL.md": {
+      "source": "catalog/skills/api-integration/SKILL.md",
+      "sha256": "5235d555ebe965fb287e84f10e61e1b0d4378459b8bb81061a8eca6861568fa3"
+    },
+    "dyadic/iris/api-integration/skill.json": {
+      "source": "catalog/skills/api-integration/skill.json",
+      "sha256": "4b6129c78ee40899614756803c3be4892b794e6149f0256c3045e0cbbc6a57b5"
+    },
+    "dyadic/iris/code-review/SKILL.md": {
+      "source": "catalog/skills/code-review/SKILL.md",
+      "sha256": "1e1bb2a3aaa89438758803afe1e920251780eca90e045dc3c14a0af60cd774bf"
+    },
+    "dyadic/iris/code-review/skill.json": {
+      "source": "catalog/skills/code-review/skill.json",
+      "sha256": "23f3b5c0c80b112bed97805c47473d7958bc3a3268423609a9eb007e76fdfa51"
+    },
+    "dyadic/iris/collaborative-review/SKILL.md": {
+      "source": "catalog/skills/collaborative-review/SKILL.md",
+      "sha256": "f2dbd60d698255a753e9581462a161e178815f5b99a2a20a4b02cbaa199669c4"
+    },
+    "dyadic/iris/collaborative-review/skill.json": {
+      "source": "catalog/skills/collaborative-review/skill.json",
+      "sha256": "8d219a4eaf633b01d79d1e66b00774cffa5af8629b859f519ec4de31e17b7bd3"
+    },
+    "dyadic/iris/compare-documents/SKILL.md": {
+      "source": "catalog/skills/compare-documents/SKILL.md",
+      "sha256": "d9dee5a0c4429164a9ea81dca46d306fc3097405c3b05040a373ba5db736a06c"
+    },
+    "dyadic/iris/compare-documents/skill.json": {
+      "source": "catalog/skills/compare-documents/skill.json",
+      "sha256": "21c537eb849fdc354197b187e6171025277f166051123e40a8165e172e684cb5"
+    },
+    "dyadic/iris/csv-cleanup/SKILL.md": {
+      "source": "catalog/skills/csv-cleanup/SKILL.md",
+      "sha256": "08119b23d89def41ccf74102c70a9fae0930491417a2fdbda229e1284995de1b"
+    },
+    "dyadic/iris/csv-cleanup/scripts/clean_csv.py": {
+      "source": "catalog/skills/csv-cleanup/scripts/clean_csv.py",
+      "sha256": "e616c57cad10afdf6c0f15ae55a0e1a2fea26cc27d9f97c301ad8214411aa6f1"
+    },
+    "dyadic/iris/csv-cleanup/skill.json": {
+      "source": "catalog/skills/csv-cleanup/skill.json",
+      "sha256": "e50f65f760f92c413801db454a3638eac539d05532332fe3f06e6a11f003b9bd"
+    },
+    "dyadic/iris/data-analysis/SKILL.md": {
+      "source": "catalog/skills/data-analysis/SKILL.md",
+      "sha256": "ee284187652779400dae863588bd59f0eda92f3a8d170062090679bb07829f10"
+    },
+    "dyadic/iris/data-analysis/scripts/chart.py": {
+      "source": "catalog/skills/data-analysis/scripts/chart.py",
+      "sha256": "7c72fdef16c6808f4f649fc6a4c828802a7e37b9f6d243b5dec87209a46e089f"
+    },
+    "dyadic/iris/data-analysis/scripts/profile.py": {
+      "source": "catalog/skills/data-analysis/scripts/profile.py",
+      "sha256": "1b692608802a7275ef63442025d37e41dcc8f7e146ae3be523d1db67183a8ac0"
+    },
+    "dyadic/iris/data-analysis/skill.json": {
+      "source": "catalog/skills/data-analysis/skill.json",
+      "sha256": "ca48dd1fb8958650291baf2379275338d0ab4e33941e48a0c3b1a7c23d531698"
+    },
+    "dyadic/iris/data-visualization/SKILL.md": {
+      "source": "catalog/skills/data-visualization/SKILL.md",
+      "sha256": "d85fe1f95b67dbbfd53be185bd0435c286a863817f76225898382d27322504cd"
+    },
+    "dyadic/iris/data-visualization/scripts/chart.py": {
+      "source": "catalog/skills/data-visualization/scripts/chart.py",
+      "sha256": "f5ada276f3762423bc527957e60a9823880982da79e5c778adfff2d11d0a5a1c"
+    },
+    "dyadic/iris/data-visualization/skill.json": {
+      "source": "catalog/skills/data-visualization/skill.json",
+      "sha256": "2a42744aed406d83be55861248cb1a295faa77420f37b0981e27b46adb4d2f2d"
+    },
+    "dyadic/iris/debug-code/SKILL.md": {
+      "source": "catalog/skills/debug-code/SKILL.md",
+      "sha256": "c08f264452082d9d898e2bc20f4cfac7cf224cfebeb4ae03143eaa7d4d9b8d99"
+    },
+    "dyadic/iris/debug-code/scripts/log_summary.py": {
+      "source": "catalog/skills/debug-code/scripts/log_summary.py",
+      "sha256": "f47b1c97a45cc0a19d01f2d72333d3d67434e7ac75efb2ab52472fc13e177d25"
+    },
+    "dyadic/iris/debug-code/skill.json": {
+      "source": "catalog/skills/debug-code/skill.json",
+      "sha256": "e7553d122171ecd67eff0e5bbfa56cb812432638d9040fefc6cf8aabd276dcb5"
+    },
+    "dyadic/iris/evidence-review/SKILL.md": {
+      "source": "catalog/skills/evidence-review/SKILL.md",
+      "sha256": "87086db685e088516ee788c0470fd0a92871a288ca21522660d28d40216b237c"
+    },
+    "dyadic/iris/evidence-review/skill.json": {
+      "source": "catalog/skills/evidence-review/skill.json",
+      "sha256": "71107e48e4d5f9e15dc5bc113dfac556ce7586f641813ab0ea04623c6c7bf9e8"
+    },
+    "dyadic/iris/explain-code/SKILL.md": {
+      "source": "catalog/skills/explain-code/SKILL.md",
+      "sha256": "e8610d247b2c70245b11fec520e81c9315f09b4de6174d5cabba9941efadde18"
+    },
+    "dyadic/iris/explain-code/skill.json": {
+      "source": "catalog/skills/explain-code/skill.json",
+      "sha256": "1bd32782de70af49e0c3845e35741983232eb1e968ba9d3a7ec6064120779568"
+    },
+    "dyadic/iris/extract-structured-data/SKILL.md": {
+      "source": "catalog/skills/extract-structured-data/SKILL.md",
+      "sha256": "3e21ca23eef16469a34bbd632dbc80bd4cc6b4a5ac776323af8d92ded28cc401"
+    },
+    "dyadic/iris/extract-structured-data/scripts/validate.py": {
+      "source": "catalog/skills/extract-structured-data/scripts/validate.py",
+      "sha256": "69594675dbf8c89de823b1149257572530787967bd302ee2acddb1053399bc73"
+    },
+    "dyadic/iris/extract-structured-data/skill.json": {
+      "source": "catalog/skills/extract-structured-data/skill.json",
+      "sha256": "4e62507830400934ec7b1d1935b83f41d5fd5f8f70ba456c4d8f55d3fea990c0"
+    },
+    "dyadic/iris/fact-check/SKILL.md": {
+      "source": "catalog/skills/fact-check/SKILL.md",
+      "sha256": "1b015c88abd2e126032006d49aed33cc3e1e083296b5ed69f63d9b6420f06658"
+    },
+    "dyadic/iris/fact-check/skill.json": {
+      "source": "catalog/skills/fact-check/skill.json",
+      "sha256": "4198f402d41ce943f09259f95b7036ba89efcabcb243656d027c69370f17b82c"
+    },
+    "dyadic/iris/forensics/SKILL.md": {
+      "source": "catalog/skills/forensics/SKILL.md",
+      "sha256": "e4cbc7791fff065d707fa6c9038ecc3c31244b94fa21f6d40f29e87b049301ef"
+    },
+    "dyadic/iris/forensics/skill.json": {
+      "source": "catalog/skills/forensics/skill.json",
+      "sha256": "1294c6c2b1d84cbf652757f6a0f5dc00f4627fe5bf0639d86c3adb537dbf07af"
+    },
+    "dyadic/iris/house-style/SKILL.md": {
+      "source": "catalog/skills/house-style/SKILL.md",
+      "sha256": "af5aaf2d53fb90e4c0a929d478ae134fc9319d2e2f1a2592613bc5c2b0a34b0b"
+    },
+    "dyadic/iris/house-style/skill.json": {
+      "source": "catalog/skills/house-style/skill.json",
+      "sha256": "4d72017eb2f03c377ac3f1337b64586ac70fd5aeffcd8591e6971c316be78588"
+    },
+    "dyadic/iris/import-review/SKILL.md": {
+      "source": "catalog/skills/import-review/SKILL.md",
+      "sha256": "0e55b39c7e4448193f768d368dafdaad42e7b338dd6e56d213ff5ea1845477e4"
+    },
+    "dyadic/iris/import-review/skill.json": {
+      "source": "catalog/skills/import-review/skill.json",
+      "sha256": "c388f71310a19cebde29b7b2424da17d59dcaeea37020ce75455f4d5e3df5443"
+    },
+    "dyadic/iris/meeting-actions/SKILL.md": {
+      "source": "catalog/skills/meeting-actions/SKILL.md",
+      "sha256": "da3c2d5178d606897e268daee1749e8b7c3695405a0722324e9536f943c4fd60"
+    },
+    "dyadic/iris/meeting-actions/skill.json": {
+      "source": "catalog/skills/meeting-actions/skill.json",
+      "sha256": "4dd67e38b01aca117eec7d88f728e0238815dde897a859b5b5cdcfa5bd27fb03"
+    },
+    "dyadic/iris/requirements-to-implementation-plan/SKILL.md": {
+      "source": "catalog/skills/requirements-to-implementation-plan/SKILL.md",
+      "sha256": "bf61a7d041d255b239f87138d64e4e627baa5d69ce64792aff43133dd174ffbe"
+    },
+    "dyadic/iris/requirements-to-implementation-plan/skill.json": {
+      "source": "catalog/skills/requirements-to-implementation-plan/skill.json",
+      "sha256": "0d122e9880a95bfe0fcbd13929fb31ba834a917e84037bdf64b8da96ff7a94bb"
+    },
+    "dyadic/iris/research-brief/SKILL.md": {
+      "source": "catalog/skills/research-brief/SKILL.md",
+      "sha256": "96bff86f745ec9b5932b3d8a27a6a60de31e53d2fb180ec1613a310c47878a5b"
+    },
+    "dyadic/iris/research-brief/skill.json": {
+      "source": "catalog/skills/research-brief/skill.json",
+      "sha256": "d4abbc63d0d700a033e8dffd58543f52316339d15e328bcc519fef6573a84095"
+    },
+    "dyadic/iris/sql-analysis/SKILL.md": {
+      "source": "catalog/skills/sql-analysis/SKILL.md",
+      "sha256": "4ae0b5f7fc061928a31feadb37be71870955221e421256541fbe35bbaffa017f"
+    },
+    "dyadic/iris/sql-analysis/skill.json": {
+      "source": "catalog/skills/sql-analysis/skill.json",
+      "sha256": "003e4006a0f8f8ab96432304572fa622e1db12c168dc8c385806238ee354dc87"
+    },
+    "dyadic/iris/summarize-documents/SKILL.md": {
+      "source": "catalog/skills/summarize-documents/SKILL.md",
+      "sha256": "e5a0a7f9da6e1d951e863beac6c8bdeea1c761188d89dcc5f968d5760207aff0"
+    },
+    "dyadic/iris/summarize-documents/skill.json": {
+      "source": "catalog/skills/summarize-documents/skill.json",
+      "sha256": "bc423f0b8eca50984454b5306228e648f8010c8746a0816fefee39ab2d00ed7c"
+    },
+    "dyadic/iris/web-task-automation/SKILL.md": {
+      "source": "catalog/skills/web-task-automation/SKILL.md",
+      "sha256": "1dd559b6b4f788926a881113a38342c7fce4fc4259906525fcd40d1189e0e789"
+    },
+    "dyadic/iris/web-task-automation/skill.json": {
+      "source": "catalog/skills/web-task-automation/skill.json",
+      "sha256": "9dde47c98c936401d6e84918e7b393f06c5123f742c229472e61e44f51bde865"
+    },
+    "dyadic/iris/write-tests/SKILL.md": {
+      "source": "catalog/skills/write-tests/SKILL.md",
+      "sha256": "e0a6681e5f4ea62ab7192a41b49a6118d6375a50370ac9655a158a28617df65f"
+    },
+    "dyadic/iris/write-tests/scripts/run_tests.py": {
+      "source": "catalog/skills/write-tests/scripts/run_tests.py",
+      "sha256": "87cf74fa3c8c3fb79230f4aa14fe3655c656a470a13b51efbe66133fa0135f69"
+    },
+    "dyadic/iris/write-tests/skill.json": {
+      "source": "catalog/skills/write-tests/skill.json",
+      "sha256": "c65c358ebf2c4719c75eb35ad743f382522c0d235b944b2b4f6f6ca762170bf6"
+    }
+  }
+}

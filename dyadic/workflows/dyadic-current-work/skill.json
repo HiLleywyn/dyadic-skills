@@ -1,0 +1,20 @@
+{
+  "id": "dyadic-current-work",
+  "name": "Current Work Revision",
+  "description": "Revise accepted work in Dyadic while preserving the owner’s constraints, exact file versions and unresolved items. Use for a follow-up that changes an accepted delivery or needs a Patch against it.",
+  "version": "1.0.0",
+  "icon": "puzzle",
+  "color": "violet",
+  "abilities": [
+    "Revise accepted work in Dyadic while preserving the owner’s constraints, exact file versions and unresolved items. Use for a follow-up that changes an accepted delivery or needs a Patch against it."
+  ],
+  "permissions": [
+    "Instructions only; uses the tools and context the owner makes available."
+  ],
+  "changes": [
+    {
+      "version": "1.0.0",
+      "notes": "Repository-authored workflow grounded in current Dyadic contracts; not installed into the product catalog."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "verified_at": "2026-11-04T01:09:07.670613+00:00",
+  "branch": "store",
+  "main_at_branch_creation": "0e66f19f2b49f9cf497c03f9ec0ed8b4800c811e",
+  "environment": {
+    "image": "sha256:d228c59ea0b616fa7f3c43b667e627ab435763efc1627cc64bcdc6e10df7e0b4",
+    "network": "none",
+    "runtime": "local isolated Linux container; not a hosted Actions run"
+  },
+  "commands": [
+    [
+      "python",
+      ".lley/run.py"
+    ],
+    [
+      "python",
+      "tools/catalog.py",
+      "build"
+    ]
+  ],
+  "results": {
+    "tests": 64,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 64
+  },
+  "actions": {
+    "preview": "accepted",
+    "hosted_run": "not run",
+    "activation_enabled": false,
+    "template_applied": false
+  },
+  "collection_sha256": "ea7d0dddef4bcf6b6b154a232fd537d4a65ce91dba5d1cfc6e3e1526eba72026"
+}

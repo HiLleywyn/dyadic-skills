@@ -1,0 +1,360 @@
+{
+  "schema": 1,
+  "kind": "skills",
+  "entries": [
+    {
+      "id": "karpathy-guidelines",
+      "name": "karpathy-guidelines",
+      "description": "Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria.",
+      "path": "development/karpathy-guidelines"
+    },
+    {
+      "id": "release-verification",
+      "name": "release-verification",
+      "description": "Verify that a specified software revision or release artifact reached the intended environment and that the affected user workflow works. Use after deployments, beta distribution, or release requests, including checks of runtime identity, artifact provenance, readiness, API behavior, and visible UI delivery. Verification alone does not authorize deployment or publication.",
+      "path": "development/release-verification"
+    },
+    {
+      "id": "docker-compose-ops",
+      "name": "docker-compose-ops",
+      "description": "Diagnose and operate existing Docker Compose projects, including service health, DNS, networks, mounts, environment configuration, targeted rebuilds, and container recreation. Use for Compose maintenance and service-to-service failures, while preserving project identity and persistent data.",
+      "path": "docker/docker-compose-ops"
+    },
+    {
+      "id": "algorithmic-art",
+      "name": "algorithmic-art",
+      "description": "Create original, seeded generative art with interactive controls and a downloadable HTML file. Use for algorithmic art, flow fields, particles and procedural drawings.",
+      "path": "dyadic/examples/algorithmic-art"
+    },
+    {
+      "id": "local-field-checks",
+      "name": "local-field-checks",
+      "description": "Inspect local fixture code using bounded executable checks and recorded results.",
+      "path": "dyadic/examples/local-field-checks"
+    },
+    {
+      "id": "api-contract-review",
+      "name": "API Contract Review",
+      "description": "Validate OpenAPI contracts, identify compatibility drift, and assess explicitly authorized isolated staging endpoints. Use for API review, schema inconsistencies, SDK interoperability and response contracts.",
+      "path": "dyadic/iris/api-contract-review"
+    },
+    {
+      "id": "api-integration",
+      "name": "API Integration",
+      "description": "Use a web API well with the HTTP Request plugin (http.request). Read the API's documentation first, start with one cheap read, page through results by link, cursor or page number, tell a wrong sign-in from a missing permission, respect rate limits, handle GraphQL's errors, and show exactly what a change sends before it asks for approval. Use when someone asks you to fetch, sync, create or update something through an API, or to connect to a service.",
+      "path": "dyadic/iris/api-integration"
+    },
+    {
+      "id": "code-review",
+      "name": "Code Review",
+      "description": "Review code, a change or a GitHub pull request for bugs, security problems and maintainability, with findings ranked by severity, each pointing to the file and line with a concrete fix. For a pull request (the GitHub plugin), read its description, files and whole diff, check it against the repository's own conventions, write one review, and post it as a single comment only when the user asks. Use when someone asks for a review, a second look, \"what's wrong with this code\", or a pull request review.",
+      "path": "dyadic/iris/code-review"
+    },
+    {
+      "id": "collaborative-review",
+      "name": "Collaborative Review",
+      "description": "Plan bounded agent work, inspect independent findings, and review exact staged revisions.",
+      "path": "dyadic/iris/collaborative-review"
+    },
+    {
+      "id": "compare-documents",
+      "name": "Compare Documents",
+      "description": "Compare two or more documents, or two versions of one document, side by side - what matches, what differs and what one leaves out - in a table with the exact wording and where it is, then the differences that matter most. Use when someone asks to compare quotes, offers, contracts, policies, drafts or versions, or asks what changed.",
+      "path": "dyadic/iris/compare-documents"
+    },
+    {
+      "id": "csv-cleanup",
+      "name": "CSV Cleanup",
+      "description": "Clean up a messy spreadsheet or CSV - tidy headers, trim stray spaces, standardise dates and numbers, drop blank and duplicate rows - and report every change. Use when data has inconsistent formats, duplicates or junk rows, or before analyzing it.",
+      "path": "dyadic/iris/csv-cleanup"
+    },
+    {
+      "id": "data-analysis",
+      "name": "Data Analysis",
+      "description": "Analyze a CSV or table in the Python sandbox - profile the columns, answer the question with numbers you computed, and draw an SVG chart. Use when someone shares data or asks for trends, totals, comparisons or a chart.",
+      "path": "dyadic/iris/data-analysis"
+    },
+    {
+      "id": "data-visualization",
+      "name": "Data Visualization",
+      "description": "Turn data into the right chart, drawn cleanly, as SVG for the web, PNG for Word documents and PDFs, or a native chart in an Excel workbook. Use when someone asks for a chart, graph or plot, or when numbers would be clearer as a picture.",
+      "path": "dyadic/iris/data-visualization"
+    },
+    {
+      "id": "debug-code",
+      "name": "Debug Code",
+      "description": "Find why code fails and fix the cause, not the symptom, and turn logs, stack traces and error reports into a diagnosis. Reproduce the failure, read the error, test one hypothesis at a time, make the smallest fix that explains every symptom and prove it with a test; for logs, find the time window, summarize a large log (scripts/log_summary.py), build a timeline, find the first real error, follow one request by its id, and give the likely cause with its evidence and the next check. Use when code crashes, gives a wrong answer, hangs or \"used to work\", or when someone shares logs, a crash report or monitoring output.",
+      "path": "dyadic/iris/debug-code"
+    },
+    {
+      "id": "evidence-review",
+      "name": "Execution Evidence Review",
+      "description": "Check tool outcomes, persisted artifacts and provider usage without trusting completion claims.",
+      "path": "dyadic/iris/evidence-review"
+    },
+    {
+      "id": "explain-code",
+      "name": "Explain Code",
+      "description": "Explain what a piece of code, a file or a project does and why, pitched at the reader. Give its purpose in one sentence, walk through the important parts in the order data flows, trace one invented input through it, and name the side effects, edge cases and surprises. Use when someone asks \"what does this do\", \"how does this work\", \"walk me through\", or is new to a codebase.",
+      "path": "dyadic/iris/explain-code"
+    },
+    {
+      "id": "extract-structured-data",
+      "name": "Extract Structured Data",
+      "description": "Extract specific fields from documents into structured data (JSON, CSV or an Excel table), such as invoice totals, contract parties and dates, receipt line items or survey answers, with each value checked and traced to where it was found. Use when someone wants information pulled out of files into rows and columns.",
+      "path": "dyadic/iris/extract-structured-data"
+    },
+    {
+      "id": "fact-check",
+      "name": "Fact Check",
+      "description": "Fact check an article, post, transcript or statement claim by claim (each checkable claim quoted exactly, the primary sources that confirm or contradict it, a verdict from a fixed scale with the evidence linked, and what couldn't be checked), and verify a single source before relying on it (who published it and when, whether it's the original, whether it really says what's claimed, rated Reliable, Use With Care, Unreliable or Can't Verify). Use when someone asks to fact check, verify or debunk something, whether an article is accurate, or whether a source, link, quote, screenshot, statistic or study is real or trustworthy.",
+      "path": "dyadic/iris/fact-check"
+    },
+    {
+      "id": "forensics",
+      "name": "Forensics",
+      "description": "Investigate public records and infrastructure, preserve private case evidence, compare claims, and produce attributable reports. Use for investigations, case review, entity relationships, timelines, public disclosures and offline source audit.",
+      "path": "dyadic/iris/forensics"
+    },
+    {
+      "id": "house-style",
+      "name": "Style Guide Editing",
+      "description": "Write or edit a document to a style guide - the user's own if they have one, otherwise a plain-language house style - and say what changed. Use for drafting, rewriting, tightening or proofreading letters, reports, posts and documentation.",
+      "path": "dyadic/iris/house-style"
+    },
+    {
+      "id": "import-review",
+      "name": "Review Imported Instructions",
+      "description": "Review portable skills and agents before enabling their native Dyadic capabilities.",
+      "path": "dyadic/iris/import-review"
+    },
+    {
+      "id": "meeting-actions",
+      "name": "Meeting Action Items",
+      "description": "Turn meeting notes or a transcript into a short summary, the decisions made, action items with owners and dates, and open questions, plus an optional follow-up message. Use when someone shares notes, a transcript or a recording's text from a meeting.",
+      "path": "dyadic/iris/meeting-actions"
+    },
+    {
+      "id": "requirements-to-implementation-plan",
+      "name": "Requirements to Implementation Plan",
+      "description": "Turn a feature request or requirements into an implementation plan someone can build from. Restate the goal, write checkable acceptance criteria, ask only the questions that change the design, look at the existing code, choose a design and say why, break the work into small ordered steps each with its test, and list risks, what is out of scope and a rough size. Use when someone asks to plan a feature, scope work, \"how would we build this\", or before writing a large change.",
+      "path": "dyadic/iris/requirements-to-implementation-plan"
+    },
+    {
+      "id": "research-brief",
+      "name": "Research Brief",
+      "description": "Research a question on the web and write a short, sourced brief with the answer first, each finding cited inline, what is uncertain, and what to read next. Use when someone asks you to research, look into, compare or fact-check something.",
+      "path": "dyadic/iris/research-brief"
+    },
+    {
+      "id": "sql-analysis",
+      "name": "SQL Analysis",
+      "description": "Answer questions from a connected database with the Database plugin (database.schema and database.query). Explore the schema first, write one focused, read-only query at a time with filtering and aggregation on the server, check the result for join duplicates, NULLs and time zones, then explain the finding with the numbers behind it. Use when someone asks about data in their PostgreSQL, MySQL or SQLite database, or asks for a change to it.",
+      "path": "dyadic/iris/sql-analysis"
+    },
+    {
+      "id": "summarize-documents",
+      "name": "Summarize Documents",
+      "description": "Summarize one or more documents (an attached PDF or Word file, a file in the workspace, a Workspace file, or pasted text) into the main point, the key points with where each one is, exact numbers and dates, and what's left open; or turn a PDF into structured notes (a summary, an outline that follows the document, key terms, numbers, dates and actions, each citing its page). Use when someone asks for a summary, an overview, the key points, notes, a breakdown or a study guide of a document.",
+      "path": "dyadic/iris/summarize-documents"
+    },
+    {
+      "id": "web-task-automation",
+      "name": "Web Task Automation",
+      "description": "Carry out a task on a website with the Browser plugin (browser.open, browser.act, browser.screenshot, browser.download) by planning the steps, reading each page as numbered elements, checking every result and asking before anything that submits, buys, sends, posts or deletes. Use when someone asks you to do something on a site rather than just read it: search a shop, compare listings, fill in a form, go through several pages, or download a file.",
+      "path": "dyadic/iris/web-task-automation"
+    },
+    {
+      "id": "write-tests",
+      "name": "Write Tests",
+      "description": "Write focused, readable tests for code and run them in the sandbox. List the behaviours and cases first (usual, edge, failure), write one small test per behaviour named for what it proves, replace networks, clocks and randomness with fakes, run them with scripts/run_tests.py, and report honestly. Use when someone asks for tests, a test plan, more coverage, or a regression test for a bug.",
+      "path": "dyadic/iris/write-tests"
+    },
+    {
+      "id": "lley-dyadic-embed",
+      "name": "lley-dyadic-embed",
+      "description": "Integrate the portable lley.cat Git and rich Notes backend and React views into a host application such as Dyadic, using the separate integration branch and host identity, workspace permissions and vault credentials.",
+      "path": "dyadic/lley-dyadic-embed"
+    },
+    {
+      "id": "dyadic-catalog-maintenance",
+      "name": "dyadic-catalog-maintenance",
+      "description": "Maintain the separate lley.cat skills, agents and plugins repositories, preserve Dyadic snapshot provenance, build reviewed import packages and report runtime compatibility gaps. Use for catalog publication and synchronization, not a Dyadic production deployment.",
+      "path": "dyadic/operators/dyadic-catalog-maintenance"
+    },
+    {
+      "id": "dyadic-attack-path-analysis",
+      "name": "Attack Path Analysis",
+      "description": "Trace a supplied security candidate from attacker-controlled source through parsing, identity, policy, state, and controls to a security-sensitive sink and impact. Use when reachability or exploit conditions are unclear; do not use for broad candidate discovery, final report prose, or live exploitation beyond the authorized validation boundary.",
+      "path": "dyadic/security/dyadic-attack-path-analysis"
+    },
+    {
+      "id": "dyadic-finding-discovery",
+      "name": "Finding Discovery",
+      "description": "Discover plausible security findings in a pinned repository or component and record source-linked candidates for later validation. Use during the candidate-generation phase of an authorized assessment; do not use it to publish unvalidated scanner matches, assign final severity, or perform uncontrolled live exploitation.",
+      "path": "dyadic/security/dyadic-finding-discovery"
+    },
+    {
+      "id": "dyadic-finding-validation",
+      "name": "Finding Validation",
+      "description": "Skeptically validate or disprove supplied security candidates against a pinned artifact using source review, counterevidence, and the safest sufficient reproduction. Use before reporting, severity assignment, fixing, or issue creation; do not use to generate a broad new candidate list.",
+      "path": "dyadic/security/dyadic-finding-validation"
+    },
+    {
+      "id": "dyadic-fix-finding",
+      "name": "Fix Finding",
+      "description": "Implement a narrow, authorized source change for a validated security vulnerability and add focused regression coverage while preserving intended behavior. Use only when the user explicitly asks to fix a specific finding; do not use for speculative hardening, ordinary bug cleanup, deployment, or unrelated refactoring.",
+      "path": "dyadic/security/dyadic-fix-finding"
+    },
+    {
+      "id": "dyadic-security-diff-scan",
+      "name": "Security Diff Scan",
+      "description": "Review a pull request, commit, branch comparison, or working-tree patch for security regressions introduced by the change, including affected callers and tests. Use for change-focused security review; do not use it as a substitute for a repository-wide audit or to report pre-existing vulnerabilities as introduced by the patch.",
+      "path": "dyadic/security/dyadic-security-diff-scan"
+    },
+    {
+      "id": "dyadic-security-hardening",
+      "name": "Security Hardening",
+      "description": "Develop prioritized architectural and operational security hardening from validated findings, incidents, threat models, or assessment evidence. Use for defense-in-depth and systemic risk reduction; do not present absent best practices as confirmed vulnerabilities or implement broad changes without an explicit build request.",
+      "path": "dyadic/security/dyadic-security-hardening"
+    },
+    {
+      "id": "dyadic-security-policy",
+      "name": "Security Policy",
+      "description": "Create or revise a repository SECURITY.md or component security policy covering supported versions, reporting channels, response expectations, safe-harbor testing boundaries, data handling, and disclosure. Use when maintainers want an actionable policy; do not infer legal promises, bounty eligibility, or authorization beyond terms the owner supplies.",
+      "path": "dyadic/security/dyadic-security-policy"
+    },
+    {
+      "id": "dyadic-security-scan",
+      "name": "Security Scan",
+      "description": "Perform a standard single-pass security assessment of a repository or scoped component in Dyadic, producing validated findings, negative results, immutable snapshot identity, and an honest coverage receipt. Use for an audit or security scan of source as it exists, not for a diff-only review, exhaustive repeated deep scan, patch implementation, or unauthorized live penetration test.",
+      "path": "dyadic/security/dyadic-security-scan"
+    },
+    {
+      "id": "dyadic-threat-model",
+      "name": "Threat Model",
+      "description": "Create or update an evidence-backed threat model for a repository, service, protocol, feature, or architecture in Dyadic. Use when security review needs assets, actors, trust boundaries, data flows, abuse cases, assumptions, and prioritized controls; do not use to claim a vulnerability without a demonstrated attack path.",
+      "path": "dyadic/security/dyadic-threat-model"
+    },
+    {
+      "id": "dyadic-track-findings",
+      "name": "Track Findings",
+      "description": "Deduplicate and record validated security findings in an approved issue tracker, advisory system, or private project with evidence, status, ownership, and remediation state. Use when the user asks to persist or update findings; do not create external tickets from unvalidated candidates or expose private vulnerability details in a public project.",
+      "path": "dyadic/security/dyadic-track-findings"
+    },
+    {
+      "id": "dyadic-verify-fix",
+      "name": "Verify Fix",
+      "description": "Verify that a proposed patch or release remediates a specific validated vulnerability without breaking intended behavior or leaving equivalent bypasses. Use when the user asks to verify a security fix; do not automatically modify the patch, declare unrelated findings, or treat test success as proof of deployment.",
+      "path": "dyadic/security/dyadic-verify-fix"
+    },
+    {
+      "id": "dyadic-vulnerability-writeup",
+      "name": "Vulnerability Write-up",
+      "description": "Turn a validated vulnerability record, source trace, and proof into a self-contained maintainer or bug-bounty report with accurate history, impact, remediation, and limitations. Use only after validation; do not submit, email, publish, or create an issue unless the user explicitly requests that external action.",
+      "path": "dyadic/security/dyadic-vulnerability-writeup"
+    },
+    {
+      "id": "dyadic-artifact-handoff",
+      "name": "Artifact Handoff",
+      "description": "Trace a Dyadic deliverable from generated output to retained bytes, exact revisions and a usable attachment or UI reference. Use when a file, image or panel is reported complete but is missing, stale or cannot be opened.",
+      "path": "dyadic/workflows/dyadic-artifact-handoff"
+    },
+    {
+      "id": "dyadic-current-work",
+      "name": "Current Work Revision",
+      "description": "Revise accepted work in Dyadic while preserving the owner’s constraints, exact file versions and unresolved items. Use for a follow-up that changes an accepted delivery or needs a Patch against it.",
+      "path": "dyadic/workflows/dyadic-current-work"
+    },
+    {
+      "id": "dyadic-receipt-reconciliation",
+      "name": "Receipt Reconciliation",
+      "description": "Explain interrupted or apparently contradictory Dyadic runs by separating execution state, recorded tool effects, accounting state and provider cost. Use for operation IDs, stopped runs, unknown charges or parent/child usage comparisons.",
+      "path": "dyadic/workflows/dyadic-receipt-reconciliation"
+    },
+    {
+      "id": "dyadic-source-conflicts",
+      "name": "Source Conflict Review",
+      "description": "Resolve disagreements among supplied Dyadic documents, accepted briefs and later revisions without silently adding outside research. Use when dates, requirements, authority or quoted evidence conflict across the provided sources.",
+      "path": "dyadic/workflows/dyadic-source-conflicts"
+    },
+    {
+      "id": "kali-linux",
+      "name": "kali-linux",
+      "description": "Use Kali Linux for authorized penetration testing, security research, and CTF work. Use when a user asks about installing Kali, setting up a pentest lab, picking tools from the Kali toolchain, using Kali in WSL/Docker/VM, or updating the distribution.",
+      "path": "linux/kali-linux"
+    },
+    {
+      "id": "lley-android",
+      "name": "lley-android",
+      "description": "Build, sign and verify the lley.cat Capacitor Android application spanning lley.cat, git.lley.cat and notes.lley.cat, including native haptics, notifications, document storage and app-link permissions.",
+      "path": "lley-cat/lley-android"
+    },
+    {
+      "id": "lley-delivery",
+      "name": "lley-delivery",
+      "description": "Configure and inspect the custom lley.cat Actions, CI/CD stage graphs, isolated runners, logs, artifacts and Releases through git.lley.cat. Use for this platform's delivery system and release assets.",
+      "path": "lley-cat/lley-delivery"
+    },
+    {
+      "id": "lley-git",
+      "name": "lley-git",
+      "description": "Use git.lley.cat to create and manage repositories, inspect and commit files, push or clone over HTTPS, manage branches and visibility, track issues and pull requests, merge reviewed commits, and associate notebooks. Applies to the custom lley.cat Git gateway, not generic GitHub account administration or infrastructure changes.",
+      "path": "lley-cat/lley-git"
+    },
+    {
+      "id": "lley-interface",
+      "name": "lley-interface",
+      "description": "Maintain the shared lley.cat, git.lley.cat and notes.lley.cat interface using its semantic design tokens, Workspace-derived navigation, themes, cards, editors and native interaction contracts.",
+      "path": "lley-cat/lley-interface"
+    },
+    {
+      "id": "lley-mcp",
+      "name": "lley-mcp",
+      "description": "Connect AI clients to the lley.cat MCP server using Streamable HTTP and Bearer authentication for typed Git, notebook, CI, credential and bridge operations, including version-checked cell edits.",
+      "path": "lley-cat/lley-mcp"
+    },
+    {
+      "id": "lley-notes",
+      "name": "lley-notes",
+      "description": "Create, edit, publish, export and recover notebooks on notes.lley.cat, including workflow classification, source search, its custom cell schema, JavaScript/Python browser execution, rich saved outputs, attachments and repository associations. Use for this platform rather than Jupyter notebooks or arbitrary server execution.",
+      "path": "lley-cat/lley-notes"
+    },
+    {
+      "id": "lley-profile",
+      "name": "lley-profile",
+      "description": "Manage the lley.cat public profile, independent repository and note pins, contribution history and shared avatar navigation through the platform API or typed MCP tools.",
+      "path": "lley-cat/lley-profile"
+    },
+    {
+      "id": "ward-scanner",
+      "name": "ward-scanner",
+      "description": "Use Ward to scan a public Git repository or inspect a SHA-256 when the user wants evidence-based malware analysis without executing the target.",
+      "path": "ward/ward-scanner"
+    },
+    {
+      "id": "windows-diagnostics",
+      "name": "windows-diagnostics",
+      "description": "Investigate Windows process, port, file-lock, service, scheduled-task, startup, crash, and event-log problems using scoped PowerShell queries and Sysinternals. Use for host diagnostics and evidence-backed repairs; Windows Sandbox, WSL, and application-specific workflows have their own procedures.",
+      "path": "windows/windows-diagnostics"
+    },
+    {
+      "id": "windows-sandbox",
+      "name": "windows-sandbox",
+      "description": "Set up, configure, launch, automate, and troubleshoot Microsoft Windows Sandbox on Windows. Use for .wsb configuration files, disposable Windows app or installer tests, mapped folders, logon scripts, and the wsb CLI. Does not govern Codex execution sandbox permissions.",
+      "path": "windows/windows-sandbox"
+    },
+    {
+      "id": "winget-setup",
+      "name": "winget-setup",
+      "description": "Use WinGet to discover exact Windows packages, install or update requested tools, manage package pins, export/import tool setups, and bootstrap WinGet inside Windows Sandbox. Use for Windows package management and reproducible developer environments, with explicit package identity and scope.",
+      "path": "windows/winget-setup"
+    },
+    {
+      "id": "wsl-ops",
+      "name": "wsl-ops",
+      "description": "Diagnose and manage Windows Subsystem for Linux distributions, Windows/Linux paths, shell environments, networking, interoperability, configuration, and backups. Use for WSL-specific failures and requested distro maintenance; application bugs inside an otherwise healthy Linux environment do not require this skill.",
+      "path": "windows/wsl-ops"
+    }
+  ]
+}

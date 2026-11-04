@@ -1,0 +1,20 @@
+{
+  "id": "dyadic-receipt-reconciliation",
+  "name": "Receipt Reconciliation",
+  "description": "Explain interrupted or apparently contradictory Dyadic runs by separating execution state, recorded tool effects, accounting state and provider cost. Use for operation IDs, stopped runs, unknown charges or parent/child usage comparisons.",
+  "version": "1.0.0",
+  "icon": "puzzle",
+  "color": "violet",
+  "abilities": [
+    "Explain interrupted or apparently contradictory Dyadic runs by separating execution state, recorded tool effects, accounting state and provider cost. Use for operation IDs, stopped runs, unknown charg"
+  ],
+  "permissions": [
+    "Instructions only; uses the tools and context the owner makes available."
+  ],
+  "changes": [
+    {
+      "version": "1.0.0",
+      "notes": "Repository-authored workflow grounded in current Dyadic contracts; not installed into the product catalog."
+    }
+  ]
+}
