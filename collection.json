@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "kind": "skills",
+  "repository": "https://git.lley.cat/r/1a151e58-468a-45f1-a028-92c95690ad68",
+  "python": "3.11+",
+  "dependencies": [
+    "PyYAML"
+  ]
+}

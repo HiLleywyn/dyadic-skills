@@ -1,5 +1,7 @@
 # Skills
 
+[Skills](README.md) · [Agents](https://git.lley.cat/r/dadd28be-7d91-432f-beb0-00d285e8f02b?ref=store) · [Plugins](https://git.lley.cat/r/ae86ea71-cb4d-4fc5-9ec1-803f8f303989?ref=store)
+
 Maintained instructions for lley.cat, Dyadic, Ward, Windows, Linux, Docker and development. Each skill folder contains its own `SKILL.md` and supporting resources. This collection contains guidance and examples, not credentials or installed services. Repository visibility is managed separately by its owner.
 
 ## lley.cat
@@ -18,7 +20,7 @@ The [lley.cat reference](lley-cat/README.md) includes scopes and working convent
 
 ## Dyadic
 
-The [Dyadic catalog](dyadic/README.md) mirrors 37 official skills: 25 under Iris and 12 in the [security engineering suite](dyadic/security/README.md). Two bundled examples and the [Git/Notes embedding skill](dyadic/lley-dyadic-embed/SKILL.md) remain separate.
+The [Dyadic catalog](dyadic/README.md) mirrors 37 official skills: 25 under Iris and 12 in the [security engineering suite](dyadic/security/README.md). Four [Current Work and delivery workflows](dyadic/workflows/README.md), a [catalog-maintenance operator skill](dyadic/operators/README.md), two bundled examples and the [Git/Notes embedding skill](dyadic/lley-dyadic-embed/SKILL.md) remain separate repository-authored additions or examples.
 
 Iris skills retain their `skill.json` metadata and bundled resources. They depend on Dyadic's existing tool registry, execution broker, sandbox and approval system. Reading a skill elsewhere does not provide those tools or authorize their execution. The security suite adds full workflows for scanning, threat modeling, candidate discovery, attack-path analysis, validation, reporting, remediation, verification, hardening, policy and finding lifecycle. The embedding package remains an integration scaffold, not a claim of a deployed Dyadic installation.
 
@@ -65,4 +67,10 @@ Installation does not change model selections, enable plugins, grant permissions
 
 The seven former root `lley-*` folders now live under `lley-cat/`. `lley-dyadic-embed/` moved to `dyadic/lley-dyadic-embed/`. Skill names are unchanged; update folder import URLs accordingly. Historical commit URLs remain available in Git history. Windows, Docker and release-verification additions retain their existing paths.
 
-See [provenance and maintenance](PROVENANCE.md) for source revisions, attribution and validation boundaries. This collection has 56 skills; it does not imply that 56 skills should be loaded into every conversation. Run `python dyadic/scripts/verify_catalog_mirror.py` to verify the recorded catalog snapshot.
+See [provenance and maintenance](PROVENANCE.md) for source revisions, attribution and validation boundaries. This collection has 61 skills; load only those relevant to the task. Run `python dyadic/scripts/verify_catalog_mirror.py` to verify the recorded catalog snapshot.
+
+## Validation and packages
+
+[Catalog inventory](catalog.json) · [Maintenance](MAINTENANCE.md) · [Compatibility](COMPATIBILITY.md) · [Delivery report](https://git.lley.cat/r/dadd28be-7d91-432f-beb0-00d285e8f02b?path=REPORT.md&ref=store)
+
+With Python 3.11+ and PyYAML, run `python tools/catalog.py check`, `python .lley/run.py`, then `python tools/catalog.py build`. Each `dist/<skill-id>.zip` is an individual importable skill; `dist/collection.zip` groups them for download and must be extracted first. The security exports include shared standards inside each ZIP. The original source layout and existing package IDs remain unchanged.

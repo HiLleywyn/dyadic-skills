@@ -1,0 +1,20 @@
+{
+  "id": "dyadic-artifact-handoff",
+  "name": "Artifact Handoff",
+  "description": "Trace a Dyadic deliverable from generated output to retained bytes, exact revisions and a usable attachment or UI reference. Use when a file, image or panel is reported complete but is missing, stale or cannot be opened.",
+  "version": "1.0.0",
+  "icon": "puzzle",
+  "color": "violet",
+  "abilities": [
+    "Trace a Dyadic deliverable from generated output to retained bytes, exact revisions and a usable attachment or UI reference. Use when a file, image or panel is reported complete but is missing, stale "
+  ],
+  "permissions": [
+    "Instructions only; uses the tools and context the owner makes available."
+  ],
+  "changes": [
+    {
+      "version": "1.0.0",
+      "notes": "Repository-authored workflow grounded in current Dyadic contracts; not installed into the product catalog."
+    }
+  ]
+}

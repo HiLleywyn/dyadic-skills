@@ -68,3 +68,8 @@ Forensics source-history scanners require an existing local Git worktree; they d
 See [source provenance](../PROVENANCE.md). Future changes to all 37 adopted packages belong in Dyadic's source catalog first, followed by `tools/sync_dyadic_skills.py` against this separate checkout. Verify the receipt with `python dyadic/scripts/verify_catalog_mirror.py`. Other workflows and examples remain maintained here.
 
 Owner-started independent tasks currently receive pinned SKILL.md text only. Supply required reference content as selected task inputs when using that mode; full skill resources are available only in workflows that actually load the installed bundle. Mirroring does not install packages into an account or change agent, plugin or MCP selections.
+## Work continuity and operations
+
+[Current Work and delivery workflows](workflows/README.md) cover accepted revisions, artifact handoffs, receipt reconciliation and conflicting supplied sources. [Catalog Maintenance](operators/README.md) covers these three repositories off the platform. These five additions are repository-authored and are not silently represented as installed official defaults.
+
+[Agents](https://git.lley.cat/r/dadd28be-7d91-432f-beb0-00d285e8f02b?ref=store) holds Iris and specialists; [Plugins](https://git.lley.cat/r/ae86ea71-cb4d-4fc5-9ec1-803f8f303989?ref=store) holds the default runtime switches. See [compatibility](../COMPATIBILITY.md) before importing.

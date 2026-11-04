@@ -1,0 +1,20 @@
+{
+  "id": "dyadic-source-conflicts",
+  "name": "Source Conflict Review",
+  "description": "Resolve disagreements among supplied Dyadic documents, accepted briefs and later revisions without silently adding outside research. Use when dates, requirements, authority or quoted evidence conflict across the provided sources.",
+  "version": "1.0.0",
+  "icon": "puzzle",
+  "color": "violet",
+  "abilities": [
+    "Resolve disagreements among supplied Dyadic documents, accepted briefs and later revisions without silently adding outside research. Use when dates, requirements, authority or quoted evidence conflict"
+  ],
+  "permissions": [
+    "Instructions only; uses the tools and context the owner makes available."
+  ],
+  "changes": [
+    {
+      "version": "1.0.0",
+      "notes": "Repository-authored workflow grounded in current Dyadic contracts; not installed into the product catalog."
+    }
+  ]
+}
