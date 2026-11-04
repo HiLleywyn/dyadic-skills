@@ -27,3 +27,13 @@ A passing schema or generated case cannot prove permissions, tenant isolation,
 financial correctness, execution safety or semantic task success. Use existing
 targeted security/accounting tests for those properties. Do not turn an audit
 into an always-on judge or change evaluator policies.
+
+Dyadic publishes four independent contracts: OpenAI-compatible, platform,
+Anthropic-compatible and OpenRouter gateway. A check of the installed default
+specification does not cover the other three. Obtain each requested contract
+explicitly and report its version and digest. Documentation MCP's `api` tool
+describes an operation without executing it. Owner-session Workspace routes are
+not implied by these public contracts. In a source checkout,
+`tools/api_contract_check.py` checks all four without network requests.
+The interactive audit uses a Linux Bubblewrap worker even in static mode. If that
+sandbox is unavailable, report the missing verification; do not bypass containment.

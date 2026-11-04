@@ -7,7 +7,7 @@ description: Verify that a proposed patch or release remediates a specific valid
 
 Independently determine whether the candidate fix closes the original attack path at the assessed revision and whether the surrounding security invariant now holds.
 
-Read [validation rubric](../_shared/validation-rubric.md), [evidence and provenance](../_shared/evidence-standard.md), [safe testing](../_shared/safe-testing.md), and the original finding plus its proof.
+Read [validation rubric](references/validation-rubric.md), [evidence and provenance](references/evidence-standard.md), [safe testing](references/safe-testing.md), and the original finding plus its proof.
 
 ## Freeze the artifacts
 
@@ -45,13 +45,13 @@ Look for regressions introduced by the fix: fail-open behavior, new denial of se
 
 At minimum:
 
-1. **exploit regression** — original proof no longer achieves unauthorized effect;
-2. **negative control** — test would still fail against vulnerable behavior or an intentionally vulnerable fixture;
-3. **legitimate behavior** — supported use case still works;
-4. **variant coverage** — equivalent encodings, routes, redirects, representations, or identities are handled;
-5. **failure behavior** — errors remain safe and do not partially commit;
-6. **component regression** — relevant existing suite passes;
-7. **build/static checks** — applicable lint, type, analyzer, or compilation succeeds.
+1. **exploit regression**  -  original proof no longer achieves unauthorized effect;
+2. **negative control**  -  test would still fail against vulnerable behavior or an intentionally vulnerable fixture;
+3. **legitimate behavior**  -  supported use case still works;
+4. **variant coverage**  -  equivalent encodings, routes, redirects, representations, or identities are handled;
+5. **failure behavior**  -  errors remain safe and do not partially commit;
+6. **component regression**  -  relevant existing suite passes;
+7. **build/static checks**  -  applicable lint, type, analyzer, or compilation succeeds.
 
 Use synthetic data and isolated environments. A test named after the vulnerability is not evidence unless its assertions exercise the boundary. Preserve commands, output, cleanup, and skipped variants.
 
@@ -59,14 +59,26 @@ Use synthetic data and isolated environments. A test named after the vulnerabili
 
 Return one verdict:
 
-- **verified fixed** — root cause and supported variants are closed; regression and legitimate behavior pass;
-- **partially fixed** — original proof is blocked but equivalent paths or supported conditions remain;
-- **not fixed** — original unauthorized effect remains;
-- **regressed** — security issue is closed but the patch introduces a material new defect;
-- **inconclusive** — missing build/runtime/deployment evidence prevents a decision.
+- **verified fixed**  -  root cause and supported variants are closed; regression and legitimate behavior pass;
+- **partially fixed**  -  original proof is blocked but equivalent paths or supported conditions remain;
+- **not fixed**  -  original unauthorized effect remains;
+- **regressed**  -  security issue is closed but the patch introduces a material new defect;
+- **inconclusive**  -  missing build/runtime/deployment evidence prevents a decision.
 
 Assign confidence and list exact tested revisions. If a release or deployment is claimed, separately verify artifact/runtime identity or mark it outstanding. Do not edit the patch during verification; return actionable evidence to `$dyadic-fix-finding` if changes are needed.
 
 ## Output
 
 Provide verdict, invariant, diff review, test matrix, commands/results, variant analysis, compatibility observations, untested conditions, and release/deployment boundary. Update the finding record only when the user asks to persist status. Do not merge, deploy, close an external report, or announce remediation without separate authorization.
+
+## Installed Resources
+
+Use `tools.load(inventory=true)` to discover enabled skills and permitted tools. Load the skills group,
+then read this package with `skills.read(name="dyadic-verify-fix", path="SKILL.md")`.
+Read linked references using the same skill name and their bundle-relative paths. Cross-skill `$name`
+references describe optional workflows, not callable tool names; discover an enabled sibling first.
+If it is unavailable, perform the supported part directly and record the remaining phase as unexecuted.
+
+For a durable record, use the [finding schema](references/finding.schema.json). The bundled
+[validator](scripts/validate_finding.py) checks record invariants without third-party packages; it does
+not establish that a finding is true. Run it only through an authorized execution tool.

@@ -7,7 +7,7 @@ description: Develop prioritized architectural and operational security hardenin
 
 Translate observed risk into a practical defense roadmap. Preserve the difference between required remediation for a demonstrated vulnerability and defense in depth that reduces likelihood, blast radius, or detection time.
 
-Read [evidence and provenance](../_shared/evidence-standard.md), [severity and confidence](../_shared/severity-and-confidence.md), and [safe testing](../_shared/safe-testing.md).
+Read [evidence and provenance](references/evidence-standard.md), [severity and confidence](references/severity-and-confidence.md), and [safe testing](references/safe-testing.md).
 
 ## Evidence basis
 
@@ -59,10 +59,10 @@ Score proposals qualitatively by:
 
 Classify:
 
-- **P0 containment** — immediate action for active compromise or exposed secret; narrowly scoped and reversible;
-- **P1 required remediation** — closes a validated high/critical boundary;
-- **P2 systemic hardening** — removes recurring classes or materially limits blast radius;
-- **P3 hygiene** — useful incremental improvement with modest risk reduction.
+- **P0 containment**  -  immediate action for active compromise or exposed secret; narrowly scoped and reversible;
+- **P1 required remediation**  -  closes a validated high/critical boundary;
+- **P2 systemic hardening**  -  removes recurring classes or materially limits blast radius;
+- **P3 hygiene**  -  useful incremental improvement with modest risk reduction.
 
 Do not label a general best practice P0 merely because it is absent.
 
@@ -84,3 +84,15 @@ Where a hardening control could break legitimate traffic, propose staged enforce
 ## Deliverable
 
 Produce an evidence-to-control matrix, prioritized roadmap, implementation sketches, verification plan, residual risk, and explicit separation among validated remediation, systemic hardening, and hygiene. Do not modify source or infrastructure unless the user separately asks to implement named items.
+
+## Installed Resources
+
+Use `tools.load(inventory=true)` to discover enabled skills and permitted tools. Load the skills group,
+then read this package with `skills.read(name="dyadic-security-hardening", path="SKILL.md")`.
+Read linked references using the same skill name and their bundle-relative paths. Cross-skill `$name`
+references describe optional workflows, not callable tool names; discover an enabled sibling first.
+If it is unavailable, perform the supported part directly and record the remaining phase as unexecuted.
+
+For a durable record, use the [finding schema](references/finding.schema.json). The bundled
+[validator](scripts/validate_finding.py) checks record invariants without third-party packages; it does
+not establish that a finding is true. Run it only through an authorized execution tool.

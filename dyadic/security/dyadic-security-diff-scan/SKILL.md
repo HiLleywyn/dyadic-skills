@@ -7,7 +7,7 @@ description: Review a pull request, commit, branch comparison, or working-tree p
 
 Determine whether a specific change introduces, exposes, or fails to remediate a security boundary. Anchor every finding to the immutable base and head artifacts and distinguish new behavior from pre-existing risk.
 
-Read [runtime and tools](../_shared/runtime-and-tools.md), [evidence and provenance](../_shared/evidence-standard.md), [severity and confidence](../_shared/severity-and-confidence.md), and [safe testing](../_shared/safe-testing.md).
+Read [runtime and tools](references/runtime-and-tools.md), [evidence and provenance](references/evidence-standard.md), [severity and confidence](references/severity-and-confidence.md), and [safe testing](references/safe-testing.md).
 
 ## Freeze the comparison
 
@@ -42,11 +42,11 @@ Follow each delta across the trust boundary. A changed sanitizer may affect unch
 
 Classify each issue as:
 
-- **introduced** — the vulnerable behavior is absent at base and present at head;
-- **worsened** — a pre-existing issue gains reachability, impact, or weaker controls;
-- **incomplete fix** — the change targets a known issue but leaves a supported bypass;
-- **pre-existing** — present at both revisions and not materially changed;
-- **not caused by diff** — relevant context but outside this review's finding set.
+- **introduced**  -  the vulnerable behavior is absent at base and present at head;
+- **worsened**  -  a pre-existing issue gains reachability, impact, or weaker controls;
+- **incomplete fix**  -  the change targets a known issue but leaves a supported bypass;
+- **pre-existing**  -  present at both revisions and not materially changed;
+- **not caused by diff**  -  relevant context but outside this review's finding set.
 
 Report introduced, worsened, and incomplete-fix items. Mention a severe pre-existing issue separately only when necessary to explain the change, and do not blame the patch for it.
 
@@ -71,3 +71,15 @@ Lead with a merge recommendation: approve, approve with security follow-up, or c
 - concrete minimal fix and regression test.
 
 Then list tests run, security-relevant areas reviewed with no finding, and limitations. Use inline review comments only for actionable, line-specific findings; keep architecture-wide issues in the summary. Post a review or create a platform comment only when the user asks for that external action.
+
+## Installed Resources
+
+Use `tools.load(inventory=true)` to discover enabled skills and permitted tools. Load the skills group,
+then read this package with `skills.read(name="dyadic-security-diff-scan", path="SKILL.md")`.
+Read linked references using the same skill name and their bundle-relative paths. Cross-skill `$name`
+references describe optional workflows, not callable tool names; discover an enabled sibling first.
+If it is unavailable, perform the supported part directly and record the remaining phase as unexecuted.
+
+For a durable record, use the [finding schema](references/finding.schema.json). The bundled
+[validator](scripts/validate_finding.py) checks record invariants without third-party packages; it does
+not establish that a finding is true. Run it only through an authorized execution tool.

@@ -9,11 +9,11 @@ Conduct one complete, evidence-bounded assessment against one immutable source s
 
 Read these standards before starting:
 
-- [runtime and tools](../_shared/runtime-and-tools.md)
-- [safe testing](../_shared/safe-testing.md)
-- [evidence and provenance](../_shared/evidence-standard.md)
-- [severity and confidence](../_shared/severity-and-confidence.md)
-- [validation rubric](../_shared/validation-rubric.md)
+- [runtime and tools](references/runtime-and-tools.md)
+- [safe testing](references/safe-testing.md)
+- [evidence and provenance](references/evidence-standard.md)
+- [severity and confidence](references/severity-and-confidence.md)
+- [validation rubric](references/validation-rubric.md)
 
 ## Establish the assessment contract
 
@@ -86,3 +86,15 @@ The final artifact must include:
 9. prioritized next evidence, if a specific missing fact could change the result.
 
 Use the shared finding schema for machine-readable records when the user requests durable tracking. Say “no reportable finding survived this coverage,” never “the repository is secure.” Do not modify source, file issues, submit reports, or publish artifacts unless separately requested.
+
+## Installed Resources
+
+Use `tools.load(inventory=true)` to discover enabled skills and permitted tools. Load the skills group,
+then read this package with `skills.read(name="dyadic-security-scan", path="SKILL.md")`.
+Read linked references using the same skill name and their bundle-relative paths. Cross-skill `$name`
+references describe optional workflows, not callable tool names; discover an enabled sibling first.
+If it is unavailable, perform the supported part directly and record the remaining phase as unexecuted.
+
+For a durable record, use the [finding schema](references/finding.schema.json). The bundled
+[validator](scripts/validate_finding.py) checks record invariants without third-party packages; it does
+not establish that a finding is true. Run it only through an authorized execution tool.

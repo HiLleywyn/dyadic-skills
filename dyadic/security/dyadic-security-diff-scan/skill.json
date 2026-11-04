@@ -2,11 +2,10 @@
   "id": "dyadic-security-diff-scan",
   "name": "Security Diff Scan",
   "description": "Review a patch or revision comparison for introduced security regressions and incomplete fixes.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Dyadic",
-  "color": "orange",
-  "icon": "git-compare",
-  "enabled": true,
+  "color": "coral",
+  "icon": "pullRequest",
   "abilities": [
     "Pins base and head revisions and reads complete diffs",
     "Traces changed behavior through unchanged callers and controls",
@@ -17,6 +16,13 @@
     "Does not post reviews or modify branches unless explicitly requested"
   ],
   "changes": [
-    { "version": "1.0.0", "notes": "Initial Dyadic-native security diff review workflow." }
+    {
+      "version": "1.0.1",
+      "notes": "Adopt owner-authored security workflow with self-contained references and explicit runtime discovery."
+    },
+    {
+      "version": "1.0.0",
+      "notes": "Initial Dyadic-native security diff review workflow."
+    }
   ]
 }

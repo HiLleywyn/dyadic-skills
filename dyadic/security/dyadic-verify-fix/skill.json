@@ -2,11 +2,10 @@
   "id": "dyadic-verify-fix",
   "name": "Verify Fix",
   "description": "Independently test whether a patch closes a validated vulnerability and preserves intended behavior.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Dyadic",
   "color": "green",
-  "icon": "badge-check",
-  "enabled": true,
+  "icon": "shield",
   "abilities": [
     "Pins vulnerable and proposed-fixed artifacts",
     "Runs exploit, negative-control, legitimate, and variant checks",
@@ -17,6 +16,13 @@
     "Does not edit, merge, deploy, or close external reports"
   ],
   "changes": [
-    { "version": "1.0.0", "notes": "Initial Dyadic-native security fix verification workflow." }
+    {
+      "version": "1.0.1",
+      "notes": "Adopt owner-authored security workflow with self-contained references and explicit runtime discovery."
+    },
+    {
+      "version": "1.0.0",
+      "notes": "Initial Dyadic-native security fix verification workflow."
+    }
   ]
 }

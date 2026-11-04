@@ -32,7 +32,7 @@ These are operational instructions for Iris. They use Dyadic's existing tool dis
 - [Finding record schema](_shared/finding.schema.json)
 - [Synthetic validated finding](examples/validated-finding.json)
 
-The skills are designed as one collection. Keep `_shared/` beside the skill folders when importing or mirroring them. A skill may still be read alone, but its linked standards are normative and should be available for professional use.
+These shared files preserve the original authoring collection. The adopted 1.0.1 packages each include the standards they use under their own `references/` and a finding validator under `scripts/`. Install the complete individual folder; sibling `_shared/` paths are no longer required. The package's linked resources are authoritative for that version. Runtime changes belong in Dyadic's source catalog and are mirrored back here with [source hashes](../catalog-source.json).
 
 ## Safety and authority
 
@@ -43,3 +43,5 @@ Do not expose secrets, persist customer data, reuse discovered credentials, exec
 ## Validation
 
 Every skill folder must pass the skill-creator `quick_validate.py` check. The collection additionally validates manifest IDs, versions, frontmatter names, relative links, and finding records with the scripts in `scripts/`. These checks establish package consistency, not the correctness of a security conclusion.
+
+Run `python dyadic/scripts/verify_catalog_mirror.py` from the repository root to check every adopted package against its recorded source hashes. Dyadic's `tools/catalog_check.py` additionally builds the real installed bundles and checks their resource closure. The twelve package validators are byte-identical; validate a synthetic record with one and confirm an invalid record is rejected. No helper runs during installation.

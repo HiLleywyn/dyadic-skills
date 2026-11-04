@@ -2,11 +2,10 @@
   "id": "dyadic-security-policy",
   "name": "Security Policy",
   "description": "Create or revise actionable SECURITY.md scope, reporting, research, data, and disclosure guidance.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Dyadic",
   "color": "blue",
-  "icon": "scroll-shield",
-  "enabled": true,
+  "icon": "fileText",
   "abilities": [
     "Defines supported versions, precise asset scope, and reporting channels",
     "Documents safe research and sensitive-data stop conditions",
@@ -17,6 +16,13 @@
     "Does not publish or modify repository files unless requested"
   ],
   "changes": [
-    { "version": "1.0.0", "notes": "Initial Dyadic-native repository security policy workflow." }
+    {
+      "version": "1.0.1",
+      "notes": "Adopt owner-authored security workflow with self-contained references and explicit runtime discovery."
+    },
+    {
+      "version": "1.0.0",
+      "notes": "Initial Dyadic-native repository security policy workflow."
+    }
   ]
 }

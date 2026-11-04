@@ -7,7 +7,7 @@ description: Trace a supplied security candidate from attacker-controlled source
 
 Decide whether a candidate has a complete, supported attack path. Produce a structured trace that a validator can reproduce or disprove.
 
-Read [runtime and tools](../_shared/runtime-and-tools.md), [evidence and provenance](../_shared/evidence-standard.md), [safe testing](../_shared/safe-testing.md), and [validation rubric](../_shared/validation-rubric.md).
+Read [runtime and tools](references/runtime-and-tools.md), [evidence and provenance](references/evidence-standard.md), [safe testing](references/safe-testing.md), and [validation rubric](references/validation-rubric.md).
 
 ## Normalize the candidate
 
@@ -94,3 +94,15 @@ Produce:
 - provisional disposition: complete, incomplete, or disproven.
 
 Do not assign final reportability or severity unless the user specifically asks for combined analysis; hand the trace to `$dyadic-finding-validation`.
+
+## Installed Resources
+
+Use `tools.load(inventory=true)` to discover enabled skills and permitted tools. Load the skills group,
+then read this package with `skills.read(name="dyadic-attack-path-analysis", path="SKILL.md")`.
+Read linked references using the same skill name and their bundle-relative paths. Cross-skill `$name`
+references describe optional workflows, not callable tool names; discover an enabled sibling first.
+If it is unavailable, perform the supported part directly and record the remaining phase as unexecuted.
+
+For a durable record, use the [finding schema](references/finding.schema.json). The bundled
+[validator](scripts/validate_finding.py) checks record invariants without third-party packages; it does
+not establish that a finding is true. Run it only through an authorized execution tool.

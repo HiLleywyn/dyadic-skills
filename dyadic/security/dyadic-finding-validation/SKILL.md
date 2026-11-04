@@ -7,7 +7,7 @@ description: Skeptically validate or disprove supplied security candidates again
 
 Make a reportability decision that survives skeptical review. Validation is not an exercise in making the candidate work; it is an attempt to identify the exact conditions under which it is true or false.
 
-Read [validation rubric](../_shared/validation-rubric.md), [safe testing](../_shared/safe-testing.md), [evidence and provenance](../_shared/evidence-standard.md), and [severity and confidence](../_shared/severity-and-confidence.md).
+Read [validation rubric](references/validation-rubric.md), [safe testing](references/safe-testing.md), [evidence and provenance](references/evidence-standard.md), and [severity and confidence](references/severity-and-confidence.md).
 
 ## Intake and independence
 
@@ -87,3 +87,15 @@ Return exactly one primary disposition from the shared rubric:
 The validation record includes confidence, severity, root cause, numbered attack path, prerequisites, evidence, counterevidence, reproduction receipt, affected/fixed versions, CWE, remediation direction, limitations, and next action. Use the shared JSON schema for durable records.
 
 No external report, issue, disclosure, source patch, or deployment occurs during validation unless the user separately requested that action.
+
+## Installed Resources
+
+Use `tools.load(inventory=true)` to discover enabled skills and permitted tools. Load the skills group,
+then read this package with `skills.read(name="dyadic-finding-validation", path="SKILL.md")`.
+Read linked references using the same skill name and their bundle-relative paths. Cross-skill `$name`
+references describe optional workflows, not callable tool names; discover an enabled sibling first.
+If it is unavailable, perform the supported part directly and record the remaining phase as unexecuted.
+
+For a durable record, use the [finding schema](references/finding.schema.json). The bundled
+[validator](scripts/validate_finding.py) checks record invariants without third-party packages; it does
+not establish that a finding is true. Run it only through an authorized execution tool.

@@ -2,11 +2,10 @@
   "id": "dyadic-fix-finding",
   "name": "Fix Finding",
   "description": "Implement a minimal authorized remediation and focused regression tests for a validated vulnerability.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Dyadic",
   "color": "green",
   "icon": "wrench",
-  "enabled": true,
   "abilities": [
     "Translates a validated root cause into a security invariant",
     "Implements a surgical fix without unrelated cleanup",
@@ -17,6 +16,13 @@
     "Does not commit, push, merge, deploy, rotate secrets, or publish without separate authorization"
   ],
   "changes": [
-    { "version": "1.0.0", "notes": "Initial Dyadic-native vulnerability remediation workflow." }
+    {
+      "version": "1.0.1",
+      "notes": "Adopt owner-authored security workflow with self-contained references and explicit runtime discovery."
+    },
+    {
+      "version": "1.0.0",
+      "notes": "Initial Dyadic-native vulnerability remediation workflow."
+    }
   ]
 }

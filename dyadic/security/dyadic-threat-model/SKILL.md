@@ -7,7 +7,7 @@ description: Create or update an evidence-backed threat model for a repository, 
 
 Produce a living security model that directs engineering and review effort. The model describes what must be protected, from whom, across which boundaries, under which assumptions. It is not a generic checklist and not a vulnerability report.
 
-Read [runtime and tools](../_shared/runtime-and-tools.md), [safe testing](../_shared/safe-testing.md), and [evidence and provenance](../_shared/evidence-standard.md).
+Read [runtime and tools](references/runtime-and-tools.md), [safe testing](references/safe-testing.md), and [evidence and provenance](references/evidence-standard.md).
 
 ## Define the modeled system
 
@@ -79,3 +79,15 @@ Produce:
 8. prioritized review plan naming the smallest evidence needed next.
 
 Update an existing model without erasing prior assumptions or decisions; mark what changed and why. Route concrete candidates to `$dyadic-finding-discovery` or `$dyadic-attack-path-analysis` rather than declaring them vulnerabilities in the threat model.
+
+## Installed Resources
+
+Use `tools.load(inventory=true)` to discover enabled skills and permitted tools. Load the skills group,
+then read this package with `skills.read(name="dyadic-threat-model", path="SKILL.md")`.
+Read linked references using the same skill name and their bundle-relative paths. Cross-skill `$name`
+references describe optional workflows, not callable tool names; discover an enabled sibling first.
+If it is unavailable, perform the supported part directly and record the remaining phase as unexecuted.
+
+For a durable record, use the [finding schema](references/finding.schema.json). The bundled
+[validator](scripts/validate_finding.py) checks record invariants without third-party packages; it does
+not establish that a finding is true. Run it only through an authorized execution tool.

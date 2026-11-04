@@ -2,6 +2,8 @@
 
 Official Iris runtime packages are copied from Dyadic's maintained `catalog/skills/`, with metadata and resources intact. Use them through Dyadic's reviewed skill loading and tool-discovery workflows. A skill is guidance, not a callable tool or an authority grant. Live registry schemas and execution-time permissions remain authoritative.
 
+The current snapshot has 37 complete catalog packages. [catalog-source.json](catalog-source.json) records the exact Dyadic commit and normalized SHA-256 hashes. The product's [extension architecture](https://git.lley.cat/r/4ae11d0f-eec7-498c-8618-f81c34e29832?ref=docs&path=docs%2Fextension-architecture.md) explains skills, specialist presets, implemented plugins and MCP boundaries; access follows the repository's own permissions.
+
 ## Official Iris catalog
 
 | Package | Name |
@@ -15,6 +17,8 @@ Official Iris runtime packages are copied from Dyadic's maintained `catalog/skil
 | [Data Analysis](iris/data-analysis/SKILL.md) | Data Analysis |
 | [Data Visualization](iris/data-visualization/SKILL.md) | Data Visualization |
 | [Debug Code](iris/debug-code/SKILL.md) | Debug Code |
+| [Dyadic API Integration](iris/dyadic-api-integration/SKILL.md) | Dyadic API Integration |
+| [Dyadic Extension Authoring](iris/dyadic-extension-authoring/SKILL.md) | Dyadic Extension Authoring |
 | [Execution Evidence Review](iris/evidence-review/SKILL.md) | Execution Evidence Review |
 | [Explain Code](iris/explain-code/SKILL.md) | Explain Code |
 | [Extract Structured Data](iris/extract-structured-data/SKILL.md) | Extract Structured Data |
@@ -32,7 +36,7 @@ Official Iris runtime packages are copied from Dyadic's maintained `catalog/skil
 
 ## Security engineering suite
 
-The [Dyadic Security Skills](security/README.md) are owner-authored, Dyadic-native packages added after the pinned official catalog snapshot. They are kept in a separate collection so their provenance is explicit. They use the same runtime principles—live tool discovery, workspace isolation, execution approvals and evidence receipts—but do not imply that a scanner or external disclosure integration is enabled.
+The [Dyadic Security Skills](security/README.md) originated as owner-authored packages in this repository and are now adopted into the official Dyadic catalog. Their workflow grouping and attribution remain explicit. They use live tool discovery, workspace isolation, execution approvals and evidence receipts; catalog availability does not enable a scanner or external disclosure integration.
 
 | Package | Purpose |
 | --- | --- |
@@ -49,7 +53,7 @@ The [Dyadic Security Skills](security/README.md) are owner-authored, Dyadic-nati
 | [Security Policy](security/dyadic-security-policy/SKILL.md) | SECURITY.md and disclosure-policy engineering |
 | [Track Findings](security/dyadic-track-findings/SKILL.md) | Deduplicated private finding lifecycle |
 
-Install or mirror the security collection with its `_shared/` standards and `scripts/`; the linked evidence, severity, safe-testing and reporting standards are normative parts of the workflows.
+Copy the whole individual skill folder. Each security package now contains its own linked standards in `references/` and its finding validator in `scripts/`; it no longer depends on sibling `_shared/` files to work after installation. Cross-skill recommendations require an available installed sibling.
 
 ## Integration and examples
 
@@ -61,4 +65,6 @@ Install or mirror the security collection with its `_shared/` standards and `scr
 
 Forensics source-history scanners require an existing local Git worktree; they do not require GitHub. Static API contract audits remain separate from explicitly approved isolated runtime tests. Copying these packages does not enable either plugin or relax their execution boundaries.
 
-See [source provenance](../PROVENANCE.md). Future changes to the 23 official Iris packages belong in Dyadic's source catalog first, followed by a reviewed snapshot update here. The separately identified security suite is maintained directly in this skills repository until it is deliberately adopted into the product catalog.
+See [source provenance](../PROVENANCE.md). Future changes to all 37 adopted packages belong in Dyadic's source catalog first, followed by `tools/sync_dyadic_skills.py` against this separate checkout. Verify the receipt with `python dyadic/scripts/verify_catalog_mirror.py`. Other workflows and examples remain maintained here.
+
+Owner-started independent tasks currently receive pinned SKILL.md text only. Supply required reference content as selected task inputs when using that mode; full skill resources are available only in workflows that actually load the installed bundle. Mirroring does not install packages into an account or change agent, plugin or MCP selections.

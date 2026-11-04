@@ -7,7 +7,7 @@ description: Create or revise a repository SECURITY.md or component security pol
 
 Write a policy that helps researchers report safely and helps maintainers triage consistently. The policy is operational and security guidance, not legal advice. Never invent safe-harbor commitments, payment terms, response SLAs, encryption keys, contacts, or authorized assets.
 
-Read [safe testing](../_shared/safe-testing.md), [report standard](../_shared/report-standard.md), and existing repository/community guidance.
+Read [safe testing](references/safe-testing.md), [report standard](references/report-standard.md), and existing repository/community guidance.
 
 ## Gather authoritative inputs
 
@@ -65,3 +65,15 @@ Check links from README, contribution docs, package metadata, website security c
 ## Review
 
 Validate that the policy is specific, internally consistent, and implementable by the maintainer team. Flag owner decisions and legal-review items. Provide a change summary when revising an existing policy and preserve valid commitments. Do not publish, commit, or announce the policy unless requested.
+
+## Installed Resources
+
+Use `tools.load(inventory=true)` to discover enabled skills and permitted tools. Load the skills group,
+then read this package with `skills.read(name="dyadic-security-policy", path="SKILL.md")`.
+Read linked references using the same skill name and their bundle-relative paths. Cross-skill `$name`
+references describe optional workflows, not callable tool names; discover an enabled sibling first.
+If it is unavailable, perform the supported part directly and record the remaining phase as unexecuted.
+
+For a durable record, use the [finding schema](references/finding.schema.json). The bundled
+[validator](scripts/validate_finding.py) checks record invariants without third-party packages; it does
+not establish that a finding is true. Run it only through an authorized execution tool.

@@ -65,10 +65,20 @@ Set the largest page size the API allows, and stop at a sensible limit (say
 | 404 | No such thing, or not visible to this sign-in | Check the path and ids against the docs |
 | 409 | Conflict (already exists, edited meanwhile) | Read the current state before trying again |
 | 429 | Rate limited | Wait as long as `retry-after` or the rate limit headers say |
-| 5xx | The API failed | One retry after a pause; then report it |
+| 5xx | The API failed or its result is uncertain | Retry a safe read once after a pause; inspect an uncertain write before any retry |
 
 Never retry the same failing request in a loop. Watch `x-ratelimit-remaining`
 (or `ratelimit-remaining`) and slow down before it reaches zero.
+
+A timeout or lost response after sending a mutation does not prove it failed.
+Use the returned request/resource ID or an authorized read to reconcile the effect.
+Only retry a write when the API's actual idempotency contract or evidence that it
+never started makes replay safe. Do not infer that guarantee from a header name.
+
+For Dyadic itself, discover the enabled Dyadic API Integration skill or the
+official Documentation MCP to distinguish the four contracts and Workspace
+session routes. For git.lley.cat, use its actual gateway and configured connection;
+the GitHub plugin is not an adapter for that service.
 
 ## 5. GraphQL
 

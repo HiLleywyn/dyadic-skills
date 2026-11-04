@@ -7,11 +7,11 @@ description: Deduplicate and record validated security findings in an approved i
 
 Maintain a durable, auditable finding lifecycle without duplicating reports or leaking sensitive evidence. Tracking is an external mutation: prepare the record, show the intended changes, and use the destination's approval flow.
 
-Read [evidence and provenance](../_shared/evidence-standard.md), [severity and confidence](../_shared/severity-and-confidence.md), [report standard](../_shared/report-standard.md), and the destination's visibility/access model.
+Read [evidence and provenance](references/evidence-standard.md), [severity and confidence](references/severity-and-confidence.md), [report standard](references/report-standard.md), and the destination's visibility/access model.
 
 ## Intake gate
 
-Accept validated reportable findings, accepted nonreportable engineering risks, hardening items explicitly requested for tracking, or fix-verification updates. Candidates with `needs-evidence` remain in the private assessment record unless the user wants a research task—not a vulnerability ticket.
+Accept validated reportable findings, accepted nonreportable engineering risks, hardening items explicitly requested for tracking, or fix-verification updates. Candidates with `needs-evidence` remain in the private assessment record unless the user wants a research task - not a vulnerability ticket.
 
 Confirm:
 
@@ -65,3 +65,15 @@ When updating, preserve history. Add a timestamped note for new evidence, change
 Read the created or updated record back. Confirm URL/ID, visibility, title, body, labels, status, assignee, and links. Record any platform limitation. Provide the user with the canonical reference and a concise list of mutations.
 
 Do not notify maintainers, submit a bounty report, disclose publicly, merge a fix, or close a report unless those actions were separately requested.
+
+## Installed Resources
+
+Use `tools.load(inventory=true)` to discover enabled skills and permitted tools. Load the skills group,
+then read this package with `skills.read(name="dyadic-track-findings", path="SKILL.md")`.
+Read linked references using the same skill name and their bundle-relative paths. Cross-skill `$name`
+references describe optional workflows, not callable tool names; discover an enabled sibling first.
+If it is unavailable, perform the supported part directly and record the remaining phase as unexecuted.
+
+For a durable record, use the [finding schema](references/finding.schema.json). The bundled
+[validator](scripts/validate_finding.py) checks record invariants without third-party packages; it does
+not establish that a finding is true. Run it only through an authorized execution tool.

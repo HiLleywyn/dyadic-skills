@@ -2,12 +2,16 @@
   "id": "api-contract-review",
   "name": "API Contract Review",
   "description": "Validate API contracts and review explicitly approved isolated staging assessments.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Dyadic",
   "color": "gray",
   "icon": "code",
   "enabled": true,
   "changes": [
+    {
+      "version": "1.0.1",
+      "notes": "Cover all four Dyadic contracts and distinguish static MCP lookup from execution."
+    },
     {
       "version": "1.0.0",
       "notes": "Static contract review and explicitly approved isolated staging checks."

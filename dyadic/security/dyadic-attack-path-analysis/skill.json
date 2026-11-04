@@ -2,11 +2,10 @@
   "id": "dyadic-attack-path-analysis",
   "name": "Attack Path Analysis",
   "description": "Trace a candidate from attacker-controlled source through controls and state to a concrete security impact.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Dyadic",
   "color": "red",
-  "icon": "route",
-  "enabled": true,
+  "icon": "map",
   "abilities": [
     "Separately tracks data, identity, policy, and state",
     "Evaluates controls against the representation used by the sink",
@@ -17,6 +16,13 @@
     "Any runtime proof follows target-specific authorization and safe-testing limits"
   ],
   "changes": [
-    { "version": "1.0.0", "notes": "Initial Dyadic-native attack-path analysis workflow." }
+    {
+      "version": "1.0.1",
+      "notes": "Adopt owner-authored security workflow with self-contained references and explicit runtime discovery."
+    },
+    {
+      "version": "1.0.0",
+      "notes": "Initial Dyadic-native attack-path analysis workflow."
+    }
   ]
 }

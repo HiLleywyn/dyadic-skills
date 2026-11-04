@@ -2,11 +2,10 @@
   "id": "dyadic-track-findings",
   "name": "Track Findings",
   "description": "Deduplicate and persist validated security findings with evidence, ownership, and remediation state.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Dyadic",
   "color": "violet",
-  "icon": "list-checks",
-  "enabled": true,
+  "icon": "files",
   "abilities": [
     "Deduplicates findings by root cause and remediation boundary",
     "Tracks source fix, release, deployment, and disclosure as separate states",
@@ -17,6 +16,13 @@
     "Does not place private exploit details in public projects"
   ],
   "changes": [
-    { "version": "1.0.0", "notes": "Initial Dyadic-native security finding lifecycle workflow." }
+    {
+      "version": "1.0.1",
+      "notes": "Adopt owner-authored security workflow with self-contained references and explicit runtime discovery."
+    },
+    {
+      "version": "1.0.0",
+      "notes": "Initial Dyadic-native security finding lifecycle workflow."
+    }
   ]
 }

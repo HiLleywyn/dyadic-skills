@@ -7,7 +7,7 @@ description: Discover plausible security findings in a pinned repository or comp
 
 Generate a small set of high-value, evidence-linked candidates. Optimize for attack paths that can be independently decided, not for the number of warnings.
 
-Read [runtime and tools](../_shared/runtime-and-tools.md), [safe testing](../_shared/safe-testing.md), [evidence and provenance](../_shared/evidence-standard.md), and the target's threat model when one exists.
+Read [runtime and tools](references/runtime-and-tools.md), [safe testing](references/safe-testing.md), [evidence and provenance](references/evidence-standard.md), and the target's threat model when one exists.
 
 ## Inputs
 
@@ -70,3 +70,15 @@ These prompts guide review; they are not findings.
 Stop expanding a candidate once the deciding evidence is clear. Send candidates to `$dyadic-attack-path-analysis` when the flow is complex and to `$dyadic-finding-validation` for a verdict. Preserve rejected candidates with a short reason so future passes do not rediscover the same false positive.
 
 Discovery output must not contain final external-report language, unsupported affected-version ranges, or severity claims beyond a provisional priority. Do not create issues or notify maintainers during discovery.
+
+## Installed Resources
+
+Use `tools.load(inventory=true)` to discover enabled skills and permitted tools. Load the skills group,
+then read this package with `skills.read(name="dyadic-finding-discovery", path="SKILL.md")`.
+Read linked references using the same skill name and their bundle-relative paths. Cross-skill `$name`
+references describe optional workflows, not callable tool names; discover an enabled sibling first.
+If it is unavailable, perform the supported part directly and record the remaining phase as unexecuted.
+
+For a durable record, use the [finding schema](references/finding.schema.json). The bundled
+[validator](scripts/validate_finding.py) checks record invariants without third-party packages; it does
+not establish that a finding is true. Run it only through an authorized execution tool.

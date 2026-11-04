@@ -1,6 +1,14 @@
 # Provenance and Maintenance
 
-## Source snapshots
+## Current Dyadic Catalog Snapshot
+
+The `docs` refresh adopts the twelve owner-authored security workflows into Dyadic and mirrors 37 complete official packages back here: 25 under `dyadic/iris/` and 12 under `dyadic/security/`. [dyadic/catalog-source.json](dyadic/catalog-source.json) records the exact merged Dyadic source commit and every mirrored file's SHA-256 after UTF-8/LF normalization. `python dyadic/scripts/verify_catalog_mirror.py` verifies that receipt without access to the private source repository.
+
+The security suite is 1.0.1: supported catalog icons/colors, complete package-local references and validators, explicit resource discovery and optional cross-skill routing. Store metadata does not turn a package on for every account. Dyadic API Integration and Dyadic Extension Authoring are new 1.0.0 packages; API Integration and API Contract Review are revised to 1.0.1. Catalog punctuation follows the product's existing rules. Original authorship and the platform/workflow layout remain intact.
+
+The source catalog is now authoritative for all 37 adopted packages. The original `_shared/` authoring standards, examples and unrelated skills remain in this repository. Existing user installations and service configuration are outside this mirror operation. Skill, ZIP/resource, finding-validator and source-equality checks establish packaging consistency; the independent authoring exercise and documented runner limits do not establish deployed model quality.
+
+## Earlier Source Snapshots
 
 | Collection | Source | Treatment |
 | --- | --- | --- |

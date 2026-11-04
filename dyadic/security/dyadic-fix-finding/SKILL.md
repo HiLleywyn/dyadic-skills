@@ -7,7 +7,7 @@ description: Implement a narrow, authorized source change for a validated securi
 
 Remediate the validated root cause with the smallest maintainable change and leave a verifiable evidence trail. A security fix is not complete merely because the exploit test stops passing; intended behavior and adjacent representations must remain correct.
 
-Read [safe testing](../_shared/safe-testing.md), [evidence and provenance](../_shared/evidence-standard.md), and the validated finding. Use `$dyadic-verify-fix` after implementation when the user asks for independent verification.
+Read [safe testing](references/safe-testing.md), [evidence and provenance](references/evidence-standard.md), and the validated finding. Use `$dyadic-verify-fix` after implementation when the user asks for independent verification.
 
 ## Preconditions
 
@@ -75,3 +75,15 @@ Provide:
 - final diff summary.
 
 Do not commit, push, open a pull request, merge, deploy, rotate credentials, notify users, or publish an advisory unless the user separately requests that action. A patch can be complete without being deployed; report those states separately.
+
+## Installed Resources
+
+Use `tools.load(inventory=true)` to discover enabled skills and permitted tools. Load the skills group,
+then read this package with `skills.read(name="dyadic-fix-finding", path="SKILL.md")`.
+Read linked references using the same skill name and their bundle-relative paths. Cross-skill `$name`
+references describe optional workflows, not callable tool names; discover an enabled sibling first.
+If it is unavailable, perform the supported part directly and record the remaining phase as unexecuted.
+
+For a durable record, use the [finding schema](references/finding.schema.json). The bundled
+[validator](scripts/validate_finding.py) checks record invariants without third-party packages; it does
+not establish that a finding is true. Run it only through an authorized execution tool.
