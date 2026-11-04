@@ -2,7 +2,7 @@
   "version": 1,
   "name": "Skills Catalog Validation",
   "triggers": {
-    "push": false,
+    "push": true,
     "tags": false,
     "manual": true
   },
