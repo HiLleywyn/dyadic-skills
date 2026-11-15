@@ -1,6 +1,6 @@
-# Skills
+# Dyadic Skills
 
-[Skills](README.md) · [Agents](https://git.lley.cat/r/dadd28be-7d91-432f-beb0-00d285e8f02b?ref=store) · [Plugins](https://git.lley.cat/r/ae86ea71-cb4d-4fc5-9ec1-803f8f303989?ref=store)
+[Skills](README.md) · [Agents](https://git.lley.cat/r/dadd28be-7d91-432f-beb0-00d285e8f02b?ref=main) · [Plugins](https://git.lley.cat/r/ae86ea71-cb4d-4fc5-9ec1-803f8f303989?ref=main)
 
 Maintained instructions for lley.cat, Dyadic, Ward, Windows, Linux, Docker and development. Each skill folder contains its own `SKILL.md` and supporting resources. This collection contains guidance and examples, not credentials or installed services. Repository visibility is managed separately by its owner.
 
@@ -71,6 +71,41 @@ See [provenance and maintenance](PROVENANCE.md) for source revisions, attributio
 
 ## Validation and packages
 
-[Catalog inventory](catalog.json) · [Maintenance](MAINTENANCE.md) · [Compatibility](COMPATIBILITY.md) · [Delivery report](https://git.lley.cat/r/dadd28be-7d91-432f-beb0-00d285e8f02b?path=REPORT.md&ref=store)
+[Catalog inventory](catalog.json) · [Maintenance](MAINTENANCE.md) · [Compatibility](COMPATIBILITY.md) · [Delivery report](https://git.lley.cat/r/dadd28be-7d91-432f-beb0-00d285e8f02b?path=REPORT.md&ref=main)
 
 With Python 3.11+ and PyYAML, run `python tools/catalog.py check`, `python .lley/run.py`, then `python tools/catalog.py build`. Each `dist/<skill-id>.zip` is an individual importable skill; `dist/collection.zip` groups them for download and must be extracted first. The security exports include shared standards inside each ZIP. The original source layout and existing package IDs remain unchanged.
+
+## Source, mirrors and licensing
+
+The [lley.cat repository](https://git.lley.cat/r/1a151e58-468a-45f1-a028-92c95690ad68) is canonical. [HiLleywyn/dyadic-skills](https://github.com/HiLleywyn/dyadic-skills) is a secondary source mirror with the same catalog and Git history.
+
+Project-authored instructions, documentation and tooling use [MIT](LICENSE). Bundled third-party material retains its original licenses and attribution; see [third-party notices](THIRD_PARTY_NOTICES.md). A repository license does not grant access to connected services, proprietary tools or somebody else's data.
+
+## Choose the right package
+
+| Need | Start here | Required environment |
+|---|---|---|
+| Work inside Dyadic | [Official Iris skills](dyadic/README.md) | Dyadic's reviewed package import and the selected tools |
+| Run an evidence-bounded review | [Security workflows](dyadic/security/README.md) | The tools and authorization declared by the chosen workflow |
+| Maintain Lley Git, Notes or Releases | [Lley platform skills](lley-cat/README.md) | An owned account and the specific API scopes in each skill |
+| Operate a Windows machine | [Windows workflows](windows/README.md) | An authorized local environment; each workflow discovers its own prerequisites |
+| Verify a release | [Release verification](development/release-verification/SKILL.md) | A known source revision, artifact and intended destination |
+
+Read `SKILL.md` before running bundled resources. Preserve the whole package directory: references, templates, scripts, metadata and notices are part of the workflow. A category directory is navigation, not an installable skill. The machine-readable [catalog](catalog.json) is the searchable inventory, and [provenance](PROVENANCE.md) explains which packages are official snapshots versus repository additions.
+
+## Author and verify a change
+
+For an official Dyadic package, change its authoritative platform source first, then refresh the exact snapshot receipt. For a repository-authored skill, edit its own `SKILL.md` and supporting resources. Keep the existing package ID and resource links stable.
+
+```sh
+git clone https://github.com/HiLleywyn/dyadic-skills.git
+cd dyadic-skills
+python -m pip install PyYAML
+python tools/catalog.py check
+python .lley/run.py
+python tools/catalog.py build
+```
+
+The checker validates instruction structure, IDs, links, provenance and packaged resources. Builders create reproducible archives without executing downloaded skill scripts. Tests and import inspection establish package compatibility; they do not establish that a provider, physical device or live external tool works. [Maintenance](MAINTENANCE.md) documents the complete refresh and export sequence.
+
+For platform capabilities and current schemas, use [Dyadic Developers](https://dyadic.app/developers/). For durable workflow orchestration, see [Matrix](https://dyadic.app/developers/matrix/) and its [auditable engine](https://github.com/HiLleywyn/dyadic-matrix). [Agents](https://github.com/HiLleywyn/dyadic-agents) define identities and delegated roles; [plugins](https://github.com/HiLleywyn/dyadic-plugins) describe actual tool switches.
