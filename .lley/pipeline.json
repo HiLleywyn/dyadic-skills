@@ -10,7 +10,7 @@
     {
       "id": "catalog",
       "label": "Validate and Package Skills",
-      "image": "sha256:d228c59ea0b616fa7f3c43b667e627ab435763efc1627cc64bcdc6e10df7e0b4",
+      "image": "sha256:a7591fbcc603c9480a31100afc4f72916ab7d5ce67043a61854028f4a2ab8de5",
       "commands": [
         [
           "python",

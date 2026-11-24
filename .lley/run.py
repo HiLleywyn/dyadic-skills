@@ -50,4 +50,8 @@ suite_xml.set('skipped', str(len(result.skipped)))
 reports = ROOT / 'reports'
 reports.mkdir(exist_ok=True)
 ET.ElementTree(suite_xml).write(reports / 'catalog.xml', encoding='utf-8', xml_declaration=True)
-sys.exit(not result.wasSuccessful())
+passed_count = result.testsRun - len(result.failures) - len(result.errors) - len(result.skipped)
+if not result.wasSuccessful() or result.testsRun == 0 or passed_count == 0:
+    print(f'ERROR: invalid test execution summary (testsRun={result.testsRun}, passed={passed_count}, skipped={len(result.skipped)})', file=sys.stderr)
+    sys.exit(1)
+sys.exit(0)
