@@ -1,6 +1,6 @@
 {
   "repository": "https://git.lley.cat/r/4ae11d0f-eec7-498c-8618-f81c34e29832",
-  "revision": "ae1c3e2119d85f518885b253132adad4110d4787",
+  "revision": "d75b3b267b4cb4049e885701d7066ab34f3e7196",
   "normalization": "UTF-8 with LF",
   "files": {
     "dyadic/iris/api-contract-review/skill.json": "f61e553b51101cb9b3938ba4263bcc78e26165d2edb36cab1f7233cc92cf8bc3",
@@ -135,8 +135,8 @@
     "dyadic/iris/forensics/SKILL.md": "e4cbc7791fff065d707fa6c9038ecc3c31244b94fa21f6d40f29e87b049301ef",
     "dyadic/iris/house-style/skill.json": "4d72017eb2f03c377ac3f1337b64586ac70fd5aeffcd8591e6971c316be78588",
     "dyadic/iris/house-style/SKILL.md": "af5aaf2d53fb90e4c0a929d478ae134fc9319d2e2f1a2592613bc5c2b0a34b0b",
-    "dyadic/iris/import-review/skill.json": "c388f71310a19cebde29b7b2424da17d59dcaeea37020ce75455f4d5e3df5443",
-    "dyadic/iris/import-review/SKILL.md": "0e55b39c7e4448193f768d368dafdaad42e7b338dd6e56d213ff5ea1845477e4",
+    "dyadic/iris/import-review/skill.json": "eadc8908fe0ea4680289bda90a488540546b34acfd5ad84632b4bea55c1c6938",
+    "dyadic/iris/import-review/SKILL.md": "2355a442e62dda2d2889562573a19ae927eba946cf0f64cb7817f123149a80fa",
     "dyadic/iris/meeting-actions/skill.json": "4dd67e38b01aca117eec7d88f728e0238815dde897a859b5b5cdcfa5bd27fb03",
     "dyadic/iris/meeting-actions/SKILL.md": "da3c2d5178d606897e268daee1749e8b7c3695405a0722324e9536f943c4fd60",
     "dyadic/iris/requirements-to-implementation-plan/skill.json": "0d122e9880a95bfe0fcbd13929fb31ba834a917e84037bdf64b8da96ff7a94bb",

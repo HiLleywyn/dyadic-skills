@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "Dyadic",
-  "revision": "ae1c3e2119d85f518885b253132adad4110d4787",
+  "revision": "d75b3b267b4cb4049e885701d7066ab34f3e7196",
   "normalization": "UTF-8 with LF; no content edits to source snapshots",
   "files": {
     "dyadic/iris/api-contract-review/SKILL.md": {
@@ -182,11 +182,11 @@
     },
     "dyadic/iris/import-review/SKILL.md": {
       "source": "catalog/skills/import-review/SKILL.md",
-      "sha256": "0e55b39c7e4448193f768d368dafdaad42e7b338dd6e56d213ff5ea1845477e4"
+      "sha256": "2355a442e62dda2d2889562573a19ae927eba946cf0f64cb7817f123149a80fa"
     },
     "dyadic/iris/import-review/skill.json": {
       "source": "catalog/skills/import-review/skill.json",
-      "sha256": "c388f71310a19cebde29b7b2424da17d59dcaeea37020ce75455f4d5e3df5443"
+      "sha256": "eadc8908fe0ea4680289bda90a488540546b34acfd5ad84632b4bea55c1c6938"
     },
     "dyadic/iris/meeting-actions/SKILL.md": {
       "source": "catalog/skills/meeting-actions/SKILL.md",
