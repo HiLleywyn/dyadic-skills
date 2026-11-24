@@ -1,4 +1,4 @@
-"""Run offline collection tests and emit real JUnit cases for lley.cat Actions."""
+"""Run offline collection tests and emit/verify real JUnit cases for lley.cat Actions."""
 from pathlib import Path
 import sys
 import time
@@ -40,18 +40,44 @@ class Results(unittest.TextTestResult):
             ET.SubElement(case, status, message=message.splitlines()[-1][:400] if message else status).text = message
 
 
-suite_xml = ET.Element('testsuite', name='Collection')
-suite = unittest.defaultTestLoader.discover(str(ROOT / 'tests'))
-result = unittest.TextTestRunner(verbosity=2, resultclass=Results).run(suite)
-suite_xml.set('tests', str(len(suite_xml)))
-suite_xml.set('failures', str(len(result.failures)))
-suite_xml.set('errors', str(len(result.errors)))
-suite_xml.set('skipped', str(len(result.skipped)))
-reports = ROOT / 'reports'
-reports.mkdir(exist_ok=True)
-ET.ElementTree(suite_xml).write(reports / 'catalog.xml', encoding='utf-8', xml_declaration=True)
-passed_count = result.testsRun - len(result.failures) - len(result.errors) - len(result.skipped)
-if not result.wasSuccessful() or result.testsRun == 0 or passed_count == 0:
-    print(f'ERROR: invalid test execution summary (testsRun={result.testsRun}, passed={passed_count}, skipped={len(result.skipped)})', file=sys.stderr)
-    sys.exit(1)
-sys.exit(0)
+def verify_junit(report_path: Path) -> dict[str, int]:
+    """Reject missing, malformed, empty, zero-passed, skipped, failed, or errored JUnit reports."""
+    if not report_path.is_file():
+        raise RuntimeError(f'Missing JUnit report: {report_path}')
+    try:
+        root = ET.parse(report_path).getroot()
+    except ET.ParseError as exc:
+        raise RuntimeError(f'Malformed JUnit report {report_path}: {exc}') from exc
+    cases = list(root.iter('testcase'))
+    failures = sum(1 for c in cases if c.find('failure') is not None)
+    errors = sum(1 for c in cases if c.find('error') is not None)
+    skipped = sum(1 for c in cases if c.find('skipped') is not None)
+    passed = len(cases) - failures - errors - skipped
+    summary = {'total': len(cases), 'passed': passed, 'failed': failures, 'errors': errors, 'skipped': skipped}
+    if not cases or passed <= 0 or failures or errors or skipped:
+        raise RuntimeError(f'Invalid test execution summary: {summary}')
+    return summary
+
+
+if __name__ == '__main__':
+    reports = ROOT / 'reports'
+    reports.mkdir(exist_ok=True)
+    report_path = reports / 'catalog.xml'
+    report_path.unlink(missing_ok=True)
+
+    suite_xml = ET.Element('testsuite', name='Collection')
+    suite = unittest.defaultTestLoader.discover(str(ROOT / 'tests'))
+    result = unittest.TextTestRunner(verbosity=2, resultclass=Results).run(suite)
+    suite_xml.set('tests', str(len(suite_xml)))
+    suite_xml.set('failures', str(len(result.failures)))
+    suite_xml.set('errors', str(len(result.errors)))
+    suite_xml.set('skipped', str(len(result.skipped)))
+    ET.ElementTree(suite_xml).write(report_path, encoding='utf-8', xml_declaration=True)
+    if not result.wasSuccessful():
+        sys.exit(1)
+    try:
+        verify_junit(report_path)
+    except RuntimeError as exc:
+        print(f'ERROR: {exc}', file=sys.stderr)
+        sys.exit(1)
+    sys.exit(0)
