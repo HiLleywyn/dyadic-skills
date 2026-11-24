@@ -1,6 +1,6 @@
 {
   "repository": "https://git.lley.cat/r/4ae11d0f-eec7-498c-8618-f81c34e29832",
-  "revision": "d75b3b267b4cb4049e885701d7066ab34f3e7196",
+  "revision": "273e43ef6e543a0b5a4e6095fd4aad4e57044451",
   "normalization": "UTF-8 with LF",
   "files": {
     "dyadic/iris/api-contract-review/skill.json": "f61e553b51101cb9b3938ba4263bcc78e26165d2edb36cab1f7233cc92cf8bc3",
@@ -26,9 +26,9 @@
     "dyadic/iris/debug-code/scripts/log_summary.py": "f47b1c97a45cc0a19d01f2d72333d3d67434e7ac75efb2ab52472fc13e177d25",
     "dyadic/iris/debug-code/skill.json": "e7553d122171ecd67eff0e5bbfa56cb812432638d9040fefc6cf8aabd276dcb5",
     "dyadic/iris/debug-code/SKILL.md": "c08f264452082d9d898e2bc20f4cfac7cf224cfebeb4ae03143eaa7d4d9b8d99",
-    "dyadic/iris/dyadic-api-integration/references/api-surfaces.md": "45a33c96af75d12b6c7c438013425b6db913979ac0aea54ed59ada0bebddfd86",
+    "dyadic/iris/dyadic-api-integration/references/api-surfaces.md": "af639c76c68887dcba5a11fe43f59424d4cd818bdd046b09994ebc9d02d90bcd",
     "dyadic/iris/dyadic-api-integration/references/lifecycle.md": "385d9d328f9f70cfd1406b64cb14b94b88f4b7d71175d67ef8b207f7be10401c",
-    "dyadic/iris/dyadic-api-integration/skill.json": "96ba2f3d49d30894ea65d7992deb2a2114176eda56ed14b619aee5c733fad21b",
+    "dyadic/iris/dyadic-api-integration/skill.json": "576e07b8074b8945c9df444e24a05bd68430bfe7987cc2dbdc9997660044580d",
     "dyadic/iris/dyadic-api-integration/SKILL.md": "cc48b8d60f7808ffd5bea4a91a367fcc5d2e5e98a78d9b475f4931bb0a819c72",
     "dyadic/security/dyadic-attack-path-analysis/references/evidence-standard.md": "69631f8e9b40e1747ba75c6fefe341d560fb552fe9e6cf74e265420b41731d0d",
     "dyadic/security/dyadic-attack-path-analysis/references/finding.schema.json": "e8327c22c5fe1649b190091b039f8f08d4f0ee2ae1bdc3299dc4e3a9910c592f",
