@@ -102,7 +102,7 @@
     },
     "dyadic/iris/dyadic-api-integration/references/api-surfaces.md": {
       "source": "catalog/skills/dyadic-api-integration/references/api-surfaces.md",
-      "sha256": "af639c76c68887dcba5a11fe43f59424d4cd818bdd046b09994ebc9d02d90bcd"
+      "sha256": "ba0acae43e3ecb2162c9ebbf2ec686db012a5c31c956580d6571077c80629d06"
     },
     "dyadic/iris/dyadic-api-integration/references/lifecycle.md": {
       "source": "catalog/skills/dyadic-api-integration/references/lifecycle.md",
@@ -110,7 +110,7 @@
     },
     "dyadic/iris/dyadic-api-integration/skill.json": {
       "source": "catalog/skills/dyadic-api-integration/skill.json",
-      "sha256": "576e07b8074b8945c9df444e24a05bd68430bfe7987cc2dbdc9997660044580d"
+      "sha256": "af473a584fa978938f19e04c1045ef8486a4714c8ca5e8604a8318aeb09a224a"
     },
     "dyadic/iris/dyadic-extension-authoring/SKILL.md": {
       "source": "catalog/skills/dyadic-extension-authoring/SKILL.md",

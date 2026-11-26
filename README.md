@@ -77,7 +77,7 @@ With Python 3.11+ and PyYAML, run `python tools/catalog.py check`, `python .lley
 
 ## Source, mirrors and licensing
 
-The [lley.cat repository](https://git.lley.cat/r/1a151e58-468a-45f1-a028-92c95690ad68) is canonical. [HiLleywyn/dyadic-skills](https://github.com/HiLleywyn/dyadic-skills) is a secondary source mirror with the same catalog and Git history.
+The [HiLleywyn/dyadic-skills](https://github.com/HiLleywyn/dyadic-skills) GitHub repository is canonical. [lley.cat](https://git.lley.cat/r/1a151e58-468a-45f1-a028-92c95690ad68) is its synchronized mirror with the same catalog and Git history.
 
 Project-authored instructions, documentation and tooling use [MIT](LICENSE). Bundled third-party material retains its original licenses and attribution; see [third-party notices](THIRD_PARTY_NOTICES.md). A repository license does not grant access to connected services, proprietary tools or somebody else's data.
 
