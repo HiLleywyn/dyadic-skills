@@ -1,6 +1,6 @@
 # Linux
 
-[All Skills](../README.md) · [Compatibility](../COMPATIBILITY.md)
+[All Skills](../README.md)
 
 | Skill | Purpose |
 | --- | --- |

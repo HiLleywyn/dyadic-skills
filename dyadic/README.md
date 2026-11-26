@@ -72,4 +72,4 @@ Owner-started independent tasks currently receive pinned SKILL.md text only. Sup
 
 [Current Work and delivery workflows](workflows/README.md) cover accepted revisions, artifact handoffs, receipt reconciliation and conflicting supplied sources. [Catalog Maintenance](operators/README.md) covers these three repositories off the platform. These five additions are repository-authored and are not silently represented as installed official defaults.
 
-[Agents](https://git.lley.cat/r/dadd28be-7d91-432f-beb0-00d285e8f02b?ref=store) holds Iris and specialists; [Plugins](https://git.lley.cat/r/ae86ea71-cb4d-4fc5-9ec1-803f8f303989?ref=store) holds the default runtime switches. See [compatibility](../COMPATIBILITY.md) before importing.
+[Agents](https://github.com/HiLleywyn/dyadic-agents) holds Iris and specialists; [Plugins](https://github.com/HiLleywyn/dyadic-plugins) holds the default runtime switches. See the [repository README](../README.md#using-a-skill) before importing.

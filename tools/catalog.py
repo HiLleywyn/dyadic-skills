@@ -224,7 +224,7 @@ def build(root, output, skills_root=None):
     outputs['README.md'] = ('# ' + catalog['kind'].title() + ' packages\n\n' +
         ('These are plugin catalog descriptors, not executable plugin installs.\n' if catalog['kind'] == 'plugins' else
          'Extract this collection, then review/import one individual ZIP at a time in Dyadic.\n') +
-        'See the repository README and compatibility report for permissions and runtime limits.\n').encode()
+        'See the repository README for permissions and runtime limits.\n').encode()
     (output / 'collection.zip').write_bytes(archive(outputs))
     return hashes
 
