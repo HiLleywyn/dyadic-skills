@@ -86,7 +86,7 @@ class CollectionChecks(unittest.TestCase):
         item = next(i for i in catalog.inventory(ROOT)['entries'] if i['role'] == 'delegate')
         first = catalog.read_json(ROOT / item['path'] / 'agent.json')['skills'][0]
         originals = {'SKILL.md': b'unchanged entrypoint', 'reference.md': b'original resource'}
-        locked = {'sha256': hashlib.sha256(originals['SKILL.md']).hexdigest(), 'bundle_sha256': hashlib.sha256(catalog.archive(originals)).hexdigest()}
+        locked = {'sha256': hashlib.sha256(originals['SKILL.md']).hexdigest(), 'bundle_sha256': catalog.bundle_digest(originals)}
         read_json = catalog.read_json
         def metadata(path):
             if path == ROOT / 'compatibility/skill-dependencies.json':

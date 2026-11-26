@@ -154,6 +154,15 @@ def skill_files(root, item):
     return files
 
 
+def bundle_digest(files):
+    """SHA-256 over the uncompressed, sorted file set, independent of the local zlib build."""
+    h = hashlib.sha256()
+    for name, body in sorted(files.items()):
+        encoded = name.encode()
+        h.update(len(encoded).to_bytes(4, 'big') + encoded + len(body).to_bytes(8, 'big') + body)
+    return h.hexdigest()
+
+
 def archive(files):
     if len(files) > 2000 or sum(map(len, files.values())) > 100 * 1024 * 1024:
         raise ValueError('Package exceeds file/expanded size limits')
@@ -184,8 +193,8 @@ def agent_files(root, item, skills_root=None):
                 raise ValueError(f'Missing dependency: {key}')
             bundled = skill_files(skills_root, available[key])
             digest = hashlib.sha256(bundled['SKILL.md']).hexdigest()
-            bundle_digest = hashlib.sha256(archive(bundled)).hexdigest()
-            if digest != expected[key]['sha256'] or bundle_digest != expected[key]['bundle_sha256']:
+            bundled_digest = bundle_digest(bundled)
+            if digest != expected[key]['sha256'] or bundled_digest != expected[key]['bundle_sha256']:
                 raise ValueError(f'Skill dependency changed; review the lock: {key}')
             target = 'skills/' + key
             files.update({target + '/' + p: b for p, b in bundled.items()})
