@@ -5,10 +5,10 @@
 | OpenAI-compatible | https://api.dyadic.app/openai/v1 | OpenAI SDKs, Decisions and Dyadic client base |
 | Anthropic REST | https://api.dyadic.app/anthropic/v1 | Anthropic SDK base omits the trailing /v1 |
 | OpenRouter gateway | https://api.dyadic.app/openrouter/v1 | Key needs platform-granted gateway access |
-| Platform | https://api.dyadic.app/v1 | Runs, Predictive Operation Graphs (`/executions`), Plans and Black Box |
+| Platform | https://api.dyadic.app/v1 | Runs, Predictive Operation Graphs (`/pog`), Plans and Black Box |
 
 Each base exposes /openapi.json. The OpenAI-compatible base also exposes /capabilities. Dyadic clients derive
-sibling surfaces from the OpenAI-compatible base; their current default is https://dyadic.app/api/openai/v1.
+sibling surfaces from the OpenAI-compatible base; their default is https://api.dyadic.app/openai/v1.
 Those website /api aliases remain supported. Do not construct paths by dropping or duplicating /v1.
 
 Documentation MCP: https://api.dyadic.app/documentation/mcp, public stateless JSON reads, no key. Use categories,

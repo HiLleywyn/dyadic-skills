@@ -2,7 +2,7 @@
   "id": "dyadic-api-integration",
   "name": "Dyadic API Integration",
   "description": "Integrate an application with Dyadic APIs, SDKs or MCP using the correct host, credentials, contract and execution lifecycle.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "icon": "book",
   "color": "violet",
   "abilities": [
@@ -12,6 +12,10 @@
     "Guidance only; existing tool, account and approval boundaries apply."
   ],
   "changes": [
+    {
+      "version": "1.0.2",
+      "notes": "Name the Predictive Operation Graphs resource /pog on the Platform surface; SDKs default to api.dyadic.app."
+    },
     {
       "version": "1.0.1",
       "notes": "Include Predictive Operation Graphs (/executions) on the Platform surface."

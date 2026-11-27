@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "Dyadic",
-  "revision": "3ac68186fa5a30124329a692e03b15034896c66b",
+  "revision": "cdab0aec02c2400e64907ca40b39f1bed980b385",
   "normalization": "UTF-8 with LF; no content edits to source snapshots",
   "files": {
     "dyadic/iris/api-contract-review/SKILL.md": {
@@ -102,7 +102,7 @@
     },
     "dyadic/iris/dyadic-api-integration/references/api-surfaces.md": {
       "source": "catalog/skills/dyadic-api-integration/references/api-surfaces.md",
-      "sha256": "ba0acae43e3ecb2162c9ebbf2ec686db012a5c31c956580d6571077c80629d06"
+      "sha256": "73ef8d731ba9a8d792361e5bd9129a23e59747494cd1202196fae2e73c462119"
     },
     "dyadic/iris/dyadic-api-integration/references/lifecycle.md": {
       "source": "catalog/skills/dyadic-api-integration/references/lifecycle.md",
@@ -110,7 +110,7 @@
     },
     "dyadic/iris/dyadic-api-integration/skill.json": {
       "source": "catalog/skills/dyadic-api-integration/skill.json",
-      "sha256": "af473a584fa978938f19e04c1045ef8486a4714c8ca5e8604a8318aeb09a224a"
+      "sha256": "2d2c9fed7aa7cf4abca544a458141636c40d8f8d18172bb223286184a4b1829c"
     },
     "dyadic/iris/dyadic-extension-authoring/SKILL.md": {
       "source": "catalog/skills/dyadic-extension-authoring/SKILL.md",
