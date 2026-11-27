@@ -22,6 +22,7 @@ Preserve IDs and bump the manifest version when its instructions/resources chang
 On/Off, selected skills, visible schemas and execution authority separately. Default catalog availability does
 not mean every account should install or enable the item.
 
-Use git.lley.cat for Dyadic source and issue tracking. Work in an isolated checkout when other models are active;
+Use the GitHub repositories (`HiLleywyn/Dyadic` and the public catalog and Matrix repositories) for Dyadic source and
+GitHub Issues for issue tracking. Work in an isolated checkout when other models are active;
 do not alter their branches or run production deployment as a packaging test. Report concrete package changes,
 checks, source revision, missing capabilities and remaining behavioral validation.

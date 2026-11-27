@@ -2,7 +2,7 @@
   "id": "dyadic-extension-authoring",
   "name": "Dyadic Extension Authoring",
   "description": "Create or update Dyadic skill bundles and specialist presets, or document implemented plugins and MCP services without widening runtime authority.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "icon": "book",
   "color": "violet",
   "abilities": [
@@ -12,6 +12,10 @@
     "Guidance only; existing tool, account and approval boundaries apply."
   ],
   "changes": [
+    {
+      "version": "1.0.1",
+      "notes": "Source and issue tracking point to the GitHub repositories and GitHub Issues."
+    },
     {
       "version": "1.0.0",
       "notes": "Initial Dyadic-specific workflow with bundled references."
